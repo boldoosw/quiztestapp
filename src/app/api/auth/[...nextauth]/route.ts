@@ -7,6 +7,7 @@ import User from "@/models/User";
 import connect from "@/utils/db";
 
 const authOptions: any = {
+   secret: process.env.NEXTAUTH_SECRET,
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
@@ -67,5 +68,5 @@ const authOptions: any = {
   },
 };
 
- const handler = NextAuth(authOptions);
+const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
