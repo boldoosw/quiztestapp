@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-
+import GoogleButton from "react-google-button";
 const Login = () => {
   const router = useRouter();
   const [error, setError] = useState("");
@@ -81,6 +81,12 @@ const Login = () => {
             </button>
             <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
           </form>
+          <GoogleButton
+            className="mx-auto mt-2 mb-4"
+            onClick={() => {
+              signIn("google");
+            }}
+          />
           <button
             className="w-full bg-black text-white py-2 rounded hover:bg-gray-800"
             onClick={() => {
