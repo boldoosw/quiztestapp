@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import { Account, User as AuthUser } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import User from "@/models/User";
@@ -35,6 +36,10 @@ const authOptions: any = {
         }
       },
     }),
+    GoogleProvider({
+    clientId: process.env.GOOGLE_CLIENT_ID  ?? "",
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? ""
+  }),
     GithubProvider({
       clientId: process.env.GITHUB_ID ?? "",
       clientSecret: process.env.GITHUB_SECRET ?? "",
@@ -43,10 +48,15 @@ const authOptions: any = {
   ],
   callbacks: {
     async signIn({ user, account }: { user: AuthUser; account: Account }) {
+if (account?.provider == "google") {
+        return true;
+      }else{
       if (account?.provider == "credentials") {
         return true;
       }
       if (account?.provider == "github") {
+
+        
         await connect();
         try {
           const existingUser = await User.findOne({ email: user.email });
@@ -64,6 +74,7 @@ const authOptions: any = {
           return false;
         }
       }
+    }
     },
   },
 };
