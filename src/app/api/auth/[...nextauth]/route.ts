@@ -52,7 +52,7 @@ const authOptions: any = {
       if (account?.provider == "credentials") {
         return true;
       }
-      if (account?.provider == "github") {
+      if (account?.provider == "google") {
 
         
         await connect();
