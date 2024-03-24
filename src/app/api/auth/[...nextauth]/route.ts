@@ -48,9 +48,7 @@ const authOptions: any = {
   ],
   callbacks: {
     async signIn({ user, account }: { user: AuthUser; account: Account }) {
-if (account?.provider == "google") {
-        return true;
-      }else{
+
       if (account?.provider == "credentials") {
         return true;
       }
@@ -74,7 +72,6 @@ if (account?.provider == "google") {
           return false;
         }
       }
-    }
     },
   },
 };
