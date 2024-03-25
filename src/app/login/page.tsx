@@ -87,14 +87,14 @@ const Login = () => {
               signIn("google");
             }}
           />
-          <button
+          {/* <button
             className="w-full bg-black text-white py-2 rounded hover:bg-gray-800"
             onClick={() => {
               signIn("github");
             }}
           >
             Sign In with Github
-          </button>
+          </button> */}
           <div className="text-center text-gray-500 mt-4">- эсвэл -</div>
           <Link
             className="block text-center text-blue-500 hover:underline mt-2"
