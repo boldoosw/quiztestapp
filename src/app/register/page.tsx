@@ -66,7 +66,7 @@ const Register = () => {
     sessionStatus !== "authenticated" && (
       <div className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="bg-[#212121] p-8 rounded shadow-md w-80">
-          <h1 className="text-4xl text-center font-semibold mb-8">
+          <h1 className="text-2xl text-gray-200 text-center  mb-8">
             Бүртгүүлэх
           </h1>
           <form onSubmit={handleSubmit}>
