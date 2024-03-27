@@ -9,6 +9,10 @@ import Button from "@/components/Button/Button";
 import { QuestionsState } from "@/types/quiz";
 import VulnChart from "@/components/VulnChart/VulnChart";
 
+import connect from "@/utils/db";
+import ClimovQuiz from "@/models/ClimovQuiz";
+import { NextResponse } from "next/server";
+
 type Props = {
   questions: QuestionsState;
   totalQuestions: number;
@@ -57,7 +61,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
     setIsQuestionAnswered(false);
     setCurrentQuestionIndex(newQuestionIndex);
   };
-  const getChartData = () => {
+  const getChartData = async () => {
     if (currentQuestionIndex === totalQuestions - 1) {
       let people_count: number = 0;
       let technical_count: number = 0;
@@ -81,6 +85,27 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
 
       setShowResult(true);
       console.log(chartData);
+
+      //baaz ruu hadgalah
+      await connect();
+
+      const newClimovQuiz = new ClimovQuiz({
+        userId: "ganbold",
+        people_count,
+        culture_count,
+        technical_count,
+        ecology_count,
+        character_count,
+      });
+
+      try {
+        await newClimovQuiz.save();
+        return new NextResponse("data is saved", { status: 200 });
+      } catch (err: any) {
+        return new NextResponse(err, {
+          status: 500,
+        });
+      }
     }
   };
 

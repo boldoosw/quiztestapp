@@ -5,7 +5,7 @@ import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import User from "@/models/User";
-import connect from "@/utils/db";
+import connectMongoDB from "@/utils/db";
 
 const authOptions: any = {
    secret: process.env.NEXTAUTH_SECRET,
@@ -19,7 +19,7 @@ const authOptions: any = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials: any) {
-        await connect();
+        await connectMongoDB();
         try {
           const user = await User.findOne({ email: credentials.email });
           if (user) {
@@ -53,9 +53,8 @@ const authOptions: any = {
         return true;
       }
       if (account?.provider == "google") {
-
-        
-        await connect();
+    
+        await connectMongoDB();
         try {
           const existingUser = await User.findOne({ email: user.email });
           if (!existingUser) {
