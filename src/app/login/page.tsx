@@ -84,12 +84,13 @@ const Login = () => {
             </button>
             <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
           </form>
-          <GoogleButton
+
+          {/* <GoogleButton
             className="mx-auto mt-2 mb-4"
             onClick={() => {
               signIn("google");
             }}
-          />
+          /> */}
           {/* <button
             className="w-full bg-black text-white py-2 rounded hover:bg-gray-800"
             onClick={() => {

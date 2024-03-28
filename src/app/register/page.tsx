@@ -8,6 +8,7 @@ const Register = () => {
   const [error, setError] = useState("");
   const router = useRouter();
   const { data: session, status: sessionStatus } = useSession();
+  const [degree, setDegree] = useState("");
 
   useEffect(() => {
     if (sessionStatus === "authenticated") {
@@ -24,6 +25,8 @@ const Register = () => {
     const email = e.target[0].value;
     const password = e.target[1].value;
 
+    console.log(degree);
+
     if (!isValidEmail(email)) {
       setError("Email is invalid");
       return;
@@ -34,28 +37,28 @@ const Register = () => {
       return;
     }
 
-    try {
-      const res = await fetch("/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      });
-      if (res.status === 400) {
-        setError("This email is already registered");
-      }
-      if (res.status === 200) {
-        setError("");
-        router.push("/login");
-      }
-    } catch (error) {
-      setError("Error, try again");
-      console.log(error);
-    }
+    // try {
+    //   const res = await fetch("/api/register", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       email,
+    //       password,
+    //     }),
+    //   });
+    //   if (res.status === 400) {
+    //     setError("This email is already registered");
+    //   }
+    //   if (res.status === 200) {
+    //     setError("");
+    //     router.push("/login");
+    //   }
+    // } catch (error) {
+    //   setError("Error, try again");
+    //   console.log(error);
+    // }
   };
 
   if (sessionStatus === "loading") {
@@ -85,9 +88,34 @@ const Register = () => {
               placeholder="Password"
               required
             />
+            <div className="border rounded-md p-4 w-full mx-auto max-w-2xl">
+              {/* <h4 className="text-xl lg:text-2xl font-semibold">Анги сонгох</h4> */}
+
+              <div>
+                <label className="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3  hover:bg-indigo-300 cursor-pointer ">
+                  <input
+                    type="radio"
+                    name="degree"
+                    value="1"
+                    onChange={(e) => setDegree(e.target.value)}
+                  />
+                  <i className="pl-2">8,9 дүгээр анги</i>
+                </label>
+
+                <label className="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3  hover:bg-indigo-300 cursor-pointer ">
+                  <input
+                    type="radio"
+                    name="degree"
+                    value="2"
+                    onChange={(e) => setDegree(e.target.value)}
+                  />
+                  <i className="pl-2">10,11,12 дугаар анги</i>
+                </label>
+              </div>
+            </div>
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+              className="w-full bg-blue-500 text-white mt-4 py-2 rounded hover:bg-blue-600"
             >
               {" "}
               Бүртгүүлэх
