@@ -10,7 +10,7 @@ import { QuestionsState } from "@/types/quiz";
 import VulnChart from "@/components/VulnChart/VulnChart";
 
 import connect from "@/utils/db";
-import ClimovQuiz from "@/models/ClimovQuiz";
+// import ClimovQuiz from "@/models/ClimovQuiz";
 import { NextResponse } from "next/server";
 
 type Props = {
@@ -89,23 +89,23 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
       //baaz ruu hadgalah
       await connect();
 
-      const newClimovQuiz = new ClimovQuiz({
-        userId: "ganbold",
-        people_count,
-        culture_count,
-        technical_count,
-        ecology_count,
-        character_count,
-      });
+      // const newClimovQuiz = new ClimovQuiz({
+      //   userId: "ganbold",
+      //   people_count,
+      //   culture_count,
+      //   technical_count,
+      //   ecology_count,
+      //   character_count,
+      // });
 
-      try {
-        await newClimovQuiz.save();
-        return new NextResponse("data is saved", { status: 200 });
-      } catch (err: any) {
-        return new NextResponse(err, {
-          status: 500,
-        });
-      }
+      // try {
+      //   await newClimovQuiz.save();
+      //   return new NextResponse("data is saved", { status: 200 });
+      // } catch (err: any) {
+      //   return new NextResponse(err, {
+      //     status: 500,
+      //   });
+      // }
     }
   };
 
