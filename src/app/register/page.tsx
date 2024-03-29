@@ -27,38 +27,43 @@ const Register = () => {
 
     console.log(degree);
 
+    if (degree === "") {
+      setError("Ангиа сонгоод бүртгүүлэх боломжтой!!!!");
+      return;
+    }
+
     if (!isValidEmail(email)) {
-      setError("Email is invalid");
+      setError("Имайл хаяг алдаатай байна !");
       return;
     }
 
     if (!password || password.length < 8) {
-      setError("Password is invalid");
+      setError("Нууц үг 8 тэмдэгтээс их байх ёстой!");
       return;
     }
 
-    // try {
-    //   const res = await fetch("/api/register", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       email,
-    //       password,
-    //     }),
-    //   });
-    //   if (res.status === 400) {
-    //     setError("This email is already registered");
-    //   }
-    //   if (res.status === 200) {
-    //     setError("");
-    //     router.push("/login");
-    //   }
-    // } catch (error) {
-    //   setError("Error, try again");
-    //   console.log(error);
-    // }
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+      if (res.status === 400) {
+        setError("Имайл хаягаар өмнө нь бүртгүүлсэн байна!");
+      }
+      if (res.status === 200) {
+        setError("");
+        router.push("/login");
+      }
+    } catch (error) {
+      setError("Алдаа гарлаа, дахин оролдоно уу!");
+      console.log(error);
+    }
   };
 
   if (sessionStatus === "loading") {
