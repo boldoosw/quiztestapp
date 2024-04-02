@@ -52,101 +52,66 @@ export default class page extends Component {
     openModal10: false,
     openModal11: false,
   };
-
   onClickButton0 = (e) => {
     e.preventDefault();
     this.setState({ openModal0: true });
-  };
-
-  onCloseModal0 = () => {
-    this.setState({ openModal0: false });
   };
   onClickButton1 = (e) => {
     e.preventDefault();
     this.setState({ openModal1: true });
   };
-
-  onCloseModal1 = () => {
-    this.setState({ openModal1: false });
-  };
   onClickButton2 = (e) => {
     e.preventDefault();
     this.setState({ openModal2: true });
-  };
-
-  onCloseModal2 = () => {
-    this.setState({ openModal2: false });
   };
   onClickButton3 = (e) => {
     e.preventDefault();
     this.setState({ openModal3: true });
   };
-
-  onCloseModal3 = () => {
-    this.setState({ openModal3: false });
-  };
   onClickButton4 = (e) => {
     e.preventDefault();
     this.setState({ openModal4: true });
-  };
-
-  onCloseModal4 = () => {
-    this.setState({ openModal4: false });
   };
   onClickButton5 = (e) => {
     e.preventDefault();
     this.setState({ openModal5: true });
   };
-
-  onCloseModal5 = () => {
-    this.setState({ openModal5: false });
-  };
   onClickButton6 = (e) => {
     e.preventDefault();
     this.setState({ openModal6: true });
-  };
-
-  onCloseModal6 = () => {
-    this.setState({ openModal6: false });
   };
   onClickButton7 = (e) => {
     e.preventDefault();
     this.setState({ openModal7: true });
   };
-
-  onCloseModal7 = () => {
-    this.setState({ openModal7: false });
-  };
   onClickButton8 = (e) => {
     e.preventDefault();
     this.setState({ openModal8: true });
-  };
-
-  onCloseModal8 = () => {
-    this.setState({ openModal8: false });
   };
   onClickButton9 = (e) => {
     e.preventDefault();
     this.setState({ openModal9: true });
   };
-
-  onCloseModal9 = () => {
-    this.setState({ openModal9: false });
-  };
   onClickButton10 = (e) => {
     e.preventDefault();
     this.setState({ openModal10: true });
-  };
-
-  onCloseModal10 = () => {
-    this.setState({ openModal10: false });
   };
   onClickButton11 = (e) => {
     e.preventDefault();
     this.setState({ openModal11: true });
   };
-
-  onCloseModal11 = () => {
+  onCloseModal = () => {
+    this.setState({ openModal0: false });
+    this.setState({ openModal1: false });
+    this.setState({ openModal2: false });
+    this.setState({ openModal3: false });
+    this.setState({ openModal4: false });
+    this.setState({ openModal5: false });
+    this.setState({ openModal6: false });
+    this.setState({ openModal7: false });
+    this.setState({ openModal8: false });
+    this.setState({ openModal9: false });
+    this.setState({ openModal10: false });
     this.setState({ openModal11: false });
   };
   state = { checked: {} };
@@ -200,9 +165,9 @@ export default class page extends Component {
                   />{" "}
                   <Modal
                     open={eval(`this.state.openModal${index}`)}
-                    onClose={eval(`this.onCloseModal${index}`)}
+                    onClose={eval(`this.onCloseModal`)}
                   >
-                    <h1>{eval(`this.onCloseModal${index}`)}</h1>
+                    <h1>{eval(`this.onCloseModal`)}</h1>
                     <Image
                       width={600}
                       height={600}
