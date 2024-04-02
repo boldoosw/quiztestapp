@@ -20,6 +20,7 @@
     "bcryptjs": "^2.4.3",
     "chart": "^0.1.2",
     "chart.js": "^4.4.1",
+    "daisyui": "^2.51.5",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
     "mongoose": "^7.5.3",
@@ -33,14 +34,17 @@
     "react-google-button": "^0.7.2",
     "react-icons": "^5.0.1",
     "react-loading-skeleton": "^3.3.1",
+    "react-responsive-modal": "^6.4.2",
     "tailwindcss": "3.3.3",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/uuid": "^9.0.1",
     "autoprefixer": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",

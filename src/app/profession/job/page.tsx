@@ -2,7 +2,7 @@ import AddTask from "@/components/AddTask";
 import TodoList from "@/components/TodoList";
 import React from "react";
 
-const ContactPage = () => {
+const page = () => {
   const tasks = {
     tasks: [
       {
@@ -30,4 +30,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default page;

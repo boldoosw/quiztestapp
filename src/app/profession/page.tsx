@@ -70,7 +70,7 @@ function ProfessionPage() {
             />
             <div className="p-3 text-center">
               <h3 className="font-semibold text-sm leading-6 text-gray-700 my-2">
-                Монгол хэл Уран Зохиол
+                Монгол хэл, Уран зохиол
               </h3>
             </div>
           </div>
