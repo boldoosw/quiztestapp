@@ -16,13 +16,7 @@ const quicksand = Quicksand({
 
 const basePath = "/assets/images/profession_images";
 
-export const Checkbox = ({
-  isChecked,
-  label,
-  checkHandler,
-  index,
-  isDisabled,
-}) => {
+const Checkbox = ({ isChecked, label, checkHandler, index, isDisabled }) => {
   return (
     <div>
       <input
