@@ -36,14 +36,14 @@ const authOptions: any = {
         }
       },
     }),
-    GoogleProvider({
-    clientId: process.env.GOOGLE_CLIENT_ID  ?? "",
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? ""
-  }),
-    GithubProvider({
-      clientId: process.env.GITHUB_ID ?? "",
-      clientSecret: process.env.GITHUB_SECRET ?? "",
-    }),
+  //   GoogleProvider({
+  //   clientId: process.env.GOOGLE_CLIENT_ID  ?? "",
+  //   clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? ""
+  // }),
+  //   GithubProvider({
+  //     clientId: process.env.GITHUB_ID ?? "",
+  //     clientSecret: process.env.GITHUB_SECRET ?? "",
+  //   }),
     // ...add more providers here
   ],
   callbacks: {
@@ -52,25 +52,25 @@ const authOptions: any = {
       if (account?.provider == "credentials") {
         return true;
       }
-      if (account?.provider == "google") {
+      // if (account?.provider == "google") {
     
-        await connectMongoDB();
-        try {
-          const existingUser = await User.findOne({ email: user.email });
-          if (!existingUser) {
-            const newUser = new User({
-              email: user.email,
-            });
+      //   await connectMongoDB();
+      //   try {
+      //     const existingUser = await User.findOne({ email: user.email });
+      //     if (!existingUser) {
+      //       const newUser = new User({
+      //         email: user.email,
+      //       });
 
-            await newUser.save();
-            return true;
-          }
-          return true;
-        } catch (err) {
-          console.log("Error saving user", err);
-          return false;
-        }
-      }
+      //       await newUser.save();
+      //       return true;
+      //     }
+      //     return true;
+      //   } catch (err) {
+      //     console.log("Error saving user", err);
+      //     return false;
+      //   }
+      // }
     },
   },
 };

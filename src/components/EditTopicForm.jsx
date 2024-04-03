@@ -26,7 +26,7 @@ export default function EditTopicForm({ id, title, description }) {
       }
 
       router.refresh();
-      router.push("/profession/test");
+      router.push("/profession");
     } catch (error) {
       console.log(error);
     }

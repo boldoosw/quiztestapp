@@ -28,7 +28,7 @@ export default function AddTopic() {
 
       if (res.ok) {
         router.refresh();
-        router.push("/profession/test");
+        router.push("/profession");
       } else {
         throw new Error("Failed to create a topic");
       }

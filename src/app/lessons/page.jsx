@@ -122,6 +122,7 @@ export default class page extends Component {
         [index]: !previousState.checked[index],
       },
     }));
+    console.log(checked);
   };
 
   render() {
@@ -132,56 +133,57 @@ export default class page extends Component {
     const disabled = checkedCount > 2;
 
     return (
-      <div>
-        <main
-          className={`${quicksand.variable}  font-quicksand max-w-[900px] w-full flex flex-col items-center`}
+      <main
+        className={`${quicksand.variable}  font-quicksand max-w-[900px] w-full flex flex-col items-center`}
+      >
+        <Image className="sm:w-full" src={prof_header} alt="prof-logo" />
+        <div
+          key="main"
+          className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10"
         >
-          <Image className="sm:w-full" src={prof_header} alt="prof-logo" />
-          <div className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10">
-            {lessons.map(({ name, price, img, img_detail }, index) => (
-              <>
-                <div
+          {lessons.map(({ name, price, img, img_detail }, index) => (
+            <>
+              <div
+                key={name + index}
+                className="flex flex-row bg-white p-2 rounded border shadow shadow-slate-500 max-w-xs md:max-w-none overflow-hidden cursor-hand items-center"
+              >
+                <Image
+                  width={64}
+                  height={64}
+                  className=" object-cover"
+                  src={`${basePath}/${img}.png`}
+                  alt=""
+                  onClick={eval(`this.onClickButton${index}`)}
+                />
+                <Checkbox
                   key={index}
-                  className="flex flex-row bg-white p-2 rounded border shadow shadow-slate-500 max-w-xs md:max-w-none overflow-hidden cursor-hand items-center"
+                  id={`checkbox-${index}`}
+                  name={`checkbox-${index}`}
+                  isChecked={checked[index] || false}
+                  checkHandler={() => this.onSelectedChange(index)}
+                  disabled={!checked[index] && disabled}
+                  label={name}
+                  index={index}
+                  isDisabled={!checked[index] && disabled}
+                />{" "}
+                <Modal
+                  open={eval(`this.state.openModal${index}`)}
+                  onClose={eval(`this.onCloseModal`)}
                 >
+                  <h1>{eval(`this.onCloseModal`)}</h1>
                   <Image
-                    width={64}
-                    height={18}
-                    className=" object-cover"
-                    src={`${basePath}/${img}.png`}
+                    width={600}
+                    height={600}
+                    className=" object-cover w-full"
+                    src={`${basePath}/${img_detail}.png`}
                     alt=""
-                    onClick={eval(`this.onClickButton${index}`)}
                   />
-                  <Checkbox
-                    key={index}
-                    id={`checkbox-${index}`}
-                    name={`checkbox-${index}`}
-                    isChecked={checked[index] || false}
-                    checkHandler={() => this.onSelectedChange(index)}
-                    disabled={!checked[index] && disabled}
-                    label={name}
-                    index={index}
-                    isDisabled={!checked[index] && disabled}
-                  />{" "}
-                  <Modal
-                    open={eval(`this.state.openModal${index}`)}
-                    onClose={eval(`this.onCloseModal`)}
-                  >
-                    <h1>{eval(`this.onCloseModal`)}</h1>
-                    <Image
-                      width={600}
-                      height={600}
-                      className=" object-cover w-full"
-                      src={`${basePath}/${img_detail}.png`}
-                      alt=""
-                    />
-                  </Modal>
-                </div>
-              </>
-            ))}
-          </div>
-        </main>
-      </div>
+                </Modal>
+              </div>
+            </>
+          ))}
+        </div>
+      </main>
     );
   }
 }
