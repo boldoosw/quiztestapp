@@ -16,7 +16,7 @@ export default function EditTopicForm({ id, title, description }) {
       const res = await fetch(
         `https://quiztestapp.vercel.app/api/topics/${id}`,
         {
-          // const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+          // const res = await fetch(`hlocalhostttp://:3000/api/topics/${id}`, {
           method: "PUT",
           headers: {
             "Content-type": "application/json",
