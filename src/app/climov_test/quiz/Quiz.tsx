@@ -111,8 +111,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
 
   return !showResult ? (
     <div className="text-black text-center mt-8">
-      <p className="p-8 font-bold text-[20px]"> {chartData}</p>
-      <p className="text-[#9F50AC] font-bold pb-2 text-[14px]">
+      <p className="p-4 text-[14px] font-bold text-black dark:text-white">
         Question {currentQuestionIndex + 1} out of {totalQuestions}
       </p>
       <QuestionCard
@@ -125,7 +124,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
         // correctAnswer={questions[currentQuestionIndex].correct_answer}
         onClick={handleOnAnswerClick}
       />
-      <div className="flex justify-between mt-16 ">
+      <div className="mt-4 flex justify-between ">
         <Button
           text="Өмнөх"
           btn_next={false}
@@ -152,7 +151,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
       </div>
     </div>
   ) : (
-    <div className="text-black text-center mt-8">
+    <div className="mt-8 text-center text-black">
       <VulnChart
         labels={["Хүн", "Урлаг", "Техник", "Байгаль", "Тэмдэгт"]}
         // data={[5, 3, 5, 4, 3]}

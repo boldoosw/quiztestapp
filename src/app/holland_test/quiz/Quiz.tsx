@@ -87,7 +87,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
         тодорхойлоход тусална. 42 хос мэргэжлээс өөрт тань таалагдах нэгийг
         сонгоно уу.
       </div>
-      <p className="text-[#9F50AC] font-bold pb-2 text-[14px]">
+      <p className="mt-4 pb-2 text-[14px] font-bold text-black dark:text-white">
         Асуулт {currentQuestionIndex + 1} / {totalQuestions}
       </p>
       <HollandQuestionCard
@@ -100,7 +100,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
         // correctAnswer={questions[currentQuestionIndex].correct_answer}
         onClick={handleOnAnswerClick}
       />
-      <div className="flex justify-between mt-16 ">
+      <div className="mt-16 flex justify-between ">
         <Button
           text="Өмнөх"
           btn_next={false}
@@ -127,7 +127,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
       </div>
     </div>
   ) : (
-    <div className="text-black text-center mt-8">
+    <div className="mt-8 text-center text-black">
       <VulnChart
         labels={[
           "Бодит үйл ажиллагааг дэмжигч",

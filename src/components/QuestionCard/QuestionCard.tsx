@@ -35,9 +35,9 @@ const QuestionCard: React.FC<Props> = ({
           <div
             key={answer}
             onClick={() => onClick(answer, answer_val[i], currentQuestionIndex)}
-            className={`${getBGColor(userAnswer, answer)}  p-2 cursor-pointer 
-            select-none font-bold min-h-[45px] max-w-[400] w-full  rounded-[10px]
-              border border-gray-300 rounded-lg shadow dark:bg-white dark:border-gray-200  `}
+            className={`${getBGColor(userAnswer, answer)}  dark:bg-blue 
+            min-h-[45px] w-full max-w-[400] cursor-pointer select-none  
+              rounded-lg border border-gray p-2 font-bold shadow  `}
           >
             <Image
               src={`/images/climov_images/${answer_pic[i]}`}
@@ -46,7 +46,7 @@ const QuestionCard: React.FC<Props> = ({
               alt="Зураг"
             />
 
-            <h5 className="mb-2 text-md tracking-tight text-gray-900 dark:text-gray-900">
+            <h5 className="text-md text-gray-900 dark:text-gray-900 mb-2 tracking-tight">
               {answer}
             </h5>
             {/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
