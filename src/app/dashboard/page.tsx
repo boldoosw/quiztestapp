@@ -37,10 +37,14 @@ export default function page() {
           <ChatCard /> */}
         </div>
         <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8 w-full">
-          Зөвлөмж.<br></br> Таны сонгосон мэргэжил өөрийн тань мэргэжлийн хэв
-          шинжид нийцэж байгаа эсэхээс тухайн мэргэжилдээ гаргах амжилт ихээхэн
-          шалтгаална. Энэхүү тест нь таны мэргэжлийн тэр төрлийг тодорхойлоход
-          тусална. 42 хос мэргэжлээс өөрт тань таалагдах нэгийг сонгоно уу.
+          Зөвлөмж.<br></br>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
+          officia reiciendis aliquid doloribus hic laborum provident ut eligendi
+          facilis minus magnam ipsum ipsa optio dignissimos, excepturi iusto
+          facere consectetur, sed perferendis porro. Eum totam dolorem natus
+          enim perferendis deleniti cum expedita nulla quo ea itaque laborum,
+          exercitationem earum saepe commodi laudantium! Dolore repudiandae
+          minima ducimus suscipit, minus perferendis? A, temporibus.
         </div>
       </>
     </main>
