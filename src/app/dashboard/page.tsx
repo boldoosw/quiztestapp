@@ -1,6 +1,4 @@
 "use client";
-import ChartOne from "@/components/Charts/ChartOne";
-import ChartTwo from "@/components/Charts/ChartTwo";
 import React from "react";
 import { Quicksand } from "next/font/google";
 import LessonCards from "@/components/Cards/LessonCards";

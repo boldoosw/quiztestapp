@@ -9,7 +9,7 @@ export default function Page() {
         <div className="md:w-[24rem]">
           {/* <Image src="/wallpaper.jpg" alt="" width={700} height={700} /> */}
           <Image
-            className="sm:h-full sm:h-full"
+            className="sm:h-full "
             src={climov}
             alt="logo"
             width={700}
@@ -19,9 +19,7 @@ export default function Page() {
       </div>
 
       <div className="md:w-[50%] flex flex-col gap-5">
-        <h1 className="text-2xl font-semibold">
-          ХОЛЛАНДЫН МЭРГЭЖИЛ СОНГОЛТЫН ТЕСТ
-        </h1>
+        <h1 className="text-2xl font-semibold">МЭРГЭЖИЛ СОНГОЛТЫН ТЕСТ</h1>
         <p className="text-sm leading-6 text-gray-300">
           Америкийн сэтгэл судлаач, доктор Ж.Холланд хүний сэтгэл зүйн хэв шинж
           ба түүний мэргэжил хоёрын хоорондын уялдаа холбоог тогтоож, ажил
@@ -34,7 +32,7 @@ export default function Page() {
           className="flex items-center justify-center gap-1 px-5 py-4 font-semibold text-blue-500 transition-colors rounded-md outline duration-600 hover:bg-blue-600 hover:text-white"
         >
           {/* <TbArrowBigRightFilled className="text-lg" /> */}
-          Холландын тест өгөх
+          тест өгөх
         </Link>
       </div>
     </div>

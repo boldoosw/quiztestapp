@@ -138,25 +138,15 @@ const Quiz = ({ questions }: Props) => {
         sport_military_count++;
     });
     console.log(userAnswers);
-    console.log(physic_math, physic_math_count);
     chartData.push(physic_math_count);
-    console.log(chemic_biology, chemic_biology_count);
     chartData.push(chemic_biology_count);
-    console.log(radio_electronic, radio_electronic_count);
     chartData.push(radio_electronic_count);
-    console.log(mechanic_const, mechanic_const_count);
     chartData.push(mechanic_const_count);
-    console.log(geography_geology, geography_geology_count);
     chartData.push(geography_geology_count);
-    console.log(literature_culture, literature_culture_count);
     chartData.push(literature_culture_count);
-    console.log(history_politic, history_politic_count);
     chartData.push(history_politic_count);
-    console.log(educaton_health, educaton_health_count);
     chartData.push(educaton_health_count);
-    console.log(labour_handcraft, labour_handcraft_count);
     chartData.push(labour_handcraft_count);
-    console.log(sport_military, sport_military_count);
     chartData.push(sport_military_count);
 
     setShowResult(true);
