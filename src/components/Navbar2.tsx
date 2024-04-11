@@ -23,16 +23,30 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    label: "Климов Тест",
-    link: "/climov_test",
+    label: "Тестүүд",
+    link: "#",
+    children: [
+      {
+        label: "Климов Тест",
+        link: "/climov_test",
+      },
+      {
+        label: "Холланд тест",
+        link: "/holland_test",
+      },
+      {
+        label: "MBTI тест",
+        link: "/custom_test",
+      },
+    ],
   },
   {
-    label: "Холланд тест",
-    link: "/holland_test",
+    label: "Хичээл сонголт",
+    link: "/lessons",
   },
   {
-    label: "MBTI тест",
-    link: "/custom_test/quiz",
+    label: "Мэргэжил сонголт",
+    link: "/profession",
   },
   {
     label: "Асуулга",

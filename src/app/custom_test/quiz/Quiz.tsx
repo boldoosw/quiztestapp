@@ -40,6 +40,8 @@ const Quiz = ({ questions }: Props) => {
   const sport_military = "Спорт ба цэрэгжилт";
   var sport_military_count = 0;
 
+  const router = useRouter();
+
   const handleOnAnswerClick = (
     answer: string,
     answer_val: string,
@@ -87,7 +89,7 @@ const Quiz = ({ questions }: Props) => {
     }
   };
 
-  const handleResultQuestion = () => {
+  const handleResultQuestion = async () => {
     questions.map((question, i) => {
       if (question.question_type === physic_math && userAnswers[i] === "Тийм")
         physic_math_count++;
@@ -148,8 +150,39 @@ const Quiz = ({ questions }: Props) => {
     chartData.push(educaton_health_count);
     chartData.push(labour_handcraft_count);
     chartData.push(sport_military_count);
-
     setShowResult(true);
+
+    //baazad hiih
+    console.log("quiz chart data:", chartData);
+
+    let customquiz_items = chartData.toString();
+
+    let email = "boldoosw@gmail.com";
+    try {
+      const res = await fetch(
+        "https://quiztestapp.vercel.app/api/custom_quiz",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            customquiz_items,
+            email,
+          }),
+        }
+      );
+
+      if (res.ok) {
+        console.log("amjilttai hadgallaa");
+        router.refresh();
+        router.push("/dashboard");
+      } else {
+        throw new Error("Failed to create a mbti");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return !showResult ? (

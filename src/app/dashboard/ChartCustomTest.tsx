@@ -1,58 +1,44 @@
 import CustomVulnChart from "@/components/VulnChart/CustomVulnChart";
+import axios from "axios";
 import React from "react";
 
-const physic_math = "Физик  ба математик";
-var physic_math_count = 4;
-const chemic_biology = "Хими ба Биолог";
-var chemic_biology_count = 3;
-const radio_electronic = "Радиотехник ба электроник";
-var radio_electronic_count = 5;
-const mechanic_const = "Механик ба конструкц";
-var mechanic_const_count = 3;
-const geography_geology = "Газар зүй ба геолог";
-var geography_geology_count = 4;
-const literature_culture = "Уран зохион ба урлаг";
-var literature_culture_count = 0;
-const history_politic = "Түүх ба улс төр";
-var history_politic_count = 4;
-const educaton_health = "Боловсрол ба Эрүүл мэнд";
-var educaton_health_count = 3;
-const labour_handcraft = "Хөдөлмөр ба гар урлал";
-var labour_handcraft_count = 4;
-const sport_military = "Спорт ба цэрэгжилт";
-var sport_military_count = 3;
+const labels = [
+  "Физик  ба математик",
+  "Хими ба Биолог",
+  "Радиотехник ба электроник",
+  "Механик ба конструкц",
+  "Газар зүй ба геолог",
+  "Уран зохион ба урлаг",
+  "Түүх ба улс төр",
+  "Боловсрол ба Эрүүл мэнд",
+  "Хөдөлмөр ба гар урлал",
+  "Спорт ба цэрэгжилт",
+];
 
-let chartData: number[] = [];
+async function getDataCustomId() {
+  // Fetch data from your API here.
+  const res = await axios.get("https://quiztestapp.vercel.app/api/custom_quiz");
+  return res.data;
+}
 
-function ChartCustomTest() {
-  chartData.push(physic_math_count);
-  chartData.push(chemic_biology_count);
-  chartData.push(radio_electronic_count);
-  chartData.push(mechanic_const_count);
-  chartData.push(geography_geology_count);
-  chartData.push(literature_culture_count);
-  chartData.push(history_politic_count);
-  chartData.push(educaton_health_count);
-  chartData.push(labour_handcraft_count);
-  chartData.push(sport_military_count);
+async function ChartCustomTest() {
+  const data = await getDataCustomId();
+
+  let datas = data.existingCustomQuiz.customquiz_items.split(",");
+  console.log(datas);
 
   return (
-    <div className="text-black text-center mt-8">
-      <CustomVulnChart
-        labels={[
-          physic_math,
-          chemic_biology,
-          radio_electronic,
-          mechanic_const,
-          geography_geology,
-          literature_culture,
-          history_politic,
-          educaton_health,
-          labour_handcraft,
-          sport_military,
-        ]}
-        data={chartData}
-      />
+    <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+      <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
+        <h3 className="font-medium text-black dark:text-white">
+          Хичээл сонголтын үр дүн
+        </h3>
+      </div>
+      <div className=" h-full">
+        <div className="text-black text-center mt-8">
+          <CustomVulnChart labels={labels} data={datas} />
+        </div>
+      </div>
     </div>
   );
 }

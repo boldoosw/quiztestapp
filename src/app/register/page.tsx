@@ -22,8 +22,10 @@ const Register = () => {
   };
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const email = e.target[0].value;
-    const password = e.target[1].value;
+    const lastname = e.target[0].value;
+    const firstname = e.target[1].value;
+    const email = e.target[2].value;
+    const password = e.target[3].value;
 
     console.log(degree);
 
@@ -31,7 +33,14 @@ const Register = () => {
       setError("Ангиа сонгоод бүртгүүлэх боломжтой!!!!");
       return;
     }
-
+    if (lastname === "") {
+      setError("Өөрийн овог оруулна уу!!!!");
+      return;
+    }
+    if (firstname === "") {
+      setError("Өөрийн нэрээ оруулна уу!!!!");
+      return;
+    }
     if (!isValidEmail(email)) {
       setError("Имайл хаяг алдаатай байна !");
       return;
@@ -49,8 +58,11 @@ const Register = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          lastname,
+          firstname,
           email,
           password,
+          degree,
         }),
       });
       if (res.status === 400) {
@@ -77,27 +89,39 @@ const Register = () => {
       //     <h1 className="text-2xl text-gray-200 text-center  mb-8">
       //       Бүртгүүлэх
       //     </h1>
-      <div className="grid place-items-center  min-h-screen  p-24 ">
-        <div className="shadow-lg p-5 rounded-lg border-t-4 border-green-400 bg-white w-80">
-          <h1 className="text-xl font-bold my-4">Бүртгүүлэх</h1>
+      <div className="grid min-h-screen  place-items-center  p-24 ">
+        <div className="w-80 rounded-lg border-t-4 border-green-400 bg-white p-5 shadow-lg">
+          <h1 className="my-4 text-xl font-bold">Бүртгүүлэх</h1>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
-              className="w-full border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
+              className="border-gray-300 mb-4 w-full rounded border px-3 py-2 text-black focus:border-blue-400 focus:text-black focus:outline-none"
+              placeholder="Овог"
+              required
+            />
+            <input
+              type="text"
+              className="border-gray-300 mb-4 w-full rounded border px-3 py-2 text-black focus:border-blue-400 focus:text-black focus:outline-none"
+              placeholder="Нэр"
+              required
+            />
+            <input
+              type="text"
+              className="border-gray-300 mb-4 w-full rounded border px-3 py-2 text-black focus:border-blue-400 focus:text-black focus:outline-none"
               placeholder="Email"
               required
             />
             <input
               type="password"
-              className="w-full border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
+              className="border-gray-300 mb-4 w-full rounded border px-3 py-2 text-black focus:border-blue-400 focus:text-black focus:outline-none"
               placeholder="Password"
               required
             />
-            <div className="border rounded-md p-4 w-full mx-auto max-w-2xl">
+            <div className="mx-auto w-full max-w-2xl rounded-md border p-4">
               {/* <h4 className="text-xl lg:text-2xl font-semibold">Анги сонгох</h4> */}
 
               <div>
-                <label className="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3  hover:bg-indigo-300 cursor-pointer ">
+                <label className="bg-gray-100 text-gray-700 my-3 flex cursor-pointer rounded-md px-3  py-2 hover:bg-indigo-300 ">
                   <input
                     type="radio"
                     name="degree"
@@ -107,7 +131,7 @@ const Register = () => {
                   <i className="pl-2">8,9 дүгээр анги</i>
                 </label>
 
-                <label className="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3  hover:bg-indigo-300 cursor-pointer ">
+                <label className="bg-gray-100 text-gray-700 my-3 flex cursor-pointer rounded-md px-3  py-2 hover:bg-indigo-300 ">
                   <input
                     type="radio"
                     name="degree"
@@ -120,16 +144,16 @@ const Register = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white mt-4 py-2 rounded hover:bg-blue-600"
+              className="mt-4 w-full rounded bg-blue-500 py-2 text-white hover:bg-blue-600"
             >
               {" "}
               Бүртгүүлэх
             </button>
-            <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
+            <p className="text-red-600 mb-4 text-[16px]">{error && error}</p>
           </form>
-          <div className="text-center text-gray-500 mt-4">- эсвэл -</div>
+          <div className="text-gray-500 mt-4 text-center">- эсвэл -</div>
           <Link
-            className="block text-center text-blue-500 hover:underline mt-2"
+            className="mt-2 block text-center text-blue-500 hover:underline"
             href="/login"
           >
             Бүртгэлтэй хэрэглэгчээр нэвтрэх

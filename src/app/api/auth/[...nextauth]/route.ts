@@ -47,6 +47,7 @@ const authOptions: any = {
     // ...add more providers here
   ],
   callbacks: {
+    
     async signIn({ user, account }: { user: AuthUser; account: Account }) {
 
       if (account?.provider == "credentials") {
@@ -72,7 +73,9 @@ const authOptions: any = {
       //   }
       // }
     },
+
   },
+  
 };
 
 const handler = NextAuth(authOptions);
