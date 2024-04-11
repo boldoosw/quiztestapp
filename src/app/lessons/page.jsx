@@ -110,7 +110,7 @@ const Checkbox = ({ isChecked, label, checkHandler, index, isDisabled }) => {
     </div>
   );
 };
-function page() {
+function LessonsPage() {
   const router = useRouter();
 
   const [checkedCount, setCheckedCount] = useState(0);
@@ -293,4 +293,4 @@ function page() {
   );
 }
 
-export default page;
+export default LessonsPage;
