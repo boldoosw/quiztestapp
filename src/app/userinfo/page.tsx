@@ -1,5 +1,4 @@
 "use client";
-import ChartCustomTest from "../dashboard/ChartCustomTest";
 import { signOut, useSession } from "next-auth/react";
 const UserInfo = () => {
   const { data: session }: any = useSession();

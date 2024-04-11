@@ -91,7 +91,7 @@ const basePath = "/assets/images/profession_images";
 
 async function getDataMbtiId() {
   // Fetch data from your API here.
-  const res = await axios.get("http://localhost:3000/api/lesson_test");
+  const res = await axios.get("https://quiztestapp.vercel.app/api/lesson_test");
   return res.data;
 }
 
