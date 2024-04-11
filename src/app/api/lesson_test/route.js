@@ -1,6 +1,6 @@
 import connectMongoDB from "@/utils/db";
-import Lesson from "@/models/lesson";
 import { NextResponse } from "next/server";
+import Lesson from "../../../models/lesson";
 
 export async function POST(request) {
   const { checkbox_items, email } = await request.json();
