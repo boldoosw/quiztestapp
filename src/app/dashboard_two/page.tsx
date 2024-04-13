@@ -22,7 +22,7 @@ const DashboardTwo: React.FC = () => {
           Танд ойр мэргэжлүүдийг доор зургаар үзүүлэв.
         </div>
         <div className="grid grid-cols-1 gap-4  md:grid-cols-2 md:gap-6 xl:grid-cols-3  2xl:gap-7.5">
-          {/* <LessonCards /> */}
+          <LessonCards />
         </div>
         <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8 w-full">
           Зөвлөмж.<br></br>
