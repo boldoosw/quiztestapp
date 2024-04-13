@@ -159,7 +159,7 @@ const Quiz = ({ questions }: Props) => {
 
     let email = "boldoosw@gmail.com";
     try {
-      const res = await fetch("http://localhost:3000/api/custom_quiz", {
+      const res = await fetch("/api/custom_quiz", {
         method: "POST",
         headers: {
           "Content-type": "application/json",

@@ -7,9 +7,7 @@ function ClimovChart() {
 
   async function fetchClimovData() {
     // Fetch data from your API here.
-    const { data } = await axios.get(
-      `${process.env.NEXT_PUBLIC_APP_API_ENDPOINT}/api/climov_test`
-    );
+    const { data } = await axios.get(`/api/climov_test`);
     // let mydata = data.data.existingCustomQuiz.customquiz_items.split(",");
     setData(data.existingClimovQuiz.climovquiz_items.split(","));
     console.log(data.existingClimovQuiz.climovquiz_items.split(","));

@@ -2,12 +2,9 @@ import EditTopicForm from "@/components/EditTopicForm";
 
 const getTopicById = async (id) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_APP_API_ENDPOINT}/api/topics/${id}`,
-      {
-        cache: "no-store",
-      }
-    );
+    const res = await fetch(`/api/topics/${id}`, {
+      cache: "no-store",
+    });
 
     if (!res.ok) {
       throw new Error("Failed to fetch topic");

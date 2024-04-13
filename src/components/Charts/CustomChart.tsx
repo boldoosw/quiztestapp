@@ -18,9 +18,7 @@ function CustomChart() {
 
   async function fetchPointsData() {
     // Fetch data from your API here.
-    const { data } = await axios.get(
-      `${process.env.NEXT_PUBLIC_APP_API_ENDPOINT}/api/custom_quiz`
-    );
+    const { data } = await axios.get(`/api/custom_quiz`);
     // let mydata = data.data.existingCustomQuiz.customquiz_items.split(",");
     setData(data.existingCustomQuiz.customquiz_items.split(","));
     console.log(data.existingCustomQuiz.customquiz_items.split(","));

@@ -2,7 +2,6 @@
 import React from "react";
 import LessonCards from "@/components/Cards/LessonCards";
 import UserInfo from "../userinfo/page";
-import ChartTwo from "@/components/Charts/ChartTwo";
 import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
 

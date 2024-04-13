@@ -95,9 +95,7 @@ function LessonCards() {
 
   async function fetchSelected3LessonData() {
     // Fetch data from your API here.
-    const { data } = await axios.get(
-      `${process.env.NEXT_PUBLIC_APP_API_ENDPOINT}/api/lesson_test`
-    );
+    const { data } = await axios.get(`/api/lesson_test`);
     // let mydata = data.data.existingCustomQuiz.customquiz_items.split(",");
     setData(data.existingLesson.checkbox_items.split(","));
     console.log(data.existingLesson.checkbox_items.split(","));

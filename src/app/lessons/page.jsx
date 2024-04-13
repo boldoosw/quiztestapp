@@ -191,16 +191,13 @@ function LessonsPage() {
 
     let email = "boldoosw@gmail.com";
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_APP_API_ENDPOINT}/api/lesson_test`,
-        {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify({ checkbox_items, email }),
-        }
-      );
+      const res = await fetch(`/api/lesson_test`, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ checkbox_items, email }),
+      });
 
       if (res.ok) {
         console.log("amjilttai hadgallaa");

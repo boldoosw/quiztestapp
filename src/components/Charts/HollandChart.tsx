@@ -7,9 +7,7 @@ function HollandChart() {
 
   async function fetchHollandData() {
     // Fetch data from your API here.
-    const { data } = await axios.get(
-      `${process.env.NEXT_PUBLIC_APP_API_ENDPOINT}/api/holland_test`
-    );
+    const { data } = await axios.get(`/api/holland_test`);
     // let mydata = data.data.existingCustomQuiz.customquiz_items.split(",");
     setData(data.existingHollandQuiz.hollandquiz_items.split(","));
     console.log(data.existingHollandQuiz.hollandquiz_items.split(","));
