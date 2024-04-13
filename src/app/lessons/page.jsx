@@ -192,7 +192,7 @@ function LessonsPage() {
     let email = "boldoosw@gmail.com";
     try {
       const res = await fetch(
-        "https://quiztestapp.vercel.app/api/lesson_test",
+        `${process.env.NEXT_PUBLIC_APP_API_ENDPOINT}/api/lesson_test`,
         {
           method: "POST",
           headers: {
@@ -205,7 +205,7 @@ function LessonsPage() {
       if (res.ok) {
         console.log("amjilttai hadgallaa");
         router.refresh();
-        router.push("/dashboard");
+        router.push("/dashboard_one");
       } else {
         throw new Error("Failed to create a mbti");
       }

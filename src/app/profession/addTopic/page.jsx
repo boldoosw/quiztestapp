@@ -18,13 +18,16 @@ export default function AddTopic() {
     }
 
     try {
-      const res = await fetch("https://quiztestapp.vercel.app/api/topics", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ title, description }),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_APP_API_ENDPOINT}/api/topics`,
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({ title, description }),
+        }
+      );
 
       if (res.ok) {
         router.refresh();

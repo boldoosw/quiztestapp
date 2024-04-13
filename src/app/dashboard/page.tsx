@@ -1,9 +1,16 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { Quicksand } from "next/font/google";
 import LessonCards from "@/components/Cards/LessonCards";
 
 import UserInfo from "../userinfo/page";
 import ChartCustomTest from "./ChartCustomTest";
+import ChartTwo from "@/components/Charts/ChartTwo";
+import ChartOne from "@/components/Charts/ChartOne";
+import ChatCard from "@/components/Chat/ChatCard";
+import ChartThree from "@/components/Charts/ChartThree";
+import MapOne from "@/components/Maps/MapOne";
+import TableOne from "@/components/Tables/TableOne";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -30,16 +37,6 @@ export default function page() {
         <LessonCards />
       </div>
 
-      <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-        {/* <ChartTwo />
-          <ChartOne /> */}
-        {/* <ChartThree /> */}
-        {/* <MapOne />
-          <div className="col-span-12 xl:col-span-8">
-            <TableOne />
-          </div>
-          <ChatCard /> */}
-      </div>
       <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8 w-full">
         Зөвлөмж.<br></br>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis

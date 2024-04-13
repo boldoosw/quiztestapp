@@ -8,6 +8,7 @@ import Button from "@/components/Button/Button";
 import { QuestionsState } from "@/types/quiz";
 import VulnChart from "@/components/VulnChart/HollandVulnChart";
 import HollandQuestionCard from "@/components/QuestionCard/HollandQuestionCard";
+import async from "../../layout";
 
 type Props = {
   questions: QuestionsState;
@@ -49,7 +50,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
     setIsQuestionAnswered(false);
     setCurrentQuestionIndex(newQuestionIndex);
   };
-  const getChartData = () => {
+  const getChartData = async () => {
     if (currentQuestionIndex === totalQuestions - 1) {
       let bodit_ua_count: number = 0;
       let shinjeech_count: number = 0;
@@ -75,7 +76,34 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
       chartData.push(standart_count);
 
       setShowResult(true);
-      console.log(chartData);
+      //baazad hiih
+      console.log("quiz chart data:", chartData);
+
+      let hollandquiz_items = chartData.toString();
+
+      let email = "boldoosw@gmail.com";
+      try {
+        const res = await fetch("http://localhost:3000/api/holland_test", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            hollandquiz_items,
+            email,
+          }),
+        });
+
+        if (res.ok) {
+          console.log("Mongodb -d amjilttai hadgallaa");
+          router.refresh();
+          router.push("/dashboard_one");
+        } else {
+          throw new Error("Failed to create a holland to mongodb");
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
   return !showResult ? (

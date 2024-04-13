@@ -84,28 +84,34 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
       chartData.push(character_count);
 
       setShowResult(true);
-      console.log(chartData);
+      //baazad hiih
+      console.log("quiz chart data:", chartData);
 
-      //baaz ruu hadgalah
-      await connect();
+      let climovquiz_items = chartData.toString();
 
-      // const newClimovQuiz = new ClimovQuiz({
-      //   userId: "ganbold",
-      //   people_count,
-      //   culture_count,
-      //   technical_count,
-      //   ecology_count,
-      //   character_count,
-      // });
+      let email = "boldoosw@gmail.com";
+      try {
+        const res = await fetch("http://localhost:3000/api/climov_test", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            climovquiz_items,
+            email,
+          }),
+        });
 
-      // try {
-      //   await newClimovQuiz.save();
-      //   return new NextResponse("data is saved", { status: 200 });
-      // } catch (err: any) {
-      //   return new NextResponse(err, {
-      //     status: 500,
-      //   });
-      // }
+        if (res.ok) {
+          console.log("Mongodb -d amjilttai hadgallaa");
+          router.refresh();
+          router.push("/dashboard_one");
+        } else {
+          throw new Error("Failed to create a climov to mongodb");
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 

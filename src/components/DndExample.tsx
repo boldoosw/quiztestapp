@@ -1,5 +1,4 @@
 "use client";
-
 import { cardsData } from "@/bin/CardsData";
 import { useEffect, useState } from "react";
 import { Draggable, DropResult, Droppable } from "react-beautiful-dnd";
@@ -75,7 +74,10 @@ const DndExample = () => {
           }
 
           return (
-            <Droppable key={index} droppableId={`droppable${index}`}>
+            <Droppable
+              key={`droppable${index}`.toString()}
+              droppableId={`droppable${index}`.toString()}
+            >
               {(provided) => (
                 <>
                   <div
@@ -91,7 +93,7 @@ const DndExample = () => {
                     </h5>
                     {val.components?.map((component, index) => (
                       <Draggable
-                        key={component.id}
+                        key={component.id.toString()}
                         draggableId={component.id.toString()}
                         index={index}
                       >
@@ -118,7 +120,7 @@ const DndExample = () => {
                     ))}
                     {provided.placeholder}
 
-                    <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
+                    {/* <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
                       <h2 className="bg-white  font-bold">{getTitle(0)}</h2>
                       {getContent(0)}
                     </div>
@@ -129,7 +131,7 @@ const DndExample = () => {
                     <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
                       <h2 className="bg-white  font-bold">{getTitle(2)}</h2>
                       {getContent(2)}
-                    </div>
+                    </div> */}
                   </div>
                 </>
               )}

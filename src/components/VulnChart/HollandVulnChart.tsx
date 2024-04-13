@@ -44,8 +44,6 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
                 "rgb(155, 217, 154)",
               ],
               borderColor: "gray",
-              // borderColor: "rgb(53,162,235)",
-              // backgroundColor: "rgb(53,162,235,0.4)",
               borderWidth: 1,
             },
           ],
@@ -55,21 +53,6 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
         options={{
           indexAxis: "y",
           maintainAspectRatio: false,
-          // elements: {
-          //   bar: {
-          //     borderWidth: 2,
-          //   },
-          // },
-          // responsive: true,
-          // plugins: {
-          //   legend: {
-          //     position: "right",
-          //   },
-          //   title: {
-          //     display: true,
-          //     text: "Chart.js Horizontal Bar Chart",
-          //   },
-          // },
         }}
       />
     </div>

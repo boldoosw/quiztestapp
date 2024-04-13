@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Draggable, DropResult, Droppable } from "react-beautiful-dnd";
 import LoadingSkeleton from "./LoadingSkeleton";
 import { DndContext } from "@/context/DndContext";
-import { lessonsData } from '@/bin/LessonsData';
+import { lessonsData } from "@/bin/LessonsData";
 interface Cards {
   id: number;
   title: string;
@@ -36,8 +36,7 @@ const LessonExample = () => {
       const newDroppableIndex = newData.findIndex(
         (x) => x.id == destination.droppableId.split("droppable")[1]
       );
-      const [item] = newData[
-        oldDroppableIndex].components.splice(
+      const [item] = newData[oldDroppableIndex].components.splice(
         source.index,
         1
       );
@@ -76,7 +75,10 @@ const LessonExample = () => {
           }
 
           return (
-            <Droppable key={index} droppableId={`droppable${index}`}>
+            <Droppable
+              key={`droppable${index}`}
+              droppableId={`droppable${index}`}
+            >
               {(provided) => (
                 <>
                   <div

@@ -1,3 +1,4 @@
+"use client";
 import CustomVulnChart from "@/components/VulnChart/CustomVulnChart";
 import axios from "axios";
 import React from "react";
@@ -17,7 +18,7 @@ const labels = [
 
 async function getDataCustomId() {
   // Fetch data from your API here.
-  const res = await axios.get("https://quiztestapp.vercel.app/api/custom_quiz");
+  const res = await axios.get("http://localhost:3000/api/custom_quiz");
   return res.data;
 }
 

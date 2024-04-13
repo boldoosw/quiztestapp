@@ -6,33 +6,6 @@ import card2 from "@/assets/images/card_images/card2.png";
 import card3 from "@/assets/images/card_images/card3.png";
 import card4 from "@/assets/images/card_images/card4.png";
 function AboutCards() {
-  // Card data
-  // const cardList = [
-  //   {
-  //     img: "https://i.imgur.com/w5HYiQZ.png",
-  //     title: "Growth",
-  //     description:
-  //       "Our group of specialists will collaborate with you to develop a personalized strategy aimed at guiding you toward success through incremental progress.",
-  //   },
-  //   {
-  //     img: "https://i.imgur.com/4wouHGC.png",
-  //     title: "Fitness",
-  //     description:
-  //       "Offering a diverse range of exercises for your selection, you'll have all the resources necessary to attain the peak of your physical fitness.",
-  //   },
-  //   {
-  //     img: "https://i.imgur.com/UdPvj8T.png",
-  //     title: "Diet",
-  //     description:
-  //       "Our team will collaborate with you to craft a tailor-made meal plan designed to assist you in achieving your distinct health objectives.",
-  //   },
-  //   {
-  //     img: "https://i.imgur.com/UdPvj8T.png",
-  //     title: "Diet",
-  //     description:
-  //       "Our team will collaborate with you to craft a tailor-made meal plan designed to assist you in achieving your distinct health objectives.",
-  //   },
-  // ];
   const cardList = [
     {
       // src={`/images/climov_images/${answer_pic[i]}`}

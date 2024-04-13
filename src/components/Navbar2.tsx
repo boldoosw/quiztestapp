@@ -38,6 +38,10 @@ const navItems: NavItem[] = [
         label: "MBTI тест",
         link: "/custom_test",
       },
+      {
+        label: "Асуулга",
+        link: "/job",
+      },
     ],
   },
   {
@@ -49,8 +53,18 @@ const navItems: NavItem[] = [
     link: "/profession",
   },
   {
-    label: "Асуулга",
-    link: "/job",
+    label: "Тайлан",
+    link: "#",
+    children: [
+      {
+        label: "Тайлан 8-9р анги",
+        link: "/dashboard_one",
+      },
+      {
+        label: "Тайлан 10,11,12 анги",
+        link: "/dashboard_two",
+      },
+    ],
   },
 ];
 

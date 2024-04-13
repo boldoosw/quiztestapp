@@ -75,7 +75,10 @@ const DndExample = () => {
           }
 
           return (
-            <Droppable key={index} droppableId={`droppable${index}`}>
+            <Droppable
+              key={`droppable${index}`}
+              droppableId={`droppable${index}`}
+            >
               {(provided) => (
                 <div
                   className="p-5 w-full bg-white  border-gray-400 border border-dashed"
@@ -112,7 +115,7 @@ const DndExample = () => {
                     </Draggable>
                   ))}
                   {provided.placeholder}
-                  <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
+                  {/* <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
                     <h2 className="bg-white  font-bold">{getTitle(0)}</h2>
                     {getContent(0)}
                   </div>
@@ -123,7 +126,7 @@ const DndExample = () => {
                   <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
                     <h2 className="bg-white  font-bold">{getTitle(2)}</h2>
                     {getContent(2)}
-                  </div>
+                  </div> */}
                 </div>
               )}
             </Droppable>

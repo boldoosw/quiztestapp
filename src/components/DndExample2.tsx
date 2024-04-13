@@ -113,7 +113,7 @@ const DndExample2 = () => {
                       </Draggable>
                     ))}
                     {provided.placeholder}
-                    <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
+                    {/* <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
                       <h2 className="bg-white  font-bold">{getTitle(0)}</h2>
                       {getContent(0)}
                     </div>
@@ -124,7 +124,7 @@ const DndExample2 = () => {
                     <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
                       <h2 className="bg-white  font-bold">{getTitle(2)}</h2>
                       {getContent(2)}
-                    </div>
+                    </div> */}
                   </div>
                 </>
               )}
