@@ -108,7 +108,10 @@ function LessonCards() {
 
   return lesson_ids.length > 0 ? (
     lesson_ids.map((id) => (
-      <div className="flex flex-col gap-5  md:flex-row md:justify-between m-4 ">
+      <div
+        key={id}
+        className="flex flex-col gap-5  md:flex-row md:justify-between m-4 "
+      >
         <div
           //  key={arr_index[0]}
           className="flex flex-col cursor-pointer bg-white justify-center items-center  rounded-full shadow-2xl w-full card-item-div max-w-screen-md border-e-black p-8"
