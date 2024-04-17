@@ -275,7 +275,7 @@ function MatrixChart() {
       <div className="flex flex-row">
         {climov_top_ids.map((id, index) => {
           return (
-            <div>
+            <div key={index}>
               <h1 style={styles.heading}>{climov_labels[id]}</h1>
               <div style={styles.container}>
                 <ul style={styles.list}>
