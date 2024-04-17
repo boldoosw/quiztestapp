@@ -323,7 +323,7 @@ function MatrixChart() {
       <div className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10">
         {holland_top_ids.map((id, index) => {
           return (
-            <div>
+            <div key={index}>
               <h1 style={styles.heading}>{holland_labels[id]}</h1>
               <div style={styles.container}>
                 <ul style={styles.list}>
