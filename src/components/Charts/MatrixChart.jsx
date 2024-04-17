@@ -336,7 +336,7 @@ function MatrixChart() {
           className="flex items-center justify-center gap-1 px-5 py-4 font-semibold text-blue-500 transition-colors rounded-md outline duration-600 hover:bg-blue-600 hover:text-white"
         >
           {/* <TbArrowBigRightFilled className="text-lg" /> */}
-          Үр дүнгийн матриц
+          Хадгалах
         </button>
         <p className="text-red-600 mb-4 text-[16px]">{error && error}</p>
       </div>
