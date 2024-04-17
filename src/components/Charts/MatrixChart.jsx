@@ -275,41 +275,22 @@ function MatrixChart() {
       <div className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10">
         {climov_top_ids.map((id, index) => {
           return (
-            <div key={index}>
+            <div key={`climov${index}`}>
               <h1 style={styles.heading}>{climov_labels[id]}</h1>
               <div style={styles.container}>
                 <ul style={styles.list}>
                   {colData.map((element, i) => {
-                    if (element.type === Number(id) && index === 0)
+                    if (element.type === Number(id))
                       return (
                         <CustomRadioButton
-                          key="climov0"
+                          key={`climov_${index}_${i}`}
                           label={element.name}
-                          selected={selectedClimov_0 === `${i}`}
+                          selected={
+                            eval(`selectedClimov_${index}`)?.toString() ===
+                            `${i?.toString()}`
+                          }
                           onSelect={() => {
-                            setClimovValue_0(`${i}`);
-                          }}
-                        />
-                      );
-                    if (element.type === Number(id) && index === 1)
-                      return (
-                        <CustomRadioButton
-                          key="climov1"
-                          label={element.name}
-                          selected={selectedClimov_1 === `${i}`}
-                          onSelect={() => {
-                            setClimovValue_1(`${i}`);
-                          }}
-                        />
-                      );
-                    if (element.type === Number(id) && index === 2)
-                      return (
-                        <CustomRadioButton
-                          key="climov2"
-                          label={element.name}
-                          selected={selectedClimov_2 === `${i}`}
-                          onSelect={() => {
-                            setClimovValue_2(`${i}`);
+                            eval(`setClimovValue_${index}(${i})`);
                           }}
                         />
                       );
@@ -323,41 +304,22 @@ function MatrixChart() {
       <div className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10">
         {holland_top_ids.map((id, index) => {
           return (
-            <div key={index}>
+            <div key={`holland${index}`}>
               <h1 style={styles.heading}>{holland_labels[id]}</h1>
               <div style={styles.container}>
                 <ul style={styles.list}>
                   {rowData.map((element, i) => {
-                    if (element.type === Number(id) && index == 0)
+                    if (element.type === Number(id))
                       return (
                         <CustomRadioButton
-                          key="holland0"
+                          key={`holland_${index}_${i}`}
                           label={element.name}
-                          selected={selectedHolland_0 === `${i}`}
+                          selected={
+                            eval(`selectedHolland_${index}`)?.toString() ===
+                            `${i?.toString()}`
+                          }
                           onSelect={() => {
-                            setHollandValue_0(`${i}`);
-                          }}
-                        />
-                      );
-                    if (element.type === Number(id) && index === 1)
-                      return (
-                        <CustomRadioButton
-                          key="holland1"
-                          label={element.name}
-                          selected={selectedHolland_1 === `${i}`}
-                          onSelect={() => {
-                            setHollandValue_1(`${i}`);
-                          }}
-                        />
-                      );
-                    if (element.type === Number(id) && index === 2)
-                      return (
-                        <CustomRadioButton
-                          key="holland2"
-                          label={element.name}
-                          selected={selectedHolland_2 === `${i}`}
-                          onSelect={() => {
-                            setHollandValue_2(`${i}`);
+                            eval(`setHollandValue_${index}(${i})`);
                           }}
                         />
                       );
@@ -368,7 +330,7 @@ function MatrixChart() {
           );
         })}
       </div>
-      <div>
+      <div className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10">
         <button
           onClick={handleSubmit}
           className="flex items-center justify-center gap-1 px-5 py-4 font-semibold text-blue-500 transition-colors rounded-md outline duration-600 hover:bg-blue-600 hover:text-white"
@@ -378,6 +340,7 @@ function MatrixChart() {
         </button>
         <p className="text-red-600 mb-4 text-[16px]">{error && error}</p>
       </div>
+      <div></div>
     </>
   );
 }

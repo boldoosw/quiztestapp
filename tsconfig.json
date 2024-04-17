@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/lessons/test/page.jsx", "src/app/contact/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/lessons/test/page.jsx", "src/app/contact/page.jsx", "src/components/Charts/MatrixChart.jsx"],
   "exclude": ["node_modules"]
 }
