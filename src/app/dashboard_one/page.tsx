@@ -3,6 +3,7 @@ import React from "react";
 import LessonCards from "@/components/Cards/LessonCards";
 import UserInfo from "../userinfo/page";
 import CustomChart from "@/components/Charts/CustomChart";
+import TableThree from "@/components/Tables/TableThree";
 
 const DashboardOne: React.FC = () => {
   return (
@@ -32,6 +33,9 @@ const DashboardOne: React.FC = () => {
               quo ea itaque laborum, exercitationem earum saepe commodi
               laudantium! Dolore repudiandae minima ducimus suscipit, minus
               perferendis? A, temporibus.
+            </div>
+            <div className=" text-center  p-4 text-[14px] mt-8 w-full">
+              <TableThree />
             </div>
           </div>
         </main>

@@ -4,6 +4,23 @@ import LessonCards from "@/components/Cards/LessonCards";
 import UserInfo from "../userinfo/page";
 import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
+import MatrixChart from "@/components/Charts/MatrixChart";
+
+const rowTable = [
+  { id: 0, name: "Бодит байдлыг эрхэмлэгч" },
+  { id: 1, name: "Шинжээч судлаач" },
+  { id: 2, name: "Урлагийн" },
+  { id: 3, name: "Нийгмийн" },
+  { id: 4, name: "Удирдан зохион байгуулах" },
+  { id: 5, name: "Стандартыг баримтлагч" },
+];
+const colTable = [
+  { id: 0, name: "Хүн" },
+  { id: 1, name: "Байгаль" },
+  { id: 2, name: "Тэмдэгт" },
+  { id: 3, name: "Техник" },
+  { id: 4, name: "Урлаг" },
+];
 
 const DashboardTwo: React.FC = () => {
   return (
@@ -17,12 +34,15 @@ const DashboardTwo: React.FC = () => {
           <ClimovChart />
           <HollandChart />
         </div>
-        <div className=" text-black text-bold text-center  p-4 text-[14px]">
-          Танд ойр мэргэжлүүдийг доор зургаар үзүүлэв.
+
+        <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
+          <h3 className="font-medium text-black dark:text-white">
+            Холланд болон Климовын тест дээр суурилсан Матрикс өгөгдөл
+          </h3>
         </div>
-        <div className="grid grid-cols-1 gap-4  md:grid-cols-2 md:gap-6 xl:grid-cols-3  2xl:gap-7.5">
-          <LessonCards />
-        </div>
+
+        <MatrixChart />
+
         <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8 w-full">
           Зөвлөмж.<br></br>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis

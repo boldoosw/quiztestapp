@@ -3,18 +3,18 @@ import ClimovQuiz from "@/models/ClimovQuiz";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-  const { climovquiz_items, email } = await request.json();
+  const { climovquiz_items, top_items, email } = await request.json();
+  console.log("testees irj bui ogogdol top items:", top_items);
   await connectMongoDB();
-  console.log("climovquiz_items arr:", climovquiz_items);
   const existingClimovQuiz = await ClimovQuiz.findOne({
-    email: "boexistingClimovQuizldoosw@gmail.com",
+    email: "boldoosw@gmail.com",
   });
   if (existingClimovQuiz) {
     await ClimovQuiz.findByIdAndDelete(existingClimovQuiz._id);
-    // return new NextResponse("Email is already in use", { status: 400 });
   }
   await ClimovQuiz.create({
     climovquiz_items,
+    top_items,
     email,
   });
   return NextResponse.json({ message: "ClimovQuiz Created" }, { status: 201 });

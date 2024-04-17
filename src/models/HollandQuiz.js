@@ -5,6 +5,10 @@ const hollandQuizSchema = new Schema(
     hollandquiz_items: {
       type: String,
     },
+    top_items: {
+      type: String,
+      required: false,
+    },
     email: {
       type: String,
       required: false,

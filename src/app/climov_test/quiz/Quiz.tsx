@@ -17,7 +17,7 @@ type Props = {
   questions: QuestionsState;
   totalQuestions: number;
 };
-let chartData: number[] = [];
+
 const Quiz = ({ questions, totalQuestions }: Props) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
@@ -51,7 +51,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
     userAnswers[currentQuestionIndex] = answer;
     selectedAnswer[currentQuestionIndex] = answer_val;
 
-    console.log(userAnswers);
+    // console.log(userAnswers);
   };
 
   const handleChangeQuestion = (step: number) => {
@@ -77,17 +77,48 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
         if (x === "Техник") technical_count++;
         if (x === "Урлаг") culture_count++;
       });
-      chartData.push(people_count);
-      chartData.push(culture_count);
-      chartData.push(technical_count);
-      chartData.push(ecology_count);
-      chartData.push(character_count);
+
+      const resultData = [
+        { id: 0, name: "Хүн", score: people_count },
+        { id: 1, name: "Байгаль", score: ecology_count },
+        { id: 2, name: "Тэмдэгт", score: character_count },
+        { id: 3, name: "Техник", score: technical_count },
+        { id: 4, name: "Урлаг", score: culture_count },
+      ];
+
+      const top3 = resultData
+        .slice()
+        .sort(function (a, b) {
+          return b.score - a.score;
+        })
+        .slice(0, 3);
 
       setShowResult(true);
       //baazad hiih
-      console.log("quiz chart data:", chartData);
+      let chartData: number[] = [];
 
-      let climovquiz_items = chartData.toString();
+      // labels={["Хүн", "Тэмдэгт","Техник",  "Урлаг","Байгаль"]}
+      // ХҮН	ТЭМДЭГТ		ТЕХНИК	УРЛАГ	БАЙГАЛЬ
+
+      chartData.push(people_count);
+      chartData.push(ecology_count);
+      chartData.push(character_count);
+      chartData.push(technical_count);
+      chartData.push(culture_count);
+
+      let climovquiz_items =
+        `${chartData[0]},${chartData[1]},${chartData[2]},${chartData[3]},${chartData[4]}`.toString();
+      console.log("chart data", chartData);
+
+      console.log(
+        `${top3[0].name}:${top3[0].score},${top3[1].name}:${top3[1].score},${top3[2].name}:${top3[2].score}`
+      );
+
+      let top_items = `${top3[0].id},${top3[1].id},${top3[2].id}`.toString();
+
+      console.log("top_items", top_items);
+
+      console.log("climovquiz_items", climovquiz_items);
 
       let email = "boldoosw@gmail.com";
       try {
@@ -98,6 +129,8 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
           },
           body: JSON.stringify({
             climovquiz_items,
+            top_items,
+            // top3,
             email,
           }),
         });
@@ -158,24 +191,13 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
     </div>
   ) : (
     <div className="mt-8 text-center text-black">
-      <VulnChart
-        labels={["Хүн", "Урлаг", "Техник", "Байгаль", "Тэмдэгт"]}
+      {/* <VulnChart
+       labels={["Хүн", "Тэмдэгт","Техник",  "Урлаг","Байгаль"]}
         // data={[5, 3, 5, 4, 3]}
         data={chartData}
-      />
+      /> */}
     </div>
   );
 };
 
 export default Quiz;
-
-// <div className="text-black text-center mt-8">
-//   {" "}
-//   {chartData}
-//   {/* <p className="p-8 font-bold text-[20px]">Score: {score}</p> */}
-//   <VulnChart
-//     labels={["Хүн", "Урлаг", "Техник", "Байгаль", "Тэмдэгт"]}
-//     data={[5, 3, 5, 4, 3]}
-//     // data={chartData}
-//   />
-// </div>;

@@ -3,7 +3,7 @@ import HollandQuiz from "@/models/HollandQuiz";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-  const { hollandquiz_items, email } = await request.json();
+  const { hollandquiz_items, top_items, email } = await request.json();
   await connectMongoDB();
   console.log("hollandquiz_items arr:", hollandquiz_items);
   const existingHollandQuiz = await HollandQuiz.findOne({
@@ -15,6 +15,7 @@ export async function POST(request) {
   }
   await HollandQuiz.create({
     hollandquiz_items,
+    top_items,
     email,
   });
   return NextResponse.json({ message: "HollandQuiz Created" }, { status: 201 });

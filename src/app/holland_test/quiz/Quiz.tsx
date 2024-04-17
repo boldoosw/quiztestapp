@@ -14,7 +14,6 @@ type Props = {
   questions: QuestionsState;
   totalQuestions: number;
 };
-let chartData: number[] = [];
 const Quiz = ({ questions, totalQuestions }: Props) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
@@ -68,18 +67,49 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
         if (x === "5") udirdah_count++;
         if (x === "6") standart_count++;
       });
+
+      const resultData = [
+        { id: 0, name: "Бодит үйл ажиллагааг дэмжигч", score: bodit_ua_count },
+        { id: 1, name: "Шинжээч судлаач", score: shinjeech_count },
+        { id: 2, name: "Урлагын", score: urlag_count },
+        { id: 3, name: "Нийгмийн", score: niigem_count },
+        { id: 4, name: "Удирдан зохион байгуулах", score: udirdah_count },
+        { id: 5, name: "Стандартыг баримтлагч", score: standart_count },
+      ];
+
+      const top3 = resultData
+        .slice()
+        .sort(function (a, b) {
+          return b.score - a.score;
+        })
+        .slice(0, 3);
+
+      setShowResult(true);
+
+      let chartData: number[] = [];
+
       chartData.push(bodit_ua_count);
       chartData.push(shinjeech_count);
       chartData.push(urlag_count);
       chartData.push(niigem_count);
       chartData.push(udirdah_count);
       chartData.push(standart_count);
-
-      setShowResult(true);
       //baazad hiih
-      console.log("quiz chart data:", chartData);
 
-      let hollandquiz_items = chartData.toString();
+      let hollandquiz_items =
+        `${chartData[0]},${chartData[1]},${chartData[2]},${chartData[3]},${chartData[4]}`.toString();
+
+      console.log("chart data", chartData);
+
+      console.log(
+        `${top3[0].name}:${top3[0].score},${top3[1].name}:${top3[1].score},${top3[2].name}:${top3[2].score}`
+      );
+
+      let top_items = `${top3[0].id},${top3[1].id},${top3[2].id}`.toString();
+
+      console.log("top_items", top_items);
+
+      console.log("hollandquiz_items", hollandquiz_items);
 
       let email = "boldoosw@gmail.com";
       try {
@@ -90,6 +120,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
           },
           body: JSON.stringify({
             hollandquiz_items,
+            top_items,
             email,
           }),
         });
@@ -97,7 +128,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
         if (res.ok) {
           console.log("Mongodb -d amjilttai hadgallaa");
           router.refresh();
-          router.push("/dashboard_one");
+          router.push("/dashboard_two");
         } else {
           throw new Error("Failed to create a holland to mongodb");
         }
@@ -165,7 +196,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
           "Удирдан зохион байгуулах",
           "Стандартыг баримтлагч",
         ]}
-        data={chartData}
+        // data={chartData}
       />
     </div>
   );

@@ -1,11 +1,11 @@
 import mongoose, { Schema } from "mongoose";
 
-const climovQuizSchema = new Schema(
+const matrixQuizSchema = new Schema(
   {
-    climovquiz_items: {
+    climov_items: {
       type: String,
     },
-    top_items: {
+    holland_items: {
       type: String,
       required: false,
     },
@@ -19,7 +19,7 @@ const climovQuizSchema = new Schema(
   }
 );
 
-const ClimovQuiz =
-  mongoose.models.ClimovQuiz || mongoose.model("ClimovQuiz", climovQuizSchema);
+const MatrixQuiz =
+  mongoose.models.MatrixQuiz || mongoose.model("MatrixQuiz", matrixQuizSchema);
 
-export default ClimovQuiz;
+export default MatrixQuiz;
