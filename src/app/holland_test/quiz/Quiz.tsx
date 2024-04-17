@@ -187,7 +187,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
     </div>
   ) : (
     <div className="mt-8 text-center text-black">
-      <VulnChart
+      {/* <VulnChart
         labels={[
           "Бодит үйл ажиллагааг дэмжигч",
           "Шинжээч судлаач",
@@ -197,7 +197,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
           "Стандартыг баримтлагч",
         ]}
         // data={chartData}
-      />
+      /> */}
     </div>
   );
 };
