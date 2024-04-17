@@ -213,7 +213,7 @@ function MatrixChart() {
     fetchClimovData();
     fetchHollandData();
   }, []);
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const climovArray = [];
     const hollandArray = [];
