@@ -41,8 +41,6 @@ const DashboardTwo: React.FC = () => {
           </h3>
         </div>
 
-        <MatrixChart />
-
         <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8 w-full">
           Зөвлөмж.<br></br>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis

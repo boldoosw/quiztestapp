@@ -8,7 +8,7 @@ const Register = () => {
   const [error, setError] = useState("");
   const router = useRouter();
   const { data: session, status: sessionStatus } = useSession();
-  const [degree, setDegree] = useState("");
+  const [role, setRole] = useState("");
 
   useEffect(() => {
     if (sessionStatus === "authenticated") {
@@ -27,9 +27,9 @@ const Register = () => {
     const email = e.target[2].value;
     const password = e.target[3].value;
 
-    console.log(degree);
+    console.log(role);
 
-    if (degree === "") {
+    if (role === "") {
       setError("Ангиа сонгоод бүртгүүлэх боломжтой!!!!");
       return;
     }
@@ -62,7 +62,7 @@ const Register = () => {
           firstname,
           email,
           password,
-          degree,
+          role,
         }),
       });
       if (res.status === 400) {
@@ -124,9 +124,9 @@ const Register = () => {
                 <label className="bg-gray-100 text-gray-700 my-3 flex cursor-pointer rounded-md px-3  py-2 hover:bg-indigo-300 ">
                   <input
                     type="radio"
-                    name="degree"
-                    value="1"
-                    onChange={(e) => setDegree(e.target.value)}
+                    name="role"
+                    value="angi_8_9"
+                    onChange={(e) => setRole(e.target.value)}
                   />
                   <i className="pl-2">8,9 дүгээр анги</i>
                 </label>
@@ -134,9 +134,9 @@ const Register = () => {
                 <label className="bg-gray-100 text-gray-700 my-3 flex cursor-pointer rounded-md px-3  py-2 hover:bg-indigo-300 ">
                   <input
                     type="radio"
-                    name="degree"
-                    value="2"
-                    onChange={(e) => setDegree(e.target.value)}
+                    name="role"
+                    value="angi10_12"
+                    onChange={(e) => setRole(e.target.value)}
                   />
                   <i className="pl-2">10,11,12 дугаар анги</i>
                 </label>

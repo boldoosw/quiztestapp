@@ -22,7 +22,7 @@ const userSchema = new Schema(
       type: String,
       required: false,
     },
-    degree: {
+    role: {
       type: String,
       required: false,
     },

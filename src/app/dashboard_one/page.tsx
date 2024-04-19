@@ -1,10 +1,8 @@
 "use client";
 import React from "react";
-import LessonCards from "@/components/Cards/LessonCards";
 import UserInfo from "../userinfo/page";
 import CustomChart from "@/components/Charts/CustomChart";
-import TableThree from "@/components/Tables/TableThree";
-
+import LessonCards from "@/components/Cards/LessonCards";
 const DashboardOne: React.FC = () => {
   return (
     <>
@@ -35,7 +33,7 @@ const DashboardOne: React.FC = () => {
               perferendis? A, temporibus.
             </div>
             <div className=" text-center  p-4 text-[14px] mt-8 w-full">
-              <TableThree />
+              end yum oruulah
             </div>
           </div>
         </main>

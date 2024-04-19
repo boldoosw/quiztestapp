@@ -138,7 +138,7 @@ const styles = {
     textAlign: "center",
   },
   radioButton: {
-    padding: "12px 16px",
+    padding: "8px 16px",
     borderRadius: "8px",
     margin: "8px",
     border: "2px solid #007BFF",
