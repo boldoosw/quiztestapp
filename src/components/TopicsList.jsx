@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
@@ -23,7 +24,7 @@ export default async function TopicsList() {
 
   return (
     <div>
-      {topics.map((t) => (
+      {topics?.map((t, index) => (
         <div
           key={t._id}
           className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start"
