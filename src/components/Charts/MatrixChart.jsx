@@ -192,6 +192,9 @@ function MatrixChart() {
   const [holland_data, setHollandData] = useState([]);
   const [holland_top_ids, setHollandIds] = useState([]);
 
+  const [mt_labels, setMtLabels] = useState([]);
+  const [mt_data, setMtData] = useState([]);
+
   async function fetchHollandData() {
     // Fetch data from your API here.
     const { data } = await axios.get(`/api/holland_test`);
@@ -242,7 +245,9 @@ function MatrixChart() {
     hollandArray.push(holland_item2);
 
     let climov_items = climovArray.toString();
+    console.log("climov_items:", climov_items);
     let holland_items = hollandArray.toString();
+    console.log("holland items:", holland_items);
     let email = "boldoosw@gmail.com";
 
     try {
@@ -257,13 +262,15 @@ function MatrixChart() {
           email,
         }),
       });
-      if (res.status === 400) {
-        setError("Имайл хаягаар өмнө нь бүртгүүлсэн байна!");
-      }
-      if (res.status === 200) {
-        setError("");
-        router.push("/dashboar_two");
-      }
+
+      router.push("/dashboard_two");
+      // if (res.status === 400) {
+      //   setError("Имайл хаягаар өмнө нь бүртгүүлсэн байна!");
+      // }
+      // if (res.status === 200) {
+      //   setError("");
+      //   router.push("/dashboar_two");
+      // }
     } catch (error) {
       setError("Алдаа гарлаа, дахин оролдоно уу!");
       console.log(error);
@@ -340,7 +347,6 @@ function MatrixChart() {
         </button>
         <p className="text-red-600 mb-4 text-[16px]">{error && error}</p>
       </div>
-      <div></div>
     </>
   );
 }

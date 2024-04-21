@@ -97,7 +97,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
       //baazad hiih
 
       let hollandquiz_items =
-        `${chartData[0]},${chartData[1]},${chartData[2]},${chartData[3]},${chartData[4]}`.toString();
+        `${chartData[0]},${chartData[1]},${chartData[2]},${chartData[3]},${chartData[4]},${chartData[5]}`.toString();
 
       console.log("chart data", chartData);
 

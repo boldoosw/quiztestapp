@@ -4,8 +4,9 @@ import LessonCards from "@/components/Cards/LessonCards";
 import UserInfo from "../userinfo/page";
 import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
-import MatrixChart from "@/components/Charts/MatrixChart";
 
+import MatrixChart from "@/components/Charts/MatrixChart";
+import { MChart } from "@/components/Charts/MChart";
 const rowTable = [
   { id: 0, name: "Бодит байдлыг эрхэмлэгч" },
   { id: 1, name: "Шинжээч судлаач" },
@@ -35,10 +36,8 @@ const DashboardTwo: React.FC = () => {
           <HollandChart />
         </div>
 
-        <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
-          <h3 className="font-medium text-black dark:text-white">
-            Холланд болон Климовын тест дээр суурилсан Матрикс өгөгдөл
-          </h3>
+        <div className="mt-4  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
+          <MChart />
         </div>
 
         <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8 w-full">
