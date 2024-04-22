@@ -12,6 +12,7 @@ import { Bar } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
 import axios from "axios";
 import climov from "@/assets/images/klimov.png";
+import { matrix } from "@/utils/matrix";
 
 const climov_labels = ["Хүн", "Байгаль", "Тэмдэгт", "Техник", "Урлаг"];
 const holland_labels = [
@@ -149,7 +150,8 @@ ChartJS.register(
 );
 
 export const options = {
-  indexAxis: "y" as const,
+  indexAxis: "y",
+  padding: { top: 30, left: 40, right: 0, bottom: 0 },
   scales: {
     y: {
       ticks: {
@@ -161,17 +163,18 @@ export const options = {
   },
   elements: {
     bar: {
-      borderWidth: 2,
+      borderWidth: 1,
     },
   },
+
   responsive: true,
   plugins: {
     legend: {
-      position: "right" as const,
+      position: "right",
     },
     title: {
       display: true,
-      text: "Chart.js Horizontal Bar Chart",
+      text: "Мэргэжил сонголтын матриц үр дүнг графикаар үзүүлэв",
     },
   },
 };
@@ -189,9 +192,14 @@ export function MChart() {
   async function fetchData() {
     // Fetch data from your API here.
     const { data } = await axios.get(`/api/matrix_test`);
+    try {
+      setClimovItems(data.existingMatrixQuiz.climov_items.split(","));
+      setHollandItems(data.existingMatrixQuiz.holland_items.split(","));
 
-    setClimovItems(data.existingMatrixQuiz.climov_items.split(","));
-    setHollandItems(data.existingMatrixQuiz.holland_items.split(","));
+      console.log("fetch data loaded............");
+    } catch (error) {
+      throw new Error();
+    }
   }
   async function fetchHollandData() {
     // Fetch data from your API here.
@@ -207,30 +215,27 @@ export function MChart() {
   }
 
   useEffect(() => {
+    fetchData();
     fetchClimovData();
     fetchHollandData();
-    fetchData();
   }, []);
 
-  const labels = [
-    holland_labels[rowData[holland_items[0]]?.type] +
-      " ба " +
-      climov_labels[colData[climov_items[0]]?.type],
-    holland_labels[rowData[holland_items[1]]?.type] +
-      " ба " +
-      climov_labels[colData[climov_items[1]]?.type],
-    holland_labels[rowData[holland_items[2]]?.type] +
-      " ба " +
-      climov_labels[colData[climov_items[2]]?.type],
-  ];
+  let labels = null;
 
-  let data1 =
-    climov_data[climov_top_ids[1]] * 5 +
+  if (climov_items.length > 0 && holland_items.length > 0)
+    labels = [
+      matrix[climov_items[0]][holland_items[0]].split(","),
+      matrix[climov_items[1]][holland_items[1]].split(","),
+      matrix[climov_items[2]][holland_items[2]].split(","),
+    ];
+
+  let chartdata1 =
+    climov_data[climov_top_ids[0]] * 5 +
     (holland_data[holland_top_ids[0]] / 42) * 100;
-  let data2 =
+  let chartdata2 =
     climov_data[climov_top_ids[1]] * 5 +
     (holland_data[holland_top_ids[1]] / 42) * 100;
-  let data3 =
+  let chartdata3 =
     climov_data[climov_top_ids[2]] * 5 +
     (holland_data[holland_top_ids[2]] / 42) * 100;
 
@@ -239,14 +244,22 @@ export function MChart() {
     datasets: [
       {
         label: "Dataset 1",
-        data: [data1.toFixed(), data2.toFixed(), data3.toFixed()],
+        data: [
+          chartdata1.toFixed(),
+          chartdata2.toFixed(),
+          chartdata3.toFixed(),
+        ],
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
         toolTipContent: "{y} (#percent%)",
       },
       {
         label: "Dataset 2",
-        data: [data1.toFixed(), data2.toFixed(), data3.toFixed()],
+        data: [
+          chartdata1.toFixed(),
+          chartdata2.toFixed(),
+          chartdata3.toFixed(),
+        ],
         borderColor: "rgb(53, 162, 235)",
         backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
@@ -254,16 +267,17 @@ export function MChart() {
   };
 
   return (
-    <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-10">
+    <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
           <h3 className="font-medium text-black dark:text-white">
-            Холланд болон Климовын тест дээр суурилсан Матрикс өгөгдөл
+            МЭРГЭЖИЛ СОНГОЛТЫН МАТРИЦААР ТОДОРХОЙЛСОН ТАНД ТОХИРОМЖТОЙ
+            МЭРГЭЖЛҮҮД
           </h3>
         </div>
         <div className=" h-full">
           <div className="text-black text-center mt-8"></div>
-          <Bar options={options} data={data} />
+          {labels && <Bar options={options} data={data} />}
         </div>
       </div>
     </div>
