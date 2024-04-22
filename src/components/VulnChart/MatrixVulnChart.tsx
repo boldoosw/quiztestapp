@@ -33,15 +33,12 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
           //   labels: ["Хүн", "Байгаль", "Амьтан", "Техник", "Тэмдэгт"],
           datasets: [
             {
-              label: "# Хариултын тоо ",
+              label: "танд нэн тохиромжтой",
               data: data,
-              //   data: [15, 12, 6, 7, 40],
               backgroundColor: [
                 "rgba(255, 99, 132, 0.5)",
                 "rgba(53, 162, 235, 0.5)",
                 "rgb(173, 179, 247)",
-                "rgb(120, 120, 125)",
-                "rgb(155, 217, 154)",
               ],
               borderColor: "rgb(53, 162, 235)",
               // borderColor: "rgb(53,162,235)",
@@ -58,17 +55,22 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
 
           elements: {
             bar: {
-              borderWidth: 2,
+              borderWidth: 1,
             },
           },
           responsive: true,
           plugins: {
             legend: {
               position: "right",
+
+              labels: {
+                usePointStyle: true,
+                boxWidth: 9,
+              },
             },
             title: {
               display: true,
-              text: "Chart.js Horizontal Bar Chart",
+              text: "Мэргэжил сонголтын матриц үр дүнг графикаар үзүүлэв",
             },
           },
         }}

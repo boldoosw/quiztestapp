@@ -9,6 +9,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import MatrixVulnChart from "../VulnChart/MatrixVulnChart";
 import { faker } from "@faker-js/faker";
 import axios from "axios";
 import climov from "@/assets/images/klimov.png";
@@ -151,7 +152,6 @@ ChartJS.register(
 
 export const options = {
   indexAxis: "y",
-  padding: { top: 30, left: 40, right: 0, bottom: 0 },
   scales: {
     y: {
       ticks: {
@@ -239,32 +239,38 @@ export function MChart() {
     climov_data[climov_top_ids[2]] * 5 +
     (holland_data[holland_top_ids[2]] / 42) * 100;
 
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: "Dataset 1",
-        data: [
-          chartdata1.toFixed(),
-          chartdata2.toFixed(),
-          chartdata3.toFixed(),
-        ],
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-        toolTipContent: "{y} (#percent%)",
-      },
-      {
-        label: "Dataset 2",
-        data: [
-          chartdata1.toFixed(),
-          chartdata2.toFixed(),
-          chartdata3.toFixed(),
-        ],
-        borderColor: "rgb(53, 162, 235)",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
-      },
-    ],
-  };
+  const data = [
+    chartdata1.toFixed(),
+    chartdata2.toFixed(),
+    chartdata3.toFixed(),
+  ];
+
+  // const data = {
+  //   labels,
+  //   datasets: [
+  //     // {
+  //     //   label: "Dataset 1",
+  //     //   data: [
+  //     //     chartdata1.toFixed(),
+  //     //     chartdata2.toFixed(),
+  //     //     chartdata3.toFixed(),
+  //     //   ],
+  //     //   borderColor: "rgb(255, 99, 132)",
+  //     //   backgroundColor: "rgba(255, 99, 132, 0.5)",
+  //     //   toolTipContent: "{y} (#percent%)",
+  //     // },
+  //     {
+  //       label: "Dataset 2",
+  //       data: [
+  //         chartdata1.toFixed(),
+  //         chartdata2.toFixed(),
+  //         chartdata3.toFixed(),
+  //       ],
+  //       borderColor: "rgb(53, 162, 235)",
+  //       backgroundColor: "rgba(53, 162, 235, 0.5)",
+  //     },
+  //   ],
+  // };
 
   return (
     <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
@@ -277,7 +283,8 @@ export function MChart() {
         </div>
         <div className=" h-full">
           <div className="text-black text-center mt-8"></div>
-          {labels && <Bar options={options} data={data} />}
+          {/* {labels && <Bar options={options} data={data} />} */}
+          <MatrixVulnChart labels={labels} data={data} />
         </div>
       </div>
     </div>
