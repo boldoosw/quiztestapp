@@ -1,12 +1,13 @@
 "use client";
-import React from "react";
-import LessonCards from "@/components/Cards/LessonCards";
+import React, { useRef } from "react";
 import UserInfo from "../userinfo/page";
 import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
-
-import MatrixChart from "@/components/Charts/MatrixChart";
 import { MChart } from "@/components/Charts/MChart";
+
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+
 const rowTable = [
   { id: 0, name: "Бодит байдлыг эрхэмлэгч" },
   { id: 1, name: "Шинжээч судлаач" },
@@ -23,19 +24,42 @@ const colTable = [
   { id: 4, name: "Урлаг" },
 ];
 
-const DashboardTwo: React.FC = () => {
+const DashboardTwo = () => {
+  const pdfRef = useRef();
+  const downloadPDF = () => {
+    const input = pdfRef.current;
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4", true);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+      const imgX = (pdfWidth - imgWidth * ratio) / 2;
+      const imgY = 30;
+      pdf.addImage(
+        imgData,
+        "PNG",
+        imgX,
+        imgY,
+        imgWidth * ratio,
+        imgHeight * ratio
+      );
+      pdf.save("10-12анги.pdf");
+    });
+  };
+
   return (
-    <main>
+    <main ref={pdfRef}>
       <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-        <div className="mt-4  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
+        <div className="  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
           <UserInfo />
-          {/* <ChartTwo /> */}
         </div>
         <div className="mt-4  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
           <ClimovChart />
           <HollandChart />
         </div>
-
         <div className="mt-4  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
           <MChart />
         </div>
@@ -50,6 +74,11 @@ const DashboardTwo: React.FC = () => {
           exercitationem earum saepe commodi laudantium! Dolore repudiandae
           minima ducimus suscipit, minus perferendis? A, temporibus.
         </div>
+      </div>
+      <div className=" text-center  p-4 text-[14px] mt-8 w-full">
+        <button className="btn btn-primary" onClick={downloadPDF}>
+          Download PDF
+        </button>
       </div>
     </main>
   );

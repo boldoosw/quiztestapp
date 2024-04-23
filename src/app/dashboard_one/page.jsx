@@ -1,13 +1,39 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import UserInfo from "../userinfo/page";
 import CustomChart from "@/components/Charts/CustomChart";
 import LessonCards from "@/components/Cards/LessonCards";
-const DashboardOne: React.FC = () => {
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+const DashboardOne = () => {
+  const pdfRef = useRef();
+  const downloadPDF = () => {
+    const input = pdfRef.current;
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4", true);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+      const imgX = (pdfWidth - imgWidth * ratio) / 2;
+      const imgY = 30;
+      pdf.addImage(
+        imgData,
+        "PNG",
+        imgX,
+        imgY,
+        imgWidth * ratio,
+        imgHeight * ratio
+      );
+      pdf.save("8-9анги.pdf");
+    });
+  };
   return (
     <>
       {/* <!-- ===== Content Area Start ===== --> */}
-      <div>
+      <div ref={pdfRef}>
         {/* <!-- ===== Main Content Start ===== --> */}
         <main>
           <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
@@ -33,7 +59,9 @@ const DashboardOne: React.FC = () => {
               perferendis? A, temporibus.
             </div>
             <div className=" text-center  p-4 text-[14px] mt-8 w-full">
-              end yum oruulah
+              <button className="btn btn-primary" onClick={downloadPDF}>
+                Download PDF
+              </button>
             </div>
           </div>
         </main>

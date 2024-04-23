@@ -30,7 +30,6 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
       <Bar
         data={{
           labels: labels,
-          //   labels: ["Хүн", "Байгаль", "Амьтан", "Техник", "Тэмдэгт"],
           datasets: [
             {
               label: "танд нэн тохиромжтой",
@@ -51,7 +50,7 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
         width={500}
         options={{
           indexAxis: "y",
-          maintainAspectRatio: true,
+          maintainAspectRatio: false,
 
           elements: {
             bar: {

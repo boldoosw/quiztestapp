@@ -54,7 +54,7 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
         width={500}
         options={{
           indexAxis: "y",
-          maintainAspectRatio: true,
+          maintainAspectRatio: false,
 
           elements: {
             bar: {
