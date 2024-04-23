@@ -35,9 +35,9 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
               label: "танд нэн тохиромжтой",
               data: data,
               backgroundColor: [
-                "rgba(255, 99, 132, 0.5)",
-                "rgba(53, 162, 235, 0.5)",
-                "rgb(173, 179, 247)",
+                "rgb(8, 189, 74)",
+                "rgba(252, 241, 23)",
+                "rgb(250, 62, 52)",
               ],
               borderColor: "rgb(53, 162, 235)",
               // borderColor: "rgb(53,162,235)",
