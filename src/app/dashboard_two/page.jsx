@@ -4,25 +4,10 @@ import UserInfo from "../userinfo/page";
 import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
 import { MChart } from "@/components/Charts/MChart";
+import { YesNoChart } from "@/components/Charts/YesNoChart";
 
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-
-const rowTable = [
-  { id: 0, name: "Бодит байдлыг эрхэмлэгч" },
-  { id: 1, name: "Шинжээч судлаач" },
-  { id: 2, name: "Урлагийн" },
-  { id: 3, name: "Нийгмийн" },
-  { id: 4, name: "Удирдан зохион байгуулах" },
-  { id: 5, name: "Стандартыг баримтлагч" },
-];
-const colTable = [
-  { id: 0, name: "Хүн" },
-  { id: 1, name: "Байгаль" },
-  { id: 2, name: "Тэмдэгт" },
-  { id: 3, name: "Техник" },
-  { id: 4, name: "Урлаг" },
-];
 
 const DashboardTwo = () => {
   const pdfRef = useRef();
@@ -54,7 +39,7 @@ const DashboardTwo = () => {
     <main ref={pdfRef}>
       <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
         <div className="  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-          <UserInfo />
+          <YesNoChart />
         </div>
 
         <div className="mt-4  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">

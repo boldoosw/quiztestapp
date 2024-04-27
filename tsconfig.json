@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Charts/MatrixChart.jsx", "src/components/Charts/MChart.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Charts/MatrixChart.jsx", "src/components/Charts/MChart.jsx", "src/app/dashboard_two/page.jsx", "src/app/dashboard_one/page.jsx", "src/app/dragdrop/page.jsx"],
   "exclude": ["node_modules"]
 }

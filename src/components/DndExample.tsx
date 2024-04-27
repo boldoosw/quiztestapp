@@ -23,7 +23,31 @@ const DndExample = () => {
     "bg-gray-400",
     "bg-orange-400",
   ];
-  const [data, setData] = useState<Cards[] | []>([]);
+  const [data, setData] = useState<Cards[] | []>(cardsData);
+  if (typeof window !== "undefined" && window.localStorage) {
+    // localStorage.clear();
+    localStorage.setItem(
+      "firstItem1",
+      JSON.stringify({
+        id: data[0]?.components[0].id,
+        name: data[0]?.components[0].name,
+      })
+    );
+    localStorage.setItem(
+      "secondItem1",
+      JSON.stringify({
+        id: data[0]?.components[1].id,
+        name: data[0]?.components[1].name,
+      })
+    );
+    localStorage.setItem(
+      "thirdItem1",
+      JSON.stringify({
+        id: data[0]?.components[2].id,
+        name: data[0]?.components[2].name,
+      })
+    );
+  }
   const onDragEnd = (result: DropResult) => {
     const { source, destination } = result;
     if (!destination) return;
@@ -41,6 +65,9 @@ const DndExample = () => {
       );
       newData[newDroppableIndex].components.splice(destination.index, 0, item);
       setData([...newData]);
+      // localStorage.setItem("first", newData[0].components[0].name);
+      // localStorage.setItem("second", newData[0].components[1].name);
+      // localStorage.setItem("last", newData[0].components[2].name);
     } else {
       const newData = [...JSON.parse(JSON.stringify(data))]; //shallow copy concept
       const droppableIndex = newData.findIndex(
@@ -49,6 +76,29 @@ const DndExample = () => {
       const [item] = newData[droppableIndex].components.splice(source.index, 1);
       newData[droppableIndex].components.splice(destination.index, 0, item);
       setData([...newData]);
+      localStorage.setItem(
+        "firstItem1",
+        JSON.stringify({
+          id: newData[0].components[0].id,
+          name: newData[0].components[0].name,
+        })
+      );
+      localStorage.setItem(
+        "secondItem1",
+        JSON.stringify({
+          id: newData[0].components[1].id,
+          name: newData[0].components[1].name,
+        })
+      );
+      localStorage.setItem(
+        "thirdItem1",
+        JSON.stringify({
+          id: newData[0].components[2].id,
+          name: newData[0].components[2].name,
+        })
+      );
+
+      // console.log(localStorage.getItem("firstItem1"));
     }
   };
   useEffect(() => {
@@ -89,7 +139,8 @@ const DndExample = () => {
                       А.Чи мэргэжил сонгохдоо юу бодолцож сонголт хийсэн бэ?
                     </h1>
                     <h5 className="text-red-500 text-sm">
-                      Доорх хариултуудыг ач холбогдлоор нь дэс дугаарлана уу.
+                      Доорх хариултууд дээр очин хулганаар чирэн ач холбогдлоор
+                      нь дэс дугаарлана уу.
                     </h5>
                     {val.components?.map((component, index) => (
                       <Draggable
@@ -119,19 +170,6 @@ const DndExample = () => {
                       </Draggable>
                     ))}
                     {provided.placeholder}
-
-                    {/* <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
-                      <h2 className="bg-white  font-bold">{getTitle(0)}</h2>
-                      {getContent(0)}
-                    </div>
-                    <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
-                      <h2 className="bg-white  font-bold">{getTitle(1)}</h2>
-                      {getContent(1)}
-                    </div>
-                    <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
-                      <h2 className="bg-white  font-bold">{getTitle(2)}</h2>
-                      {getContent(2)}
-                    </div> */}
                   </div>
                 </>
               )}

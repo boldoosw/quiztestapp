@@ -25,7 +25,32 @@ const DndExample2 = () => {
     "bg-orange-400",
     "bg-red-400",
   ];
-  const [data, setData] = useState<Cards[] | []>([]);
+  const [data, setData] = useState<Cards[] | []>(cardsData);
+
+  if (typeof window !== "undefined" && window.localStorage) {
+    // localStorage.clear();
+    localStorage.setItem(
+      "firstItem2",
+      JSON.stringify({
+        id: data[0]?.components[0].id,
+        name: data[0]?.components[0].name,
+      })
+    );
+    localStorage.setItem(
+      "secondItem2",
+      JSON.stringify({
+        id: data[0]?.components[1].id,
+        name: data[0]?.components[1].name,
+      })
+    );
+    localStorage.setItem(
+      "thirdItem2",
+      JSON.stringify({
+        id: data[0]?.components[2].id,
+        name: data[0]?.components[2].name,
+      })
+    );
+  }
   const onDragEnd = (result: DropResult) => {
     const { source, destination } = result;
     if (!destination) return;
@@ -51,6 +76,27 @@ const DndExample2 = () => {
       const [item] = newData[droppableIndex].components.splice(source.index, 1);
       newData[droppableIndex].components.splice(destination.index, 0, item);
       setData([...newData]);
+      localStorage.setItem(
+        "firstItem2",
+        JSON.stringify({
+          id: newData[0].components[0].id,
+          name: newData[0].components[0].name,
+        })
+      );
+      localStorage.setItem(
+        "secondItem2",
+        JSON.stringify({
+          id: newData[0].components[1].id,
+          name: newData[0].components[1].name,
+        })
+      );
+      localStorage.setItem(
+        "thirdItem2",
+        JSON.stringify({
+          id: newData[0].components[2].id,
+          name: newData[0].components[2].name,
+        })
+      );
     }
   };
   useEffect(() => {
@@ -113,18 +159,6 @@ const DndExample2 = () => {
                       </Draggable>
                     ))}
                     {provided.placeholder}
-                    {/* <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
-                      <h2 className="bg-white  font-bold">{getTitle(0)}</h2>
-                      {getContent(0)}
-                    </div>
-                    <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
-                      <h2 className="bg-white  font-bold">{getTitle(1)}</h2>
-                      {getContent(1)}
-                    </div>
-                    <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
-                      <h2 className="bg-white  font-bold">{getTitle(2)}</h2>
-                      {getContent(2)}
-                    </div> */}
                   </div>
                 </>
               )}

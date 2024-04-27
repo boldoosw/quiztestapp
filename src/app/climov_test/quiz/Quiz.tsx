@@ -7,11 +7,6 @@ import QuestionCard from "@/components/QuestionCard/QuestionCard";
 import Button from "@/components/Button/Button";
 // Types
 import { QuestionsState } from "@/types/quiz";
-import VulnChart from "@/components/VulnChart/VulnChart";
-
-import connect from "@/utils/db";
-// import ClimovQuiz from "@/models/ClimovQuiz";
-import { NextResponse } from "next/server";
 
 type Props = {
   questions: QuestionsState;

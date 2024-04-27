@@ -195,8 +195,6 @@ export function MChart() {
     try {
       setClimovItems(data.existingMatrixQuiz.climov_items.split(","));
       setHollandItems(data.existingMatrixQuiz.holland_items.split(","));
-
-      console.log("fetch data loaded............");
     } catch (error) {
       throw new Error();
     }
@@ -245,33 +243,6 @@ export function MChart() {
     chartdata3.toFixed(),
   ];
 
-  // const data = {
-  //   labels,
-  //   datasets: [
-  //     // {
-  //     //   label: "Dataset 1",
-  //     //   data: [
-  //     //     chartdata1.toFixed(),
-  //     //     chartdata2.toFixed(),
-  //     //     chartdata3.toFixed(),
-  //     //   ],
-  //     //   borderColor: "rgb(255, 99, 132)",
-  //     //   backgroundColor: "rgba(255, 99, 132, 0.5)",
-  //     //   toolTipContent: "{y} (#percent%)",
-  //     // },
-  //     {
-  //       label: "Dataset 2",
-  //       data: [
-  //         chartdata1.toFixed(),
-  //         chartdata2.toFixed(),
-  //         chartdata3.toFixed(),
-  //       ],
-  //       borderColor: "rgb(53, 162, 235)",
-  //       backgroundColor: "rgba(53, 162, 235, 0.5)",
-  //     },
-  //   ],
-  // };
-
   return (
     <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -283,7 +254,6 @@ export function MChart() {
         </div>
         <div className=" h-full">
           <div className="text-black text-center mt-8"></div>
-          {/* {labels && <Bar options={options} data={data} />} */}
           <MatrixVulnChart labels={labels} data={data} />
         </div>
       </div>

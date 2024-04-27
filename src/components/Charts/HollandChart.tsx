@@ -110,9 +110,6 @@ function HollandChart() {
           </div>
           <div className=" h-full m-4">
             <div className="flex flex-col gap-5 ">
-              <h1 className="text-sm font-semibold  text-gray-500">
-                {holland_labels[holland_top_ids[0]]?.name}
-              </h1>
               <p className="text-sm leading-6 text-gray-400">
                 {holland_labels[holland_top_ids[0]]?.content1}
               </p>
@@ -141,9 +138,6 @@ function HollandChart() {
           </div>
           <div className=" h-full m-4">
             <div className="flex flex-col gap-5 ">
-              <h1 className="text-sm font-semibold text-gray-500">
-                {holland_labels[holland_top_ids[1]]?.name}
-              </h1>
               <p className="text-sm leading-6 text-gray-400">
                 {holland_labels[holland_top_ids[1]]?.content1}
               </p>
@@ -172,9 +166,6 @@ function HollandChart() {
           </div>
           <div className=" h-full m-4">
             <div className="flex flex-col gap-5 ">
-              <h1 className="text-sm font-semibold text-gray-500">
-                {holland_labels[holland_top_ids[2]]?.name}
-              </h1>
               <p className="text-sm leading-6 text-gray-400">
                 {holland_labels[holland_top_ids[2]]?.content1}
               </p>
