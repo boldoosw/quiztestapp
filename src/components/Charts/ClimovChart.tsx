@@ -5,6 +5,7 @@ const climov_label = ["Хүн", "Байгаль", "Тэмдэгт", "Техни�
 const climov_labels = [
   {
     name: "Хүн",
+    bg: "#50d71e",
     content1:
       "Хүн - хүн төрлийн мэргэжлүүдийн төлөөлөгчдийн хөдөлмөрийн хэрэгслэл нь:• Хүн.",
     content2:
@@ -14,6 +15,7 @@ const climov_labels = [
   },
   {
     name: "Байгаль",
+    bg: "#2596be",
     content1:
       "Хэрэв та цэцэрлэг, ногооны талбайд ажиллах, ургамал, амьтдыг арчлах, биологийн хичээлд дуртай бол `хүн-байгаль`` мэргэжлийг үзээрэй. `Хүн-байгаль` мэргэжлийн хөдөлмөрийн хэрэгслэл нь: • амьтан, тэдгээрийн өсөлт, амьдрах нөхцөл; • ургамал, тэдгээрийн ургах нөхцөл. Ус, хөрс г.м",
     content2:
@@ -24,6 +26,7 @@ const climov_labels = [
 
   {
     name: "Тэмдэгт",
+    bg: "#b5c576",
     content1:
       "Хэрэв та тооцоолол, зураг зурах, диаграмм хийх, карт хөтлөх, төрөл бүрийн мэдээллийг системчлэх, програмчлал, эдийн засаг, статистик гэх мэт зүйлийг хийх дуртай бол `хүн - тэмдэгт` мэргэжлүүдтэй танилцаарай. Энэ төрлийн ихэнх мэргэжлүүд мэдээлэл боловсруулахтай холбоотой байдаг.",
     content2:
@@ -33,6 +36,7 @@ const climov_labels = [
   },
   {
     name: "Техник",
+    bg: "#BCF10D",
     content1:
       "Хэрэв та физик, хими, цахилгааны инженерчлэлийн лабораторийн ажилд дуртай, загвар хийдэг, гэр ахуйн цахилгаан хэрэгслийг ойлгодог, машин, механизм, төхөөрөмж, машин хэрэгсэл бүтээх, ажиллуулах, засварлахыг хүсч байвал `хүн-техникийн` мэргэжлийг сонирхож үзнэ үү. . `Техникийн` мэргэжлийн хөдөлмөрийн хэрэгслэл нь:• техникийн объект (машин, механизм);• материал, төрөл бүзрийн энерги.",
     content2:
@@ -42,6 +46,7 @@ const climov_labels = [
   },
   {
     name: "Урлаг",
+    bg: "#F11D0D",
     content1:
       "`Хүн - урлагын` төрлийн мэргэжлүүдийн хөдөлмөрийн хэрэгслэл нь:• уран сайхны дүр төрх, түүнийг бүтээх арга.",
     content2:
@@ -89,7 +94,13 @@ function ClimovChart() {
       </div>
       <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-          <div className="border-b border-stroke  text-white bg-red-500  px-7 py-4 dark:border-strokedark">
+          <div
+            className={
+              "border-b border-stroke  text-white   px-7 py-4 dark:border-strokedark bg-[" +
+              climov_labels[climov_top_ids[0]]?.bg +
+              "]"
+            }
+          >
             <h3 className="font-medium dark:text-white">
               {climov_labels[climov_top_ids[0]]?.name}
             </h3>
@@ -117,7 +128,14 @@ function ClimovChart() {
       </div>
       <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-          <div className="border-b border-stroke  text-white bg-red-500 px-7 py-4 dark:border-strokedark">
+          <div
+            className={
+              "border-b border-stroke  text-white   px-7 py-4 dark:border-strokedark bg-[" +
+              climov_labels[climov_top_ids[1]]?.bg +
+              "]"
+            }
+          >
+            {" "}
             <h3 className="font-medium dark:text-white">
               {climov_labels[climov_top_ids[1]]?.name}
             </h3>
@@ -145,7 +163,14 @@ function ClimovChart() {
       </div>
       <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-          <div className="border-b border-stroke  text-white bg-red-500 px-7 py-4 dark:border-strokedark">
+          <div
+            className={
+              "border-b border-stroke  text-white   px-7 py-4 dark:border-strokedark bg-[" +
+              climov_labels[climov_top_ids[2]]?.bg +
+              "]"
+            }
+          >
+            {" "}
             <h3 className="font-medium  dark:text-white">
               {climov_labels[climov_top_ids[2]]?.name}
             </h3>

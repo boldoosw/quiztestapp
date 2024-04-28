@@ -82,14 +82,14 @@ function HollandChart() {
 
   return (
     <>
-      <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
+      <div className="col-span-12 rounded-sm border border-stroke bg-white p-24  shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
           <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
             <h3 className="font-medium text-black dark:text-white">
               Холландын тестийн үр дүн
             </h3>
           </div>
-          <div className=" h-full">
+          <div className=" h-full ">
             <div className="text-black text-center mt-8">
               <HollandVulnChart labels={holland_label} data={holland_data} />
             </div>
