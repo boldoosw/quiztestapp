@@ -12,6 +12,7 @@ const holland_label = [
 const holland_labels = [
   {
     name: "Бодит үйл ажиллагааг дэмжигч",
+    bg: "bg-[#FCB6A4]",
     content1:
       "Идэвх санаачлагатай, шийдвэртэй, ажил хэрэгч, тэсвэр тэвчээртэй, оновчтой байдал, практик сэтгэлгээтэй, хөдөлгөөний эвсэлтэй, орон зайн төсөөлөл сайн, техникийн чадвартай.",
     content2:
@@ -21,6 +22,7 @@ const holland_labels = [
   },
   {
     name: "Шинжээч судлаач",
+    bg: "bg-[#F5E83B]",
     content1:
       "Аналитик сэтгэлгээ, хараат бус байдал, өвөрмөц сэтгэлгээ, хэлний ба математикийн чадварыг хослуулж хөгжүүлсэн, аливаад шүүмжтэй хандах, сониуч зантай, уран зөгнөлч сэтгэлгээтэй, дотогш чиглэсэн зан чанартай, биеийн хөдөлгөөн багатай.",
     content2:
@@ -30,6 +32,7 @@ const holland_labels = [
   },
   {
     name: "Урлагын",
+    bg: "bg-[#F06292]",
     content1:
       "Хийсвэр төсөөлөл, зөн совин, дотоод мэдрэмж, амьдралын олон нарийн төвөгтэй байдлын мэдрэмж, бие даасан, сэтгэлгээний уян хатан байдал, өвөрмөц сэтгэлгээ, хөдөлгөөний эвсэл, мэдээллийг хүлээн авах мэдрэхүйн чадвар.",
     content2:
@@ -39,6 +42,7 @@ const holland_labels = [
   },
   {
     name: "Нийгмийн",
+    bg: "bg-[#78787D]",
     content1:
       "Харилцааны чадвар, хүмүүнлэг, өрөвдөх сэтгэл, идэвхтэй, бусдын ба нийтийн санаа бодлыг харгалзан үзэх, нийгэмд дасан зохицох, сэтгэл санаа болон  мэдрэмж дээр тулгуурлан асуудлыг шийдвэрлэх, хэл ярианы чадвар өндөр байх.",
     content2:
@@ -48,6 +52,7 @@ const holland_labels = [
   },
   {
     name: "Удирдан зохион байгуулах",
+    bg: "bg-[#9BD99A]",
     content1:
       "Энергитэй, эрс тэс байдал, урам зоригтой, ажил хэрэгч, эрс шийдэмгий ба тууштай зан, эрсдэл даах, өөдрөг үзэл, өөртөө итгэлтэй, хэл ярианы өндөр чадвартай, зохион байгуулалтын ур чадвар хөгшжсөн",
     content2:
@@ -57,6 +62,7 @@ const holland_labels = [
   },
   {
     name: "Стандартыг баримтлагч",
+    bg: "bg-[#462CF2]",
     content1:
       "Тоон ба үсгэн мэдээллийг боловсруулах чадвар, асуудалд хэвшмэл, консерватив байдлаар ханддаг, захирагдах ба стандарт, хууль дүрэм, дэг журам баримталдаг,  ёс заншлыг дагаж мөрдөж, бусадтай нийцтэй, сайн гүйцэтгэгч, математикийн чадвар давамгайлсан.",
     content2:
@@ -103,7 +109,12 @@ function HollandChart() {
       </div>
       <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-          <div className="border-b border-stroke  text-white bg-red-500 px-7 py-4 dark:border-strokedark">
+          <div
+            className={
+              "border-b border-stroke  text-white   px-7 py-4 dark:border-strokedark " +
+              holland_labels[holland_top_ids[0]]?.bg
+            }
+          >
             <h3 className="font-medium dark:text-white">
               {holland_labels[holland_top_ids[0]]?.name}
             </h3>
@@ -131,7 +142,13 @@ function HollandChart() {
       </div>
       <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-          <div className="border-b border-stroke  text-white bg-red-500 px-7 py-4 dark:border-strokedark">
+          <div
+            className={
+              "border-b border-stroke  text-white   px-7 py-4 dark:border-strokedark " +
+              holland_labels[holland_top_ids[1]]?.bg
+            }
+          >
+            {" "}
             <h3 className="font-medium dark:text-white">
               {holland_labels[holland_top_ids[1]]?.name}
             </h3>
@@ -159,7 +176,13 @@ function HollandChart() {
       </div>
       <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-          <div className="border-b border-stroke  text-white bg-red-500 px-7 py-4 dark:border-strokedark">
+          <div
+            className={
+              "border-b border-stroke  text-white   px-7 py-4 dark:border-strokedark " +
+              holland_labels[holland_top_ids[2]]?.bg
+            }
+          >
+            {" "}
             <h3 className="font-medium  dark:text-white">
               {holland_labels[holland_top_ids[2]]?.name}
             </h3>
