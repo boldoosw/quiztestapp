@@ -6,6 +6,7 @@ const climov_labels = [
   {
     name: "Хүн",
     bg: "bg-[#50d71e]",
+    text_color: "text-[#50d71e]",
     content1:
       "Хүн - хүн төрлийн мэргэжлүүдийн төлөөлөгчдийн хөдөлмөрийн хэрэгслэл нь:• Хүн.",
     content2:
@@ -16,6 +17,7 @@ const climov_labels = [
   {
     name: "Байгаль",
     bg: "bg-[#2596be]",
+    text_color: "text-[#2596be]",
     content1:
       "Хэрэв та цэцэрлэг, ногооны талбайд ажиллах, ургамал, амьтдыг арчлах, биологийн хичээлд дуртай бол `хүн-байгаль`` мэргэжлийг үзээрэй. `Хүн-байгаль` мэргэжлийн хөдөлмөрийн хэрэгслэл нь: • амьтан, тэдгээрийн өсөлт, амьдрах нөхцөл; • ургамал, тэдгээрийн ургах нөхцөл. Ус, хөрс г.м",
     content2:
@@ -27,6 +29,7 @@ const climov_labels = [
   {
     name: "Тэмдэгт",
     bg: "bg-[#EC407A]",
+    text_color: "text-[#EC407A]",
     content1:
       "Хэрэв та тооцоолол, зураг зурах, диаграмм хийх, карт хөтлөх, төрөл бүрийн мэдээллийг системчлэх, програмчлал, эдийн засаг, статистик гэх мэт зүйлийг хийх дуртай бол `хүн - тэмдэгт` мэргэжлүүдтэй танилцаарай. Энэ төрлийн ихэнх мэргэжлүүд мэдээлэл боловсруулахтай холбоотой байдаг.",
     content2:
@@ -37,6 +40,7 @@ const climov_labels = [
   {
     name: "Техник",
     bg: "bg-[#FFEB3B]",
+    text_color: "text-[#FFEB3B]",
     content1:
       "Хэрэв та физик, хими, цахилгааны инженерчлэлийн лабораторийн ажилд дуртай, загвар хийдэг, гэр ахуйн цахилгаан хэрэгслийг ойлгодог, машин, механизм, төхөөрөмж, машин хэрэгсэл бүтээх, ажиллуулах, засварлахыг хүсч байвал `хүн-техникийн` мэргэжлийг сонирхож үзнэ үү. . `Техникийн` мэргэжлийн хөдөлмөрийн хэрэгслэл нь:• техникийн объект (машин, механизм);• материал, төрөл бүзрийн энерги.",
     content2:
@@ -47,6 +51,7 @@ const climov_labels = [
   {
     name: "Урлаг",
     bg: "bg-[#F11D0D]",
+    text_color: "text-[#F11D0D]",
     content1:
       "`Хүн - урлагын` төрлийн мэргэжлүүдийн хөдөлмөрийн хэрэгслэл нь:• уран сайхны дүр төрх, түүнийг бүтээх арга.",
     content2:
@@ -73,7 +78,7 @@ function ClimovChart() {
 
   return (
     <>
-      <div className="col-span-12 text-center rounded-sm border border-stroke bg-white p-24 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
+      <div className="col-span-12 text-center rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
           <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
             <h3 className="font-medium text-black dark:text-white">
@@ -109,13 +114,23 @@ function ClimovChart() {
               <p className="text-sm leading-6 text-gray-400">
                 {climov_labels[climov_top_ids[0]]?.content1}
               </p>
-              <h1 className="text-sm font-semibold  text-gray-500">
+              <h1
+                className={
+                  "text-sm font-semibold  " +
+                  climov_labels[climov_top_ids[0]]?.text_color
+                }
+              >
                 Гүйцэтгэх үйл ажиллагаа
               </h1>
               <p className="text-sm leading-6 text-gray-400">
                 {climov_labels[climov_top_ids[0]]?.content2}
               </p>
-              <h1 className="text-sm font-semibold  text-gray-500">
+              <h1
+                className={
+                  "text-sm font-semibold " +
+                  climov_labels[climov_top_ids[0]]?.text_color
+                }
+              >
                 Тавигдах сэтгэл зүйн шаардлага
               </h1>
               <p className="text-sm leading-6 text-gray-400">
@@ -143,13 +158,23 @@ function ClimovChart() {
               <p className="text-sm leading-6 text-gray-400">
                 {climov_labels[climov_top_ids[1]]?.content1}
               </p>
-              <h1 className="text-sm font-semibold  text-gray-500">
+              <h1
+                className={
+                  "text-sm font-semibold " +
+                  climov_labels[climov_top_ids[1]]?.text_color
+                }
+              >
                 Гүйцэтгэх үйл ажиллагаа
               </h1>
               <p className="text-sm leading-6 text-gray-400">
                 {climov_labels[climov_top_ids[1]]?.content2}
               </p>
-              <h1 className="text-sm font-semibold  text-gray-500">
+              <h1
+                className={
+                  "text-sm font-semibold " +
+                  climov_labels[climov_top_ids[1]]?.text_color
+                }
+              >
                 Тавигдах сэтгэл зүйн шаардлага
               </h1>
               <p className="text-sm leading-6 text-gray-400">
@@ -177,13 +202,23 @@ function ClimovChart() {
               <p className="text-sm leading-6 text-gray-400">
                 {climov_labels[climov_top_ids[2]]?.content1}
               </p>
-              <h1 className="text-sm font-semibold  text-gray-500">
+              <h1
+                className={
+                  "text-sm font-semibold " +
+                  climov_labels[climov_top_ids[2]]?.text_color
+                }
+              >
                 Гүйцэтгэх үйл ажиллагаа
               </h1>
               <p className="text-sm leading-6 text-gray-400">
                 {climov_labels[climov_top_ids[2]]?.content2}
               </p>
-              <h1 className="text-sm font-semibold  text-gray-500">
+              <h1
+                className={
+                  "text-sm font-semibold " +
+                  climov_labels[climov_top_ids[2]]?.text_color
+                }
+              >
                 Тавигдах сэтгэл зүйн шаардлага
               </h1>
               <p className="text-sm leading-6 text-gray-400">
