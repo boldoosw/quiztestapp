@@ -177,14 +177,14 @@ export function YesNoChart() {
             </div>
 
             <div className=" h-full flex flex-col">
-              <div className="bg-green-500 mt-2 text-black text-center">
+              <div className="bg-green-500 mt-2 text-white p-2 text-center">
                 {cardData1[a_items[0]]?.name}
                 {/* {c_items[0]} */}
               </div>
-              <div className="bg-yellow-500 text-black text-center mt-2">
+              <div className="bg-yellow-500 text-white p-2 text-center mt-2">
                 {cardData1[a_items[1]]?.name}
               </div>
-              <div className="bg-red-500 text-black text-center mt-2 mb-2">
+              <div className="bg-red-500 text-white p-2 text-center mt-2 mb-2">
                 {cardData1[a_items[2]]?.name}
               </div>
             </div>
@@ -192,15 +192,21 @@ export function YesNoChart() {
         </div>
         <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-9">
           <div className=" h-full m-4">
-            <h3>{cardData1[a_items[0]]?.name}</h3>
+            <h3 className="text-white bg-green-500 p-2">
+              {cardData1[a_items[0]]?.name}
+            </h3>
             <div className="text-sm leading-6 text-gray-400">
               {cardData1[a_items[0]]?.content}
             </div>
-            <h3>{cardData1[a_items[1]]?.name}</h3>
+            <h3 className="text-white bg-yellow-500 p-2">
+              {cardData1[a_items[1]]?.name}
+            </h3>
             <div className="text-sm leading-6 text-gray-400">
               {cardData1[a_items[1]]?.content}
             </div>
-            <h3>{cardData1[a_items[2]]?.name}</h3>
+            <h3 className="text-white bg-red-500 p-2">
+              {cardData1[a_items[2]]?.name}
+            </h3>
             <div className="text-sm leading-6 text-gray-400">
               {cardData1[a_items[2]]?.content}
             </div>
@@ -216,14 +222,14 @@ export function YesNoChart() {
             </div>
 
             <div className=" h-full flex flex-col">
-              <div className="bg-green-500 mt-2 text-black text-center">
+              <div className="bg-green-500 mt-2 text-white p-2 text-center">
                 {cardData2[b_items[0]]?.name}
                 {/* {c_items[0]} */}
               </div>
-              <div className="bg-yellow-500 text-black text-center mt-2">
+              <div className="bg-yellow-500 text-white p-2 text-center mt-2">
                 {cardData2[b_items[1]]?.name}
               </div>
-              <div className="bg-red-500 text-black text-center mt-2 mb-2">
+              <div className="bg-red-500 text-white p-2 text-center mt-2 mb-2">
                 {cardData2[b_items[2]]?.name}
               </div>
             </div>
@@ -231,15 +237,21 @@ export function YesNoChart() {
         </div>
         <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-9">
           <div className=" h-full m-4">
-            <h3>{cardData2[b_items[0]]?.name}</h3>
+            <h3 className="text-white bg-green-500 p-2">
+              {cardData2[b_items[0]]?.name}
+            </h3>
             <div className="text-sm leading-6 text-gray-400">
               {cardData2[b_items[0]]?.content}
             </div>
-            <h3>{cardData1[a_items[1]]?.name}</h3>
+            <h3 className="text-white bg-yellow-500 p-2">
+              {cardData2[b_items[1]]?.name}
+            </h3>
             <div className="text-sm leading-6 text-gray-400">
               {cardData2[b_items[1]]?.content}
             </div>
-            <h3>{cardData2[b_items[2]]?.name}</h3>
+            <h3 className="text-white bg-red-500 p-2">
+              {cardData2[b_items[2]]?.name}
+            </h3>
             <div className="text-sm leading-6 text-gray-400">
               {cardData2[b_items[2]]?.content}
             </div>
@@ -273,15 +285,15 @@ export function YesNoChart() {
         </div>
         <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-9">
           <div className=" h-full m-4">
-            <h3>{cardData3[c_items[0]]?.name}</h3>
+            <h3 className="bg-green-500">{cardData3[c_items[0]]?.name}</h3>
             <div className="text-sm leading-6 text-gray-400">
               {cardData3[c_items[0]]?.content}
             </div>
-            <h3>{cardData3[c_items[1]]?.name}</h3>
+            <h3 className="bg-yellow-500">{cardData3[c_items[1]]?.name}</h3>
             <div className="text-sm leading-6 text-gray-400">
               {cardData3[c_items[1]]?.content}
             </div>
-            <h3>{cardData3[c_items[2]]?.name}</h3>
+            <h3 className="text-red-500">{cardData3[c_items[2]]?.name}</h3>
             <div className="text-sm leading-6 text-gray-400">
               {cardData3[c_items[2]]?.content}
             </div>

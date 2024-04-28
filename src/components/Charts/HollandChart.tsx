@@ -103,8 +103,8 @@ function HollandChart() {
       </div>
       <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-          <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
-            <h3 className="font-medium text-black dark:text-white">
+          <div className="border-b border-stroke  text-white bg-red-500 px-7 py-4 dark:border-strokedark">
+            <h3 className="font-medium dark:text-white">
               {holland_labels[holland_top_ids[0]]?.name}
             </h3>
           </div>
@@ -131,8 +131,8 @@ function HollandChart() {
       </div>
       <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-          <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
-            <h3 className="font-medium text-black dark:text-white">
+          <div className="border-b border-stroke  text-white bg-red-500 px-7 py-4 dark:border-strokedark">
+            <h3 className="font-medium dark:text-white">
               {holland_labels[holland_top_ids[1]]?.name}
             </h3>
           </div>
@@ -159,8 +159,8 @@ function HollandChart() {
       </div>
       <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-          <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
-            <h3 className="font-medium text-black dark:text-white">
+          <div className="border-b border-stroke  text-white bg-red-500 px-7 py-4 dark:border-strokedark">
+            <h3 className="font-medium  dark:text-white">
               {holland_labels[holland_top_ids[2]]?.name}
             </h3>
           </div>
