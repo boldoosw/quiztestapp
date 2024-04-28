@@ -165,82 +165,127 @@ export function YesNoChart() {
   }, []);
 
   if (a_items.length > 0 && b_items.length > 0)
-    return (
+    return a_items.length > 2 ? (
       <>
-        <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
+        <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-3">
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
             <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
               <h3 className="font-medium text-black dark:text-white">
-                Та мэргэжилээ сонгосон уу (
+                A. Та мэргэжилээ сонгосон уу: (
                 {a_items.length > 2 ? "Тийм" : "Үгүй"})
               </h3>
             </div>
-            {a_items.length > 2 ? (
-              <>
-                <div className=" h-full flex flex-col">
-                  <h3>A </h3>
-                  <div className="bg-green-500 mt-2 text-black text-center">
-                    {cardData1[a_items[0]]?.name}
-                    {/* {c_items[0]} */}
-                  </div>
-                  <div className="bg-yellow-500 text-black text-center mt-2">
-                    {cardData1[a_items[1]]?.name}
-                  </div>
-                  <div className="bg-red-500 text-black text-center mt-2 mb-2">
-                    {cardData1[a_items[2]]?.name}
-                  </div>
-                </div>
-                <div className=" h-full flex flex-col">
-                  <h3>B </h3>
-                  <div className="bg-blue-500 text-black text-center mt-2">
-                    {cardData2[b_items[0]]?.name}
-                  </div>
-                  <div className="    bg-purple-500 text-black text-center mt-4">
-                    {cardData2[b_items[1]]?.name}
-                  </div>
-                  <div className="bg-red-500 text-black text-center mt-2 mb-2">
-                    {cardData2[a_items[2]]?.name}
-                  </div>
-                </div>
-              </>
-            ) : (
-              <div className=" h-full flex flex-col">
-                <h3>C </h3>
-                <div className="bg-blue-500 text-black text-center mt-2">
-                  {cardData3[c_items[0]]?.name}
-                </div>
-                <div className="    bg-purple-500 text-black text-center mt-4">
-                  {cardData3[c_items[1]]?.name}
-                </div>
-                <div className="bg-red-500 text-black text-center mt-2 mb-2">
-                  {cardData3[c_items[2]]?.name}
-                </div>
+
+            <div className=" h-full flex flex-col">
+              <div className="bg-green-500 mt-2 text-black text-center">
+                {cardData1[a_items[0]]?.name}
+                {/* {c_items[0]} */}
               </div>
-            )}
-          </div>
-        </div>{" "}
-        <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-8">
-          {a_items.length > 2 ? (
-            <>
-              <div className=" h-full m-4">
-                <h3>{cardData1[a_items[0]]?.name}</h3>
-                <div className="text-sm leading-6 text-gray-400">
-                  {cardData1[a_items[0]]?.content}
-                </div>
-                <h3>{cardData2[b_items[0]]?.name}</h3>
-                <div className="text-sm leading-6 text-gray-400">
-                  {cardData2[b_items[0]]?.content}
-                </div>
+              <div className="bg-yellow-500 text-black text-center mt-2">
+                {cardData1[a_items[1]]?.name}
               </div>
-            </>
-          ) : (
-            <div className=" h-full m-4">
-              <h3>{cardData3[c_items[0]]?.title}</h3>
-              <div className="text-sm leading-6 text-gray-400">
-                {cardData3[c_items[0]]?.content}
+              <div className="bg-red-500 text-black text-center mt-2 mb-2">
+                {cardData1[a_items[2]]?.name}
               </div>
             </div>
-          )}
+          </div>
+        </div>
+        <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-9">
+          <div className=" h-full m-4">
+            <h3>{cardData1[a_items[0]]?.name}</h3>
+            <div className="text-sm leading-6 text-gray-400">
+              {cardData1[a_items[0]]?.content}
+            </div>
+            <h3>{cardData1[a_items[1]]?.name}</h3>
+            <div className="text-sm leading-6 text-gray-400">
+              {cardData1[a_items[1]]?.content}
+            </div>
+            <h3>{cardData1[a_items[2]]?.name}</h3>
+            <div className="text-sm leading-6 text-gray-400">
+              {cardData1[a_items[2]]?.content}
+            </div>
+          </div>
+        </div>
+        <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-3">
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
+              <h3 className="font-medium text-black dark:text-white">
+                B. Та мэргэжилээ сонгосон уу (
+                {a_items.length > 2 ? "Тийм" : "Үгүй"})
+              </h3>
+            </div>
+
+            <div className=" h-full flex flex-col">
+              <div className="bg-green-500 mt-2 text-black text-center">
+                {cardData2[b_items[0]]?.name}
+                {/* {c_items[0]} */}
+              </div>
+              <div className="bg-yellow-500 text-black text-center mt-2">
+                {cardData2[b_items[1]]?.name}
+              </div>
+              <div className="bg-red-500 text-black text-center mt-2 mb-2">
+                {cardData2[b_items[2]]?.name}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-9">
+          <div className=" h-full m-4">
+            <h3>{cardData2[b_items[0]]?.name}</h3>
+            <div className="text-sm leading-6 text-gray-400">
+              {cardData2[b_items[0]]?.content}
+            </div>
+            <h3>{cardData1[a_items[1]]?.name}</h3>
+            <div className="text-sm leading-6 text-gray-400">
+              {cardData2[b_items[1]]?.content}
+            </div>
+            <h3>{cardData2[b_items[2]]?.name}</h3>
+            <div className="text-sm leading-6 text-gray-400">
+              {cardData2[b_items[2]]?.content}
+            </div>
+          </div>
+        </div>
+      </>
+    ) : (
+      <>
+        <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-3">
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
+              <h3 className="font-medium text-black dark:text-white">
+                C. Та мэргэжилээ сонгосон уу (
+                {a_items.length > 2 ? "Тийм" : "Үгүй"})
+              </h3>
+            </div>
+
+            <div className=" h-full flex flex-col">
+              <div className="bg-green-500 mt-2 text-black text-center">
+                {cardData3[c_items[0]]?.name}
+                {/* {c_items[0]} */}
+              </div>
+              <div className="bg-yellow-500 text-black text-center mt-2">
+                {cardData3[c_items[1]]?.name}
+              </div>
+              <div className="bg-red-500 text-black text-center mt-2 mb-2">
+                {cardData3[c_items[2]]?.name}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-9">
+          <div className=" h-full m-4">
+            <h3>{cardData3[c_items[0]]?.name}</h3>
+            <div className="text-sm leading-6 text-gray-400">
+              {cardData3[c_items[0]]?.content}
+            </div>
+            <h3>{cardData3[c_items[1]]?.name}</h3>
+            <div className="text-sm leading-6 text-gray-400">
+              {cardData3[c_items[1]]?.content}
+            </div>
+            <h3>{cardData3[c_items[2]]?.name}</h3>
+            <div className="text-sm leading-6 text-gray-400">
+              {cardData3[c_items[2]]?.content}
+            </div>
+          </div>
         </div>
       </>
     );
