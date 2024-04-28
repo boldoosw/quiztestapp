@@ -37,11 +37,11 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
               data: data,
               //   data: [15, 12, 6, 7, 40],
               backgroundColor: [
-                "#FCB6A4",
+                "#B71C1C",
                 "#F5E83B",
                 "#F06292",
                 "#78787D",
-                "#9BD99A",
+                "#388E3C",
                 "#462CF2",
               ],
               borderColor: "gray",
