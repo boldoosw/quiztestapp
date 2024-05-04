@@ -33,7 +33,7 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
           //   labels: ["Хүн", "Байгаль", "Амьтан", "Техник", "Тэмдэгт"],
           datasets: [
             {
-              label: "# Хариултын тоо ",
+              label: "Климовын тестийн үр дүнг доорх графикаар үзүүлэв. ",
               data: data,
               //   data: [15, 12, 6, 7, 40],
               backgroundColor: [

@@ -141,16 +141,20 @@ const cardData3 = [
   },
 ];
 
-export function YesNoChart() {
+export default function YesNoChart({ email }: { email: String }) {
   const [a_items, setAItems] = useState([]);
 
   const [b_items, setBItems] = useState([]);
 
   const [c_items, setCItems] = useState([]);
 
+  const [user_email, setEmail] = useState(email);
+
   async function fetchData() {
     // Fetch data from your API here.
-    const { data } = await axios.get(`/api/yes_no`);
+    const { data } = await axios.get(`/api/yes_no`, {
+      params: { user_email: user_email },
+    });
     try {
       setAItems(data.existingYesNo.a_items.split(","));
       setBItems(data.existingYesNo.b_items.split(","));
@@ -162,6 +166,7 @@ export function YesNoChart() {
 
   useEffect(() => {
     fetchData();
+    console.log("chart dororh id:", user_email);
   }, []);
 
   if (a_items.length > 0 && b_items.length > 0)

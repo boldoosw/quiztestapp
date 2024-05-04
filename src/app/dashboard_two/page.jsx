@@ -1,15 +1,21 @@
 "use client";
 import React, { useRef } from "react";
-import UserInfo from "../userinfo/page";
+import { useSearchParams } from "next/navigation";
+
+import UserInfo from "../userInfo/page";
 import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
 import { MChart } from "@/components/Charts/MChart";
-import { YesNoChart } from "@/components/Charts/YesNoChart";
+import YesNoChart from "@/components/Charts/YesNoChart";
 
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
 const DashboardTwo = () => {
+  const searchParams = useSearchParams();
+
+  const email = searchParams.get("email");
+
   const pdfRef = useRef();
   const downloadPDF = () => {
     const input = pdfRef.current;
@@ -38,8 +44,11 @@ const DashboardTwo = () => {
   return (
     <main ref={pdfRef}>
       <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+        <div className="mt-4  grid grid-cols-12 content-center gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
+          <UserInfo />
+        </div>
         <div className="  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-          <YesNoChart />
+          <YesNoChart email={email} />
         </div>
 
         <div className="mt-4  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">

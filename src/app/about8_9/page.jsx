@@ -1,4 +1,4 @@
-import AboutCards from "@/components/Cards/Cards";
+import AboutCards from "@/components/Cards/Card8_9";
 import React from "react";
 
 function AboutPage() {

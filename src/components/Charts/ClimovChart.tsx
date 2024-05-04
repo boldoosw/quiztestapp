@@ -89,10 +89,54 @@ function ClimovChart() {
             <div className="text-black text-center mt-8">
               <VulnChart labels={climov_label} data={climov_data} />
             </div>
-            <div className="flex flex-col  text-sm">
-              <div> {climov_labels[climov_top_ids[0]]?.name}</div>
-              <div> {climov_labels[climov_top_ids[1]]?.name}</div>
-              <div> {climov_labels[climov_top_ids[2]]?.name}</div>
+            <div className="flex flex-col  text-sm text-left m-4">
+              <div className="flex flex-row content-center">
+                <div
+                  className={
+                    "h-4 w-16 mr-4 " + climov_labels[climov_top_ids[0]]?.bg
+                  }
+                ></div>
+                <div
+                  className={
+                    "text-sm font-semibold content-center " +
+                    climov_labels[climov_top_ids[0]]?.text_color
+                  }
+                >
+                  {climov_labels[climov_top_ids[0]]?.name}
+                </div>
+              </div>
+              <div className="flex flex-row content-center">
+                <div
+                  className={
+                    "h-4 w-16 mr-4 " + climov_labels[climov_top_ids[1]]?.bg
+                  }
+                ></div>
+                <div
+                  className={
+                    "text-sm font-semibold  " +
+                    climov_labels[climov_top_ids[1]]?.text_color
+                  }
+                >
+                  {" "}
+                  {climov_labels[climov_top_ids[1]]?.name}
+                </div>
+              </div>
+              <div className="flex flex-row content-center">
+                <div
+                  className={
+                    "h-4 w-16 mr-4 " + climov_labels[climov_top_ids[2]]?.bg
+                  }
+                ></div>
+                <div
+                  className={
+                    "text-sm font-semibold  " +
+                    climov_labels[climov_top_ids[2]]?.text_color
+                  }
+                >
+                  {" "}
+                  {climov_labels[climov_top_ids[2]]?.name}
+                </div>
+              </div>
             </div>
           </div>
         </div>

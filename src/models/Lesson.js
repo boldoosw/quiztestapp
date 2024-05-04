@@ -5,6 +5,10 @@ const lessonSchema = new Schema(
     checkbox_items: {
       type: String,
     },
+    uid: {
+      type: String,
+      required: false,
+    },
     email: {
       type: String,
       required: false,

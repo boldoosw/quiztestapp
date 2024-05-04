@@ -24,8 +24,9 @@ const Register = () => {
     e.preventDefault();
     const lastname = e.target[0].value;
     const firstname = e.target[1].value;
-    const email = e.target[2].value;
-    const password = e.target[3].value;
+    const phone = e.target[2].value;
+    const email = e.target[3].value;
+    const password = e.target[4].value;
 
     console.log(role);
 
@@ -39,6 +40,10 @@ const Register = () => {
     }
     if (firstname === "") {
       setError("Өөрийн нэрээ оруулна уу!!!!");
+      return;
+    }
+    if (phone === "") {
+      setError("Утасны дугаараа оруулна уу!!!!");
       return;
     }
     if (!isValidEmail(email)) {
@@ -60,6 +65,7 @@ const Register = () => {
         body: JSON.stringify({
           lastname,
           firstname,
+          phone,
           email,
           password,
           role,
@@ -106,6 +112,12 @@ const Register = () => {
               required
             />
             <input
+              type="number"
+              className="border-gray-300 mb-4 w-full rounded border px-3 py-2 text-black focus:border-blue-400 focus:text-black focus:outline-none"
+              placeholder="Утасны дугаар"
+              required
+            />
+            <input
               type="text"
               className="border-gray-300 mb-4 w-full rounded border px-3 py-2 text-black focus:border-blue-400 focus:text-black focus:outline-none"
               placeholder="Email"
@@ -114,7 +126,7 @@ const Register = () => {
             <input
               type="password"
               className="border-gray-300 mb-4 w-full rounded border px-3 py-2 text-black focus:border-blue-400 focus:text-black focus:outline-none"
-              placeholder="Password"
+              placeholder="Нууц үг"
               required
             />
             <div className="mx-auto w-full max-w-2xl rounded-md border p-4">

@@ -58,8 +58,8 @@ const Login = () => {
       // <div className="flex min-h-screen flex-col items-center justify-between p-24">
       //   <div className="bg-[#212121] p-8 rounded shadow-md w-80">
       //     <h1 className="text-2xl text-gray-200 text-center  mb-8">Нэвтрэх</h1>
-      <div className="grid place-items-center  min-h-screen  p-24 ">
-        <div className="shadow-lg p-5 rounded-lg border-t-4 border-green-400 bg-white w-80">
+      <div className="grid min-h-screen  place-items-center  p-24 ">
+        <div className="w-80 rounded-lg border-t-4 border-green-400 bg-white p-5 shadow-lg">
           <h1 className="text-xl font-bold my-4">Нэвтрэх</h1>
           <form onSubmit={handleSubmit}>
             <input

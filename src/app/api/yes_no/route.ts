@@ -1,8 +1,8 @@
 import connectMongoDB from "@/utils/db";
 import YesNo from "@/models/YesNo";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request) {
+export async function POST(request: NextRequest) {
   const { a_items, b_items, c_items, email } = await request.json();
   await connectMongoDB();
   const existingYesNo = await YesNo.findOne({
@@ -20,16 +20,23 @@ export async function POST(request) {
   return NextResponse.json({ message: "YesNo Created" }, { status: 201 });
 }
 
-export async function GET() {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { user_email: string } }
+) {
+  // const { searchParams } = new URL(request.url);
+  const by_email = request.nextUrl.searchParams.get("user_email");
+  console.log("my search email:", by_email);
+
   await connectMongoDB();
 
   const existingYesNo = await YesNo.findOne({
-    email: "boldoosw@gmail.com",
+    email: by_email,
   });
   return NextResponse.json({ existingYesNo });
 }
 
-export async function DELETE(request) {
+export async function DELETE(request: NextRequest) {
   const id = request.nextUrl.searchParams.get("id");
   await connectMongoDB();
   await YesNo.findByIdAndDelete(id);

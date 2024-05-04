@@ -105,10 +105,54 @@ function HollandChart() {
             <div className="text-black text-center mt-8">
               <HollandVulnChart labels={holland_label} data={holland_data} />
             </div>
-            <div className="flex flex-col  text-sm">
-              <div>{holland_label[holland_top_ids[0]]}</div>
-              <div> {holland_label[holland_top_ids[1]]}</div>
-              <div> {holland_label[holland_top_ids[2]]}</div>
+            <div className="flex flex-col  text-sm m-4">
+              <div className="flex flex-row content-center">
+                <div
+                  className={
+                    "h-4 w-16 mr-4 " + holland_labels[holland_top_ids[0]]?.bg
+                  }
+                ></div>
+                <div
+                  className={
+                    "text-sm font-semibold " +
+                    holland_labels[holland_top_ids[0]]?.text_color
+                  }
+                >
+                  {holland_label[holland_top_ids[0]]}
+                </div>
+              </div>
+              <div className="flex flex-row content-center">
+                <div
+                  className={
+                    "h-4 w-16 mr-4 " + holland_labels[holland_top_ids[1]]?.bg
+                  }
+                ></div>
+                <div
+                  className={
+                    "text-sm font-semibold " +
+                    holland_labels[holland_top_ids[1]]?.text_color
+                  }
+                >
+                  {" "}
+                  {holland_label[holland_top_ids[1]]}
+                </div>
+              </div>
+              <div className="flex flex-row content-center">
+                <div
+                  className={
+                    "h-4 w-16 mr-4 " + holland_labels[holland_top_ids[2]]?.bg
+                  }
+                ></div>
+                <div
+                  className={
+                    "text-sm font-semibold " +
+                    holland_labels[holland_top_ids[2]]?.text_color
+                  }
+                >
+                  {" "}
+                  {holland_label[holland_top_ids[2]]}
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -33,7 +33,7 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
           //   labels: ["Хүн", "Байгаль", "Амьтан", "Техник", "Тэмдэгт"],
           datasets: [
             {
-              label: "# Хариултын тоо ",
+              label: " ",
               data: data,
               //   data: [15, 12, 6, 7, 40],
               backgroundColor: [
@@ -68,7 +68,7 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
             },
             title: {
               display: true,
-              text: "Chart.js Horizontal Bar Chart",
+              text: "Хичээл сонголтын үр дүнг графикаар харуулав.",
             },
           },
         }}

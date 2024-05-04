@@ -9,6 +9,10 @@ const climovQuizSchema = new Schema(
       type: String,
       required: false,
     },
+    uid: {
+      type: String,
+      required: false,
+    },
     email: {
       type: String,
       required: false,

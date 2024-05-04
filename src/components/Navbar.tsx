@@ -21,57 +21,127 @@ type NavItem = {
   iconImage?: string;
 };
 
-const navItems: NavItem[] = [
+let navItems: NavItem[] = [
+  // {
+  //   label: "Тестүүд",
+  //   link: "#",
+  //   children: [
+  //     {
+  //       label: "Климов Тест",
+  //       link: "/climov_test",
+  //     },
+  //     {
+  //       label: "Холланд тест",
+  //       link: "/holland_test",
+  //     },
+  //     {
+  //       label: "Үр дүнгийн матриц",
+  //       link: "/matrix_test",
+  //     },
+  //     {
+  //       label: "MBTI тест",
+  //       link: "/custom_test",
+  //     },
+  //     {
+  //       label: "Асуулга",
+  //       link: "/job",
+  //     },
+  //   ],
+  // },
+  // {
+  //   label: "Хичээл сонголт",
+  //   link: "/lessons",
+  // },
+  // {
+  //   label: "Мэргэжил сонголт",
+  //   link: "/profession",
+  // },
+  // {
+  //   label: "Тайлан",
+  //   link: "#",
+  //   children: [
+  //     {
+  //       label: "Тайлан 8-9р анги",
+  //       link: "/dashboard_one",
+  //     },
+  //     {
+  //       label: "Тайлан 10,11,12 анги",
+  //       link: "/dashboard_two",
+  //     },
+  //   ],
+  // },
+];
+
+const navItems1: NavItem[] = [
   {
-    label: "Тестүүд",
+    label: "Асуулга",
+    link: "/job",
+    // children: [
+    //   {
+    //     label: "Мэргэжил сонголт",
+    //     link: "/job",
+    //   },
+    // ],
+  },
+  {
+    label: "Хүсэл Сонирхол",
     link: "#",
     children: [
       {
-        label: "Климов Тест",
-        link: "/climov_test",
-      },
-      {
-        label: "Холланд тест",
-        link: "/holland_test",
-      },
-      {
-        label: "Үр дүнгийн матриц",
-        link: "/matrix_test",
-      },
-      {
-        label: "MBTI тест",
+        label: "Мэргэжил сонголтын тест",
         link: "/custom_test",
       },
+    ],
+  },
+  {
+    label: "Анализ",
+    link: "#",
+    children: [
       {
-        label: "Асуулга",
+        label: "Мэргэжлийн чиг баримжаа",
+        link: "/lessons",
+      },
+    ],
+  },
+  {
+    label: "Мэдээ Мэдээлэл",
+    link: "#",
+  },
+];
+const navItems2: NavItem[] = [
+  {
+    label: "Асуулга",
+    link: "/job",
+    children: [
+      {
+        label: "Түргэн тандалт",
         link: "/job",
       },
     ],
   },
   {
-    label: "Хичээл сонголт",
-    link: "/lessons",
-  },
-  {
-    label: "Мэргэжил сонголт",
-    link: "/profession",
-  },
-  {
-    label: "Тайлан",
+    label: "Хүсэл Сонирхол",
     link: "#",
     children: [
       {
-        label: "Тайлан 8-9р анги",
-        link: "/dashboard_one",
+        label: "Климовын тест",
+        link: "/climov_test",
       },
       {
-        label: "Тайлан 10,11,12 анги",
-        link: "/dashboard_two",
+        label: "Холландын тест",
+        link: "/holland_test",
       },
     ],
   },
+  {
+    label: "ЭЕШ,ИДС",
+    link: "#",
+  },
+  {
+    label: "Мэдээ Мэдээлэл",
+    link: "#",
+  },
 ];
-
 export default function Navbar2() {
   const [animationParent] = useAutoAnimate();
   const [isSideMenuOpen, setSideMenue] = useState(false);
@@ -83,10 +153,15 @@ export default function Navbar2() {
     setSideMenue(false);
   }
 
+  // if (!session) {
+  //   navItems = session?.user?.role === "angi_8_9" ? navItems1 : navItems2;
+  // }
+  // navItems = navItems1;
+
   return (
     <div className="bg-white mx-auto flex  w-full max-w-7xl justify-between px-4 py-4 text-sm">
       {/* left side  */}
-      <section ref={animationParent} className="flex items-center gap-10">
+      <section ref={animationParent} className="flex items-center gap-4">
         {/* logo */}
         <Link href="/">
           <Image className="w-12" src={logonew} alt=" logo" />
@@ -96,42 +171,6 @@ export default function Navbar2() {
         </div>
         {isSideMenuOpen && <MobileNav closeSideMenu={closeSideMenu} />}
         <div className="hidden md:flex items-center gap-4 transition-all">
-          {navItems.map((d, i) => (
-            <Link
-              key={i}
-              href={d.link ?? "#"}
-              className="relative group  px-2 py-3 transition-all "
-            >
-              <p className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-black ">
-                <span>{d.label}</span>
-                {d.children && (
-                  <IoIosArrowDown className=" rotate-180  transition-all group-hover:rotate-0" />
-                )}
-              </p>
-
-              {/* dropdown */}
-              {d.children && (
-                <div className="absolute   right-0   top-10 hidden w-auto  flex-col gap-1   rounded-lg bg-white py-3 shadow-md  transition-all group-hover:flex ">
-                  {d.children.map((ch, i) => (
-                    <Link
-                      key={i}
-                      href={ch.link ?? "#"}
-                      className=" flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black  "
-                    >
-                      {/* image */}
-                      {ch.iconImage && (
-                        <Image src={ch.iconImage} alt="item-icon" />
-                      )}
-                      {/* item */}
-                      <span className="whitespace-nowrap   pl-3 ">
-                        {ch.label}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </Link>
-          ))}
           {!session ? (
             <>
               <Link
@@ -153,6 +192,47 @@ export default function Navbar2() {
             </>
           ) : (
             <>
+              {(navItems =
+                session?.user?.role === "angi_8_9"
+                  ? navItems1
+                  : session?.user?.role === "angi10_12"
+                  ? navItems2
+                  : navItems)?.map((d, i) => (
+                <Link
+                  key={i}
+                  href={d.link ?? "#"}
+                  className="relative group  px-2 py-3 transition-all "
+                >
+                  <p className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-black ">
+                    <span>{d.label}</span>
+                    {d.children && (
+                      <IoIosArrowDown className=" rotate-180  transition-all group-hover:rotate-0" />
+                    )}
+                  </p>
+
+                  {/* dropdown */}
+                  {d.children && (
+                    <div className="absolute   right-0   top-10 hidden w-auto  flex-col gap-1   rounded-lg bg-white py-3 shadow-md  transition-all group-hover:flex ">
+                      {d.children.map((ch, i) => (
+                        <Link
+                          key={i}
+                          href={ch.link ?? "#"}
+                          className=" flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black  "
+                        >
+                          {/* image */}
+                          {ch.iconImage && (
+                            <Image src={ch.iconImage} alt="item-icon" />
+                          )}
+                          {/* item */}
+                          <span className="whitespace-nowrap   pl-3 ">
+                            {ch.label}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </Link>
+              ))}
               <p className="flex cursor-pointer items-center gap-2 text-neutral-300 group-hover:text-black ">
                 {session.user?.email}
               </p>

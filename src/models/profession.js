@@ -4,6 +4,10 @@ const professionSchema = new Schema(
   {
     title: String,
     description: String,
+    uid: {
+      type: String,
+      required: false,
+    },
   },
   {
     timestamps: true,
