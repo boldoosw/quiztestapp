@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { useSearchParams } from "next/navigation";
 
-import UserInfo from "../userInfo/page";
+// import UserInfo from "../userInfo/page";
 import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
 import { MChart } from "@/components/Charts/MChart";
@@ -45,7 +45,7 @@ const DashboardTwo = () => {
     <main ref={pdfRef}>
       <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
         <div className="mt-4  grid grid-cols-12 content-center gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-          <UserInfo />
+          {/* <UserInfo /> */}
         </div>
         <div className="  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
           <YesNoChart email={email} />
