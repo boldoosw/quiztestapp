@@ -75,16 +75,16 @@ let navItems: NavItem[] = [
 const navItems1: NavItem[] = [
   {
     label: "Асуулга",
-    link: "/job",
-    // children: [
-    //   {
-    //     label: "Мэргэжил сонголт",
-    //     link: "/job",
-    //   },
-    // ],
+    link: "#",
+    children: [
+      {
+        label: "Түргэн тандалт",
+        link: "/job",
+      },
+    ],
   },
   {
-    label: "Хүсэл Сонирхол",
+    label: "Тест",
     link: "#",
     children: [
       {
@@ -94,7 +94,7 @@ const navItems1: NavItem[] = [
     ],
   },
   {
-    label: "Анализ",
+    label: "Мэргэжил",
     link: "#",
     children: [
       {
@@ -111,7 +111,7 @@ const navItems1: NavItem[] = [
 const navItems2: NavItem[] = [
   {
     label: "Асуулга",
-    link: "/job",
+    link: "#",
     children: [
       {
         label: "Түргэн тандалт",
@@ -120,7 +120,7 @@ const navItems2: NavItem[] = [
     ],
   },
   {
-    label: "Хүсэл Сонирхол",
+    label: "Тестүүд",
     link: "#",
     children: [
       {

@@ -11,22 +11,21 @@ function AboutCards() {
     {
       // src={`/images/climov_images/${answer_pic[i]}`}
       img: card1,
-      title: "1.Түргэн тандалт",
-      description:
-        "Мэргэжил сонголтын түргэн тандалт буюу өөрийгөө үнэлэх анкет",
+      title: "1.Асуулга",
+      description: "Түргэн тандалт",
       link: "/job",
     },
     {
       img: card2,
-      title: "2.Хүсэл сонирхол",
-      description: "Хувь хүний сонирхол ба чадварын сорил ",
+      title: "2.Хичээл",
+      description: "Хичээл сонголтын тест ",
       link: "/custom_test",
     },
     ,
     {
       img: card3,
-      title: "3.Анализ шинжилгээ",
-      description: "Оношилгоо сорилын цахим анализ шинжилгээ ",
+      title: "3.Мэргэжил",
+      description: "Мэргэжлийн чиг баримжаа ",
       link: "/lessons",
     },
     {

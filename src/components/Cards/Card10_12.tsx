@@ -10,9 +10,8 @@ function AboutCards() {
   const cardList = [
     {
       img: card1,
-      title: "1.Өөрийгөө үнэлэх анкет",
-      description:
-        "Мэргэжил сонголтын түргэн тандалт буюу өөрийгөө үнэлэх анкет",
+      title: "1.Асуулга",
+      description: "Мэргэжил сонголтын түргэн тандалт",
       link: "/job",
     },
     {

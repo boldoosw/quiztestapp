@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Charts/MatrixChart.jsx", "src/components/Charts/MChart.jsx", "src/app/dashboard_two/page.jsx", "src/app/dashboard_one/page.jsx", "src/app/dragdrop/page.jsx", "src/components/Navbar.jsx", "src/components/Navbar.jsx", "src/app/about8_9/page.jsx", "src/app/page.jsx", "src/components/UsersPage.jsx", "src/app/page.jsx", "src/app/api/auth/[...nextauth]/options.js", "src/app/api/auth/[...nextauth]/options.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Charts/MatrixChart.jsx", "src/components/Charts/MChart.jsx", "src/app/dashboard_two/page.jsx", "src/app/dashboard_one/page.jsx", "src/app/dragdrop/page.jsx", "src/components/Navbar.jsx", "src/components/Navbar.jsx", "src/app/about8_9/page.jsx", "src/app/page.jsx", "src/components/UsersPage.jsx", "src/app/page.jsx", "src/app/api/auth/[...nextauth]/options.js", "src/app/api/auth/[...nextauth]/options.js", "src/app/matrix_test/page.jsx", "src/lib/session.js"],
   "exclude": ["node_modules"]
 }
