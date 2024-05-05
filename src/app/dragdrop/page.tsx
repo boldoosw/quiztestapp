@@ -3,6 +3,7 @@ import DndExample from "@/components/DndExample";
 import DndExample2 from "@/components/DndExample2";
 import React, { useEffect } from "react";
 import { Quicksand } from "next/font/google";
+import { useSession } from "next-auth/react";
 
 interface Item {
   id: number;
@@ -13,6 +14,8 @@ const quicksand = Quicksand({
   variable: "--font-quicksand",
 });
 function DragDropPage() {
+  const { data: session }: any = useSession();
+
   let firstItem1!: Item;
   let secondItem1!: Item;
   let thirdItem1!: Item;
@@ -34,10 +37,11 @@ function DragDropPage() {
     let a_items = [firstItem1.id, secondItem1.id, thirdItem1.id].toString();
     let b_items = [firstItem2.id, secondItem2.id, thirdItem2.id].toString();
     let c_items = "";
-    let email = "boldoosw@gmail.com";
+    let email = session?.user.email;
+    let uid = session?.user.id;
 
-    console.log("a items:", a_items);
-    console.log("b items :", b_items);
+    // console.log("a items:", a_items);
+    // console.log("b items :", b_items);
 
     try {
       const res = await fetch("/api/yes_no", {
@@ -49,6 +53,7 @@ function DragDropPage() {
           a_items,
           b_items,
           c_items,
+          uid: uid,
           email,
         }),
       });

@@ -77,13 +77,17 @@ const holland_labels = [
       "Санхүү - эдийн засаг, тоон мэдээлэл, сошил харилцаа, тооцоо, нягтлан бодох бүртгэл, офисын ажиллабарт дуртай. Байнга мэдээллээр хангагдах, тоон өгөгдлийг боловсруулах үйл ажиллагаа.",
   },
 ];
-function HollandChart() {
+function HollandChart({ email }: { email: String }) {
   const [holland_data, setData] = useState([]);
   const [holland_top_ids, setIds] = useState([]);
 
+  const [user_email, setEmail] = useState(email);
+
   async function fetchHollandData() {
     // Fetch data from your API here.
-    const { data } = await axios.get(`/api/holland_test`);
+    const { data } = await axios.get(`/api/holland_test`, {
+      params: { user_email: user_email },
+    });
 
     setData(data.existingHollandQuiz.hollandquiz_items.split(","));
     setIds(data.existingHollandQuiz.top_items.split(","));

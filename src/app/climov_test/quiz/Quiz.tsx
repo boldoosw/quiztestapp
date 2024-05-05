@@ -7,6 +7,7 @@ import QuestionCard from "@/components/QuestionCard/QuestionCard";
 import Button from "@/components/Button/Button";
 // Types
 import { QuestionsState } from "@/types/quiz";
+import { useSession } from "next-auth/react";
 
 type Props = {
   questions: QuestionsState;
@@ -14,6 +15,7 @@ type Props = {
 };
 
 const Quiz = ({ questions, totalQuestions }: Props) => {
+  const { data: session }: any = useSession();
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [showResult, setShowResult] = React.useState(false);
@@ -51,6 +53,8 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
 
   const handleChangeQuestion = (step: number) => {
     const newQuestionIndex = currentQuestionIndex + step;
+
+    // console.log("user email:", session?.user.id);
 
     if (newQuestionIndex < 0 || newQuestionIndex >= totalQuestions) return;
     setIsQuestionAnswered(false);
@@ -115,7 +119,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
 
       console.log("climovquiz_items", climovquiz_items);
 
-      let email = "boldoosw@gmail.com";
+      let email = session?.user.email;
       try {
         const res = await fetch("/api/climov_test", {
           method: "POST",
@@ -125,7 +129,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
           body: JSON.stringify({
             climovquiz_items,
             top_items,
-            // top3,
+            uid: session?.user.id,
             email,
           }),
         });

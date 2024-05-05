@@ -3,10 +3,10 @@ import YesNo from "@/models/YesNo";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const { a_items, b_items, c_items, email } = await request.json();
+  const { a_items, b_items, c_items,uid, email } = await request.json();
   await connectMongoDB();
   const existingYesNo = await YesNo.findOne({
-    email: "boldoosw@gmail.com",
+    email:email,
   });
   if (existingYesNo) {
     await YesNo.findByIdAndDelete(existingYesNo._id);
@@ -15,6 +15,7 @@ export async function POST(request: NextRequest) {
     a_items,
     b_items,
     c_items,
+    uid,
     email,
   });
   return NextResponse.json({ message: "YesNo Created" }, { status: 201 });

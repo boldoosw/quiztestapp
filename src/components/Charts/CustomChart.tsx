@@ -13,12 +13,15 @@ const labels = [
   "Хөдөлмөр ба гар урлал",
   "Спорт ба цэрэгжилт",
 ];
-function CustomChart() {
+function CustomChart({ email }: { email: String }) {
   const [lesson_points, setData] = useState([]);
+  const [user_email, setEmail] = useState(email);
 
   async function fetchPointsData() {
     // Fetch data from your API here.
-    const { data } = await axios.get(`/api/custom_quiz`);
+    const { data } = await axios.get(`/api/custom_quiz`, {
+      params: { user_email: user_email },
+    });
     // let mydata = data.data.existingCustomQuiz.customquiz_items.split(",");
     setData(data.existingCustomQuiz.customquiz_items.split(","));
     console.log(data.existingCustomQuiz.customquiz_items.split(","));

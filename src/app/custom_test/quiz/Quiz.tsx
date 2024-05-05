@@ -8,12 +8,14 @@ import CustomCard from "@/components/QuestionCard/CustomCard";
 import { Question } from "../../../types/quiz";
 import { Varela } from "next/font/google";
 import CustomVulnChart from "@/components/VulnChart/CustomVulnChart";
+import { useSession } from "next-auth/react";
 
 type Props = {
   questions: QuestionsState;
 };
 let chartData: number[] = [];
 const Quiz = ({ questions }: Props) => {
+  const { data: session }: any = useSession();
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
   const [userAnswers, setUserAnswers] = React.useState<Record<number, string>>(
     {}
@@ -157,7 +159,7 @@ const Quiz = ({ questions }: Props) => {
 
     let customquiz_items = chartData.toString();
 
-    let email = "boldoosw@gmail.com";
+    let email = session?.user.email;
     try {
       const res = await fetch("/api/custom_quiz", {
         method: "POST",
@@ -166,6 +168,7 @@ const Quiz = ({ questions }: Props) => {
         },
         body: JSON.stringify({
           customquiz_items,
+          uid: session?.user.id,
           email,
         }),
       });

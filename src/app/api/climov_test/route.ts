@@ -1,13 +1,14 @@
 import connectMongoDB from "@/utils/db";
 import ClimovQuiz from "@/models/ClimovQuiz";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request) {
-  const { climovquiz_items, top_items, email } = await request.json();
-  console.log("testees irj bui ogogdol top items:", top_items);
+export async function POST(request:NextRequest) {
+  const { climovquiz_items, top_items, uid, email } = await request.json();
+
+
   await connectMongoDB();
   const existingClimovQuiz = await ClimovQuiz.findOne({
-    email: "boldoosw@gmail.com",
+    email: email,
   });
   if (existingClimovQuiz) {
     await ClimovQuiz.findByIdAndDelete(existingClimovQuiz._id);
@@ -15,21 +16,28 @@ export async function POST(request) {
   await ClimovQuiz.create({
     climovquiz_items,
     top_items,
+    uid,
     email,
   });
   return NextResponse.json({ message: "ClimovQuiz Created" }, { status: 201 });
 }
 
-export async function GET() {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { user_email: string } }
+) {
+  const by_email = request.nextUrl.searchParams.get("user_email");
+  
+
   await connectMongoDB();
 
   const existingClimovQuiz = await ClimovQuiz.findOne({
-    email: "boldoosw@gmail.com",
+    email: by_email,
   });
   return NextResponse.json({ existingClimovQuiz });
 }
 
-export async function DELETE(request) {
+export async function DELETE(request:NextRequest) {
   const id = request.nextUrl.searchParams.get("id");
   await connectMongoDB();
   await ClimovQuiz.findByIdAndDelete(id);

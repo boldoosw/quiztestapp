@@ -52,7 +52,7 @@ const DashboardOne = () => {
             </div>
             <div className="mt-4  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
               {/* <UserInfo /> */}
-              <CustomChart />
+              <CustomChart email={email} />
             </div>
             <div className=" text-black text-bold text-center  p-4 text-[14px]">
               Танд ойр мэргэжлүүдийг доор зургаар үзүүлэв.

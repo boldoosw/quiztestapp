@@ -9,12 +9,14 @@ import { QuestionsState } from "@/types/quiz";
 import VulnChart from "@/components/VulnChart/HollandVulnChart";
 import HollandQuestionCard from "@/components/QuestionCard/HollandQuestionCard";
 import async from "../../layout";
+import { useSession } from "next-auth/react";
 
 type Props = {
   questions: QuestionsState;
   totalQuestions: number;
 };
 const Quiz = ({ questions, totalQuestions }: Props) => {
+  const { data: session }: any = useSession();
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [showResult, setShowResult] = React.useState(false);
@@ -111,7 +113,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
 
       console.log("hollandquiz_items", hollandquiz_items);
 
-      let email = "boldoosw@gmail.com";
+      let email = session?.user.email;
       try {
         const res = await fetch("/api/holland_test", {
           method: "POST",
@@ -121,6 +123,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
           body: JSON.stringify({
             hollandquiz_items,
             top_items,
+            uid: session?.user.id,
             email,
           }),
         });

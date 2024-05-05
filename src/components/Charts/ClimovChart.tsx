@@ -60,13 +60,17 @@ const climov_labels = [
       "`Хүн - Урлаг`-ын мэргэжлүүдэд тавигдах сэтгэлзүйн шаардлага:• уран сайхны чадвар; харааны ойлголтыг хөгжүүлэх;• ажиглалт, харааны санах ой; дүрслэлийн сэтгэлгээ; бүтээж туурвих сэтгэлгээ ба  төсөөлөл;• хүмүүсийн сэтгэл хөдлөлийн нөлөөллийн сэтгэл зүйн хуулиудын мэдлэг.",
   },
 ];
-function ClimovChart() {
+function ClimovChart({ email }: { email: String }) {
   const [climov_data, setData] = useState([]);
   const [climov_top_ids, setIds] = useState([]);
 
+  const [user_email, setEmail] = useState(email);
+
   async function fetchClimovData() {
     // Fetch data from your API here.
-    const { data } = await axios.get(`/api/climov_test`);
+    const { data } = await axios.get(`/api/climov_test`, {
+      params: { user_email: user_email },
+    });
     // let mydata = data.data.existingCustomQuiz.customquiz_items.split(",");
     setData(data.existingClimovQuiz.climovquiz_items.split(","));
     setIds(data.existingClimovQuiz.top_items.split(","));

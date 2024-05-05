@@ -8,11 +8,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
 import MatrixVulnChart from "../VulnChart/MatrixVulnChart";
-import { faker } from "@faker-js/faker";
 import axios from "axios";
-import climov from "@/assets/images/klimov.png";
 import { matrix } from "@/utils/matrix";
 
 const climov_labels = ["Хүн", "Байгаль", "Тэмдэгт", "Техник", "Урлаг"];
@@ -179,7 +176,7 @@ export const options = {
   },
 };
 
-export function MChart() {
+export function MChart({ email }) {
   const [climov_items, setClimovItems] = useState([]);
 
   const [holland_items, setHollandItems] = useState([]);
@@ -188,10 +185,13 @@ export function MChart() {
   const [climov_top_ids, setClimovIds] = useState([]);
   const [holland_data, setHollandData] = useState([]);
   const [holland_top_ids, setHollandIds] = useState([]);
+  const [user_email, setEmail] = useState(email);
 
   async function fetchData() {
     // Fetch data from your API here.
-    const { data } = await axios.get(`/api/matrix_test`);
+    const { data } = await axios.get(`/api/matrix_test`, {
+      params: { user_email: user_email },
+    });
     try {
       setClimovItems(data.existingMatrixQuiz.climov_items.split(","));
       setHollandItems(data.existingMatrixQuiz.holland_items.split(","));
@@ -201,13 +201,17 @@ export function MChart() {
   }
   async function fetchHollandData() {
     // Fetch data from your API here.
-    const { data } = await axios.get(`/api/holland_test`);
+    const { data } = await axios.get(`/api/holland_test`, {
+      params: { user_email: user_email },
+    });
     setHollandData(data.existingHollandQuiz.hollandquiz_items.split(","));
     setHollandIds(data.existingHollandQuiz.top_items.split(","));
   }
   async function fetchClimovData() {
     // Fetch data from your API here.
-    const { data } = await axios.get(`/api/climov_test`);
+    const { data } = await axios.get(`/api/climov_test`, {
+      params: { user_email: user_email },
+    });
     setClimovData(data.existingClimovQuiz.climovquiz_items.split(","));
     setClimovIds(data.existingClimovQuiz.top_items.split(","));
   }
