@@ -5,15 +5,11 @@ import Search from "@/app/ui/dashboard/search/search";
 import styles from "@/app/ui/dashboard/users/users.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
 
 const UsersPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
   const page = searchParams?.page || 1;
   const { count, users } = await fetchUsers(q, page);
-
-  const { data: session } = useSession();
-  // const { count, users } = [];
 
   return (
     <main>

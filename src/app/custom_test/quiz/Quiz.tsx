@@ -65,7 +65,7 @@ const Quiz = ({ questions }: Props) => {
       questions[currentQuestionIndex].question
     );
     if (div_containing_box != null)
-      div_containing_box.style.background = "#abdbe3";
+      div_containing_box.style.background = "#29B6F6";
 
     const answer_index = div_id.charAt(div_id.length - 1);
 
@@ -176,7 +176,7 @@ const Quiz = ({ questions }: Props) => {
       if (res.ok) {
         console.log("amjilttai hadgallaa");
         router.refresh();
-        router.push("/dashboard_one");
+        router.push("/");
       } else {
         throw new Error("Failed to create a mbti");
       }
@@ -187,6 +187,10 @@ const Quiz = ({ questions }: Props) => {
 
   return !showResult ? (
     <>
+      <div className="bg-red-400 m-4 p-4 rounded-xl ">
+        Та доорх тестүүдийг бүрэн бөглөсөн тохиолдолд Дуусгах товч гарч ирэх
+        бөгөөд түүнийг дарснаар тестийг бөглөсөнд тооцохыг анхаарна уу.
+      </div>
       <div className="md:grid grid-cols-2 gap-1">
         {/* { for(let i = 0; i < questions.length; i++) { }}  */}
         {questions.map(function (question, i) {

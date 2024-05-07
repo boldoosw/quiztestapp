@@ -77,7 +77,7 @@ const holland_labels = [
       "Санхүү - эдийн засаг, тоон мэдээлэл, сошил харилцаа, тооцоо, нягтлан бодох бүртгэл, офисын ажиллабарт дуртай. Байнга мэдээллээр хангагдах, тоон өгөгдлийг боловсруулах үйл ажиллагаа.",
   },
 ];
-function HollandChart({ email }: { email: String }) {
+function HollandChart({ email }: { email: String | undefined }) {
   const [holland_data, setData] = useState([]);
   const [holland_top_ids, setIds] = useState([]);
 

@@ -10,13 +10,14 @@ import VulnChart from "@/components/VulnChart/HollandVulnChart";
 import HollandQuestionCard from "@/components/QuestionCard/HollandQuestionCard";
 import async from "../../layout";
 import { useSession } from "next-auth/react";
+import HollandChart from "@/components/Charts/HollandChart";
 
 type Props = {
   questions: QuestionsState;
   totalQuestions: number;
 };
 const Quiz = ({ questions, totalQuestions }: Props) => {
-  const { data: session }: any = useSession();
+  const { data: session, status: sessionStatus } = useSession();
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [showResult, setShowResult] = React.useState(false);
@@ -131,7 +132,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
         if (res.ok) {
           console.log("Mongodb -d amjilttai hadgallaa");
           router.refresh();
-          router.push("/dashboard_two");
+          router.push("/");
         } else {
           throw new Error("Failed to create a holland to mongodb");
         }
@@ -201,6 +202,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
         ]}
         // data={chartData}
       /> */}
+      {<HollandChart email={session?.user.email} />}
     </div>
   );
 };

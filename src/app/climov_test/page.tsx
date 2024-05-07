@@ -1,8 +1,18 @@
+"use client";
 import Image from "next/image";
 import climov from "@/assets/images/klimov.png";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-export default function Page() {
+const Page = () => {
+  const router = useRouter();
+  const { data: session, status: sessionStatus } = useSession();
+
+  if (sessionStatus === "loading") {
+    return <h1>Ачааллаж байна...</h1>;
+  }
   return (
     <div className="flex flex-col gap-5 py-5 md:flex-row-reverse md:justify-between">
       <div className="relative overflow-hidden rounded-2xl">
@@ -39,4 +49,6 @@ export default function Page() {
       </div>
     </div>
   );
-}
+};
+
+export default Page;

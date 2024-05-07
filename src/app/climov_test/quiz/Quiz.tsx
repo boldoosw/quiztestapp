@@ -8,6 +8,7 @@ import Button from "@/components/Button/Button";
 // Types
 import { QuestionsState } from "@/types/quiz";
 import { useSession } from "next-auth/react";
+import ClimovChart from "@/components/Charts/ClimovChart";
 
 type Props = {
   questions: QuestionsState;
@@ -137,7 +138,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
         if (res.ok) {
           console.log("Mongodb -d amjilttai hadgallaa");
           router.refresh();
-          router.push("/dashboard_one");
+          router.push("/");
         } else {
           throw new Error("Failed to create a climov to mongodb");
         }
@@ -195,6 +196,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
         // data={[5, 3, 5, 4, 3]}
         data={chartData}
       /> */}
+      {<ClimovChart email={session?.user.email} />}
     </div>
   );
 };

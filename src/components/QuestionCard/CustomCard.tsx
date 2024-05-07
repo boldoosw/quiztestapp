@@ -32,10 +32,11 @@ const CustomCard: React.FC<Props> = ({
         className="bg-gray-100 flex
         flex-row justify-between items-center cursor-pointer 
             select-none  max-w-[400] w-full  rounded-[10px]
-              border border-gray-400shadow dark:bg-white dark:border-gray-200  "
+              border border-gray-400 shadow dark:bg-white dark:border-gray-200 hover:bg-blue-400 "
       >
         <div className="w-full m-1">{question.question}</div>
         <div
+          className=" border-l-[1px] border-gray-400 border-dashed"
           key={
             question.question +
             question.answers[currentQuestionIndex] +
@@ -60,7 +61,7 @@ const CustomCard: React.FC<Props> = ({
                   question.question + i
                 )
               }
-              className={`flex items-center mr-1 rounded `}
+              className={`flex items-center mr-1 rounded`}
             >
               <h5 className=" m-1 text-md tracking-tight  text-gray:900 dark:text-gray-900 ">
                 {answer}

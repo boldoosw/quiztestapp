@@ -2,7 +2,8 @@
 import React, { useRef } from "react";
 import { useSearchParams } from "next/navigation";
 
-// import UserInfo from "../userInfo/page";
+import { useSession } from "next-auth/react";
+
 import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
 import { MChart } from "@/components/Charts/MChart";
@@ -13,8 +14,9 @@ import jsPDF from "jspdf";
 
 const DashboardTwo = () => {
   const searchParams = useSearchParams();
+  const { data: session, status: sessionStatus } = useSession();
 
-  const email = searchParams.get("email");
+  const email = searchParams.get("email") | session?.user?.email;
 
   const pdfRef = useRef();
   const downloadPDF = () => {
@@ -40,7 +42,9 @@ const DashboardTwo = () => {
       pdf.save("10-12анги.pdf");
     });
   };
-
+  if (sessionStatus === "loading") {
+    return <h1>Ачааллаж байна...</h1>;
+  }
   return (
     <main ref={pdfRef}>
       <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
