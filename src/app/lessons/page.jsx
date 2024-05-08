@@ -114,7 +114,7 @@ function LessonsPage() {
   const router = useRouter();
 
   const [checkedCount, setCheckedCount] = useState(0);
-
+  const [error, setError] = useState("");
   const [openModal0, setOpenModal0] = useState(false);
   const [openModal1, setOpenModal1] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
@@ -284,6 +284,7 @@ function LessonsPage() {
               Хадгал
             </button>
           )}
+          <p className="text-red-600 mb-4 text-[16px]">{error && error}</p>
         </div>
       </form>
     </main>

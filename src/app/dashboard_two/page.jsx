@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useSession } from "next-auth/react";
 
-import UserInfo from "../userInfo/page";
+import UserInfo from "@/app/userInfo/page";
 import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
 import { MChart } from "@/components/Charts/MChart";
