@@ -71,9 +71,7 @@ function DragDropPage() {
       <div className="flex flex-col">
         {/* <Test /> */}
         <DndExampleNo />
-        <p className="m-4 text-sm text-red-400">
-          Үүний тулд тохирсон асуулга дээр хуруугаараа дарж шилжүүлнэ үү
-        </p>
+
         <div>
           {" "}
           <button

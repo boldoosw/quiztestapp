@@ -81,9 +81,7 @@ function DragDropPage() {
         {/* <Test /> */}
         <DndExample />
         <DndExample2 />
-        <p className="m-4 text-sm text-red-400">
-          Үүний тулд тохирсон асуулга дээр хуруугаараа дарж шилжүүлнэ үү
-        </p>
+
         <div>
           {" "}
           <button

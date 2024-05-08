@@ -109,7 +109,11 @@ const DndExample = () => {
                   <h1>Та яагаад мэргэжлээ сонгоогүй байгаа вэ?</h1>
                   <h5 className="text-red-500 text-sm">
                     Доорх хариултуудыг ач холбогдлоор нь дэс дугаарлана уу.
-                  </h5>
+                  </h5>{" "}
+                  <p className="m-4 text-sm text-red-400">
+                    Үүний тулд тохирсон асуулга дээр хуруугаараа дарж шилжүүлнэ
+                    үү
+                  </p>
                   {val.components?.map((component, index) => (
                     <Draggable
                       key={component.id}

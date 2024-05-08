@@ -1,6 +1,19 @@
+import axios from "axios";
 import { signOut, useSession } from "next-auth/react";
-const UserInfo = () => {
+import { useEffect, useState } from "react";
+
+const UserInfo = ({ email }: { email: String }) => {
   const { data: session }: any = useSession();
+  const [user_email, setEmail] = useState(email);
+  async function fetchUserData() {
+    const { data } = await axios.get(`/api/climov_test`, {
+      params: { user_email: user_email },
+    });
+  }
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
   return (
     <>
       <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
