@@ -106,7 +106,7 @@ const DndExample = () => {
                   {...provided.droppableProps}
                   ref={provided.innerRef}
                 >
-                  <h1>Чи мэргэжил сонгохдоо юу бодолцож сонголт хийсэн бэ?</h1>
+                  <h1>Та яагаад мэргэжлээ сонгоогүй байгаа вэ?</h1>
                   <h5 className="text-red-500 text-sm">
                     Доорх хариултуудыг ач холбогдлоор нь дэс дугаарлана уу.
                   </h5>
