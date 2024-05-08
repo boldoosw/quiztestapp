@@ -1,5 +1,5 @@
 import { signOut, useSession } from "next-auth/react";
-export default function UserInfo() {
+const UserInfo = () => {
   const { data: session }: any = useSession();
   return (
     <>
@@ -99,4 +99,5 @@ export default function UserInfo() {
       </div>
     </>
   );
-}
+};
+export default UserInfo;
