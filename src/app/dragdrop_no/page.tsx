@@ -17,19 +17,18 @@ const quicksand = Quicksand({
 function DragDropPage() {
   const router = useRouter();
   const { data: session }: any = useSession();
-  let firstItem3!: Item;
-  let secondItem3!: Item;
+  let thirdItem1!: Item;
+  let thirdItem2!: Item;
   let thirdItem3!: Item;
 
-  if (typeof window !== "undefined" && window.localStorage) {
-    firstItem3 = JSON.parse(localStorage.getItem("firstItem3")!);
-    secondItem3 = JSON.parse(localStorage.getItem("secondItem3")!);
-    thirdItem3 = JSON.parse(localStorage.getItem("thirdItem3")!);
-  }
   async function handleSaveBtn() {
+    thirdItem1 = JSON.parse(localStorage.getItem("thirdItem1")!);
+    thirdItem2 = JSON.parse(localStorage.getItem("thirdItem2")!);
+    thirdItem3 = JSON.parse(localStorage.getItem("thirdItem3")!);
+
     let a_items = "";
     let b_items = "";
-    let c_items = [firstItem3.id, secondItem3.id, thirdItem3.id].toString();
+    let c_items = [thirdItem1.id, thirdItem2.id, thirdItem3.id].toString();
     let email = session?.user.email;
     let uid = session?.user.id;
 
@@ -61,6 +60,9 @@ function DragDropPage() {
       console.log(error);
     }
   }
+  useEffect(() => {
+    localStorage.clear;
+  }, []);
 
   return (
     <main
@@ -69,17 +71,9 @@ function DragDropPage() {
       <div className="flex flex-col">
         {/* <Test /> */}
         <DndExampleNo />
-        {firstItem3?.id}
-        {firstItem3?.name}
-        <br />
-        {secondItem3?.id}
-        {secondItem3?.name}
-        <br />
-        {thirdItem3?.id}
-        {thirdItem3?.name}
-
-        {/* {second}
-        {last} */}
+        <p className="m-4 text-sm text-red-400">
+          Үүний тулд тохирсон асуулга дээр хуруугаараа дарж шилжүүлнэ үү
+        </p>
         <div>
           {" "}
           <button

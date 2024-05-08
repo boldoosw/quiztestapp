@@ -30,7 +30,7 @@ const DndExample2 = () => {
   if (typeof window !== "undefined" && window.localStorage) {
     // localStorage.clear();
     localStorage.setItem(
-      "firstItem2",
+      "secondItem1",
       JSON.stringify({
         id: data[0]?.components[0].id,
         name: data[0]?.components[0].name,
@@ -44,7 +44,7 @@ const DndExample2 = () => {
       })
     );
     localStorage.setItem(
-      "thirdItem2",
+      "secondItem3",
       JSON.stringify({
         id: data[0]?.components[2].id,
         name: data[0]?.components[2].name,
@@ -77,7 +77,7 @@ const DndExample2 = () => {
       newData[droppableIndex].components.splice(destination.index, 0, item);
       setData([...newData]);
       localStorage.setItem(
-        "firstItem2",
+        "secondItem1",
         JSON.stringify({
           id: newData[0].components[0].id,
           name: newData[0].components[0].name,
@@ -91,7 +91,7 @@ const DndExample2 = () => {
         })
       );
       localStorage.setItem(
-        "thirdItem2",
+        "secondItem3",
         JSON.stringify({
           id: newData[0].components[2].id,
           name: newData[0].components[2].name,

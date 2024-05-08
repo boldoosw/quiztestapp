@@ -51,14 +51,14 @@ const DndExample = () => {
       newData[droppableIndex].components.splice(destination.index, 0, item);
       setData([...newData]);
       localStorage.setItem(
-        "firstItem3",
+        "thirdItem1",
         JSON.stringify({
           id: newData[0].components[0].id,
           name: newData[0].components[0].name,
         })
       );
       localStorage.setItem(
-        "secondItem3",
+        "thirdItem2",
         JSON.stringify({
           id: newData[0].components[1].id,
           name: newData[0].components[1].name,

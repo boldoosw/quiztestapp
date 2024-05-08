@@ -34,14 +34,14 @@ const DndExample = () => {
       })
     );
     localStorage.setItem(
-      "secondItem1",
+      "firstItem2",
       JSON.stringify({
         id: data[0]?.components[1].id,
         name: data[0]?.components[1].name,
       })
     );
     localStorage.setItem(
-      "thirdItem1",
+      "firstItem3",
       JSON.stringify({
         id: data[0]?.components[2].id,
         name: data[0]?.components[2].name,
@@ -84,14 +84,14 @@ const DndExample = () => {
         })
       );
       localStorage.setItem(
-        "secondItem1",
+        "firstItem2",
         JSON.stringify({
           id: newData[0].components[1].id,
           name: newData[0].components[1].name,
         })
       );
       localStorage.setItem(
-        "thirdItem1",
+        "firstItem3",
         JSON.stringify({
           id: newData[0].components[2].id,
           name: newData[0].components[2].name,
@@ -99,6 +99,7 @@ const DndExample = () => {
       );
 
       // console.log(localStorage.getItem("firstItem1"));
+      console.log(localStorage);
     }
   };
   useEffect(() => {

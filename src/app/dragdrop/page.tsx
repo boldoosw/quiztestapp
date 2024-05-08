@@ -19,25 +19,24 @@ function DragDropPage() {
   const router = useRouter();
 
   let firstItem1!: Item;
-  let secondItem1!: Item;
-  let thirdItem1!: Item;
-
   let firstItem2!: Item;
+  let firstItem3!: Item;
+
+  let secondItem1!: Item;
   let secondItem2!: Item;
-  let thirdItem2!: Item;
+  let secondItem3!: Item;
 
-  if (typeof window !== "undefined" && window.localStorage) {
-    firstItem1 = JSON.parse(localStorage.getItem("firstItem1")!);
-    secondItem1 = JSON.parse(localStorage.getItem("secondItem1")!);
-    thirdItem1 = JSON.parse(localStorage.getItem("thirdItem1")!);
-
-    firstItem2 = JSON.parse(localStorage.getItem("firstItem2")!);
-    secondItem2 = JSON.parse(localStorage.getItem("secondItem2")!);
-    thirdItem2 = JSON.parse(localStorage.getItem("thirdItem2")!);
-  }
   const handleSaveBtn = async () => {
-    let a_items = [firstItem1.id, secondItem1.id, thirdItem1.id].toString();
-    let b_items = [firstItem2.id, secondItem2.id, thirdItem2.id].toString();
+    firstItem1 = JSON.parse(localStorage.getItem("firstItem1")!);
+    firstItem2 = JSON.parse(localStorage.getItem("firstItem2")!);
+    firstItem3 = JSON.parse(localStorage.getItem("firstItem3")!);
+
+    secondItem1 = JSON.parse(localStorage.getItem("secondItem1")!);
+    secondItem2 = JSON.parse(localStorage.getItem("secondItem2")!);
+    secondItem3 = JSON.parse(localStorage.getItem("secondItem3")!);
+
+    let a_items = [firstItem1.id, firstItem2.id, firstItem3.id].toString();
+    let b_items = [secondItem1.id, secondItem2.id, secondItem3.id].toString();
     let c_items = "";
     let email = session?.user.email;
     let uid = session?.user.id;
@@ -71,7 +70,9 @@ function DragDropPage() {
       console.log(error);
     }
   };
-
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
   return (
     <main
       className={`${quicksand.variable}  font-quicksand max-w-[900px] w-full m-auto `}
@@ -80,19 +81,9 @@ function DragDropPage() {
         {/* <Test /> */}
         <DndExample />
         <DndExample2 />
-        {firstItem1?.id}
-        {firstItem1?.name}
-        <br />
-        {secondItem1?.id}
-        {secondItem1?.name} <br />
-        {thirdItem1?.id}
-        {thirdItem1?.name} <br />
-        {firstItem2?.id}
-        {firstItem2?.name} <br />
-        {secondItem2?.id}
-        {secondItem2?.name} <br />
-        {thirdItem2?.id}
-        {thirdItem2?.name}
+        <p className="m-4 text-sm text-red-400">
+          Үүний тулд тохирсон асуулга дээр хуруугаараа дарж шилжүүлнэ үү
+        </p>
         <div>
           {" "}
           <button
