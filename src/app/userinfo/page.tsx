@@ -1,6 +1,6 @@
 "use client";
 import { signOut, useSession } from "next-auth/react";
-const UserInfo = () => {
+export default function UserInfo() {
   const { data: session }: any = useSession();
   return (
     <>
@@ -100,6 +100,4 @@ const UserInfo = () => {
       </div>
     </>
   );
-};
-
-export default UserInfo;
+}
