@@ -25,7 +25,7 @@ const DashboardOne = () => {
     const input = pdfRef.current;
     html2canvas(input).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4", true);
+      const pdf = new jsPDF("p", "mm", "a4", false);
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
       const imgWidth = canvas.width;
@@ -66,12 +66,12 @@ const DashboardOne = () => {
   return (
     <>
       {/* <!-- ===== Content Area Start ===== --> */}
-      <div ref={pdfRef} id="summary-report-container">
+      <div ref={pdfRef}>
         {/* <!-- ===== Main Content Start ===== --> */}
         <main>
           <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
             <div className="  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-              <UserInfo />
+              <UserInfo email={email} />
             </div>
             <div className="  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
               <YesNoChart email={email} />
@@ -98,7 +98,7 @@ const DashboardOne = () => {
               perferendis? A, temporibus.
             </div>
             <div className=" text-center  p-4 text-[14px] mt-8 w-full">
-              <button className="btn btn-primary" onClick={generatePdf}>
+              <button className="btn btn-primary" onClick={downloadPDF}>
                 Download PDF
               </button>
             </div>

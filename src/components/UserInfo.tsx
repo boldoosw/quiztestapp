@@ -1,19 +1,29 @@
 import axios from "axios";
 import { signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import User from "@/models/User";
+import { data } from "autoprefixer";
 
 const UserInfo = ({ email }: { email: String }) => {
   const { data: session }: any = useSession();
+
+  const [searchedUser, setData] = useState({});
+
   const [user_email, setEmail] = useState(email);
+
   async function fetchUserData() {
-    const { data } = await axios.get(`/api/climov_test`, {
+    const { data } = await axios.get(`/api/user`, {
       params: { user_email: user_email },
     });
+
+    setData({ ...data.existinguser });
+    // console.log("user_data:", user_data?.firstname);
   }
 
   useEffect(() => {
     fetchUserData();
   }, []);
+  console.log("searchUser:", searchedUser);
   return (
     <>
       <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
@@ -39,13 +49,13 @@ const UserInfo = ({ email }: { email: String }) => {
                       type="text"
                       name="fullName"
                       id="fullName"
-                      placeholder="Халтар Ганболд"
+                      placeholder=""
                       defaultValue={
-                        !session
+                        !searchedUser
                           ? ""
-                          : session.user?.lastname +
+                          : (searchedUser as any).lastname +
                             " " +
-                            session.user?.firstname
+                            (searchedUser as any).firstname
                       }
                     />
                   </div>
@@ -64,7 +74,9 @@ const UserInfo = ({ email }: { email: String }) => {
                     name="phoneNumber"
                     id="phoneNumber"
                     placeholder="+976 8811 5348"
-                    defaultValue={!session ? "" : session.user?.phone}
+                    defaultValue={
+                      !searchedUser ? "" : (searchedUser as any).phone
+                    }
                   />
                 </div>
               </div>
@@ -83,7 +95,9 @@ const UserInfo = ({ email }: { email: String }) => {
                     name="emailAddress"
                     id="emailAddress"
                     placeholder=""
-                    defaultValue={!session ? "" : session.user?.email}
+                    defaultValue={
+                      !searchedUser ? "" : (searchedUser as any).email
+                    }
                   />
                 </div>
               </div>
@@ -102,7 +116,7 @@ const UserInfo = ({ email }: { email: String }) => {
                   id="Username"
                   placeholder="boldoosw"
                   defaultValue={
-                    !session ? "Халтар Ганболд" : session.user?.email
+                    !searchedUser ? "" : (searchedUser as any).email
                   }
                 />
               </div>

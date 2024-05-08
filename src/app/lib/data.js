@@ -38,7 +38,6 @@ export const fetchUser = async (id) => {
     throw new Error("Failed to fetch user!");
   }
 };
-
 export const fetchProducts = async (q, page) => {
   console.log(q);
   const regex = new RegExp(q, "i");
