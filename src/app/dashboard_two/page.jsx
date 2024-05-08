@@ -7,7 +7,7 @@ import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
 import { MChart } from "@/components/Charts/MChart";
 import YesNoChart from "@/components/Charts/YesNoChart";
-import UserInfo from "../userInfo/page";
+import UserInfo from "@/components/UserInfo";
 
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
