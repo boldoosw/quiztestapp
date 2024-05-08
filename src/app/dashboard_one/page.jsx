@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import CustomChart from "@/components/Charts/CustomChart";
 import YesNoChart from "@/components/Charts/YesNoChart";
 import LessonCards from "@/components/Cards/LessonCards";
+import UserInfo from "@/components/UserInfo";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import domToPdf from "dom-to-pdf";
@@ -70,10 +71,12 @@ const DashboardOne = () => {
         <main>
           <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
             <div className="  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
+              <UserInfo />
+            </div>
+            <div className="  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
               <YesNoChart email={email} />
             </div>
             <div className="mt-4  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-              {/* <UserInfo /> */}
               <CustomChart email={email} />
             </div>
             <div className=" text-black text-bold text-center  p-4 text-[14px]">
