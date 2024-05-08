@@ -18,7 +18,7 @@ export default function Page() {
         <div className="md:w-[24rem]">
           {/* <Image src="/wallpaper.jpg" alt="" width={700} height={700} /> */}
           <Image
-            className="sm:h-full "
+            className="absolute sm:h-full overflow-hidden"
             src={climov}
             alt="logo"
             width={700}

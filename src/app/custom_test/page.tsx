@@ -15,10 +15,10 @@ export default function Page() {
   return (
     <div className="flex flex-col gap-5 py-5 md:flex-row-reverse md:justify-between">
       <div className="relative overflow-hidden rounded-2xl">
-        <div className="md:w-[24rem]">
+        <div className="md:w-[24rem] ">
           {/* <Image src="/wallpaper.jpg" alt="" width={700} height={700} /> */}
           <Image
-            className="sm:h-full "
+            className="absolute sm:h-full overflow-hidden"
             src={climov}
             alt="logo"
             width={700}

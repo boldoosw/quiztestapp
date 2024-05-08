@@ -4,6 +4,7 @@ import DndExample2 from "@/components/DndExample2";
 import React, { useEffect } from "react";
 import { Quicksand } from "next/font/google";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 interface Item {
   id: number;
@@ -15,6 +16,7 @@ const quicksand = Quicksand({
 });
 function DragDropPage() {
   const { data: session }: any = useSession();
+  const router = useRouter();
 
   let firstItem1!: Item;
   let secondItem1!: Item;
@@ -60,8 +62,8 @@ function DragDropPage() {
 
       if (res.ok) {
         console.log("amjilttai hadgallaa");
-        //  router.refresh();
-        //  router.push("/dashboard_one");
+        router.refresh();
+        router.push("/");
       } else {
         throw new Error("Failed to create a yes no");
       }
