@@ -1,18 +1,21 @@
 "use client";
 import React, { useRef } from "react";
 import { useSearchParams } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 import CustomChart from "@/components/Charts/CustomChart";
 import YesNoChart from "@/components/Charts/YesNoChart";
 import LessonCards from "@/components/Cards/LessonCards";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import domToPdf from "dom-to-pdf";
 // import { fetchUser } from "@/app/lib/data";
 
 const DashboardOne = () => {
   const searchParams = useSearchParams();
+  const { data: session, status: sessionStatus } = useSession();
 
-  const email = searchParams.get("email");
+  const email = searchParams ? searchParams.get("email") : session.user?.email;
 
   // const user = await fetchUser(id);
 
@@ -40,10 +43,29 @@ const DashboardOne = () => {
       pdf.save("8-9анги.pdf");
     });
   };
+
+  const element = document.querySelector(".summary-report-container");
+
+  const options = {
+    filename: "test.pdf",
+  };
+
+  const generatePdf = () => {
+    const element = document.querySelector(".summary-report-container");
+
+    const options = {
+      filename: "test.pdf",
+    };
+
+    return domToPdf(element, options, () => {
+      console.log("done");
+      // callback function
+    });
+  };
   return (
     <>
       {/* <!-- ===== Content Area Start ===== --> */}
-      <div ref={pdfRef}>
+      <div ref={pdfRef} id="summary-report-container">
         {/* <!-- ===== Main Content Start ===== --> */}
         <main>
           <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
@@ -60,7 +82,17 @@ const DashboardOne = () => {
             <div className="grid grid-cols-1 gap-4  md:grid-cols-2 md:gap-6 xl:grid-cols-3  2xl:gap-7.5">
               <LessonCards />
             </div>
-            <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8 w-full">
+            <div className="mt-4  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
+              {/* <UserInfo /> */}
+              <CustomChart email={email} />
+            </div>
+            <div className=" text-black text-bold text-center  p-4 text-[14px]">
+              Танд ойр мэргэжлүүдийг доор зургаар үзүүлэв.
+            </div>
+            <div className="grid grid-cols-1 gap-4  md:grid-cols-2 md:gap-6 xl:grid-cols-3  2xl:gap-7.5">
+              <LessonCards />
+            </div>
+            {/* <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8 w-full">
               Зөвлөмж.<br></br>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
               officia reiciendis aliquid doloribus hic laborum provident ut
@@ -70,9 +102,9 @@ const DashboardOne = () => {
               quo ea itaque laborum, exercitationem earum saepe commodi
               laudantium! Dolore repudiandae minima ducimus suscipit, minus
               perferendis? A, temporibus.
-            </div>
+            </div> */}
             <div className=" text-center  p-4 text-[14px] mt-8 w-full">
-              <button className="btn btn-primary" onClick={downloadPDF}>
+              <button className="btn btn-primary" onClick={generatePdf}>
                 Download PDF
               </button>
             </div>

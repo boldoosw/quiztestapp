@@ -10,7 +10,14 @@ export const fetchUsers = async (q, page) => {
   try {
     connectMongoDB();
     const count = await User.find({ email: { $regex: regex } }).count();
-    const users = await User.find({ email: { $regex: regex } })
+    const users = await User.find({
+      $or: [
+        { lastname: { $regex: regex } },
+        { firstname: { $regex: regex } },
+        { email: { $regex: regex } },
+        { phone: { $regex: regex } },
+      ],
+    })
       .limit(ITEM_PER_PAGE)
       .skip(ITEM_PER_PAGE * (page - 1));
     return { count, users };

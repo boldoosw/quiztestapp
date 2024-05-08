@@ -19,7 +19,7 @@ export async function POST(request:NextRequest) {
     uid,
     email,
   });
-  return NextResponse.json({ message: "ClimovQuiz Created" }, { status: 201 });
+  return NextResponse.json({ message: "Климовын тестийг амжилттай бөглөлөө." }, { status: 201 });
 }
 
 export async function GET(

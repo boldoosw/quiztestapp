@@ -51,8 +51,8 @@ const Register = () => {
       return;
     }
 
-    if (!password || password.length < 8) {
-      setError("Нууц үг 8 тэмдэгтээс их байх ёстой!");
+    if (!password || password.length < 4) {
+      setError("Нууц үг 4 тэмдэгтээс их байх ёстой!");
       return;
     }
 

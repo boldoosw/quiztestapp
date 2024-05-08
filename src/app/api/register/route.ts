@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
 export const POST = async (request: any) => {
-  const {lastname,firstname, email, password,role } = await request.json();
+  const {lastname,firstname ,phone, email, password,role } = await request.json();
 
   await connectMongoDB();
 
@@ -18,6 +18,7 @@ export const POST = async (request: any) => {
   const newUser = new User({
     lastname,
     firstname,
+    phone,
     email,
     password: hashedPassword,
     role
