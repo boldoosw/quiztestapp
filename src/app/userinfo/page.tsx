@@ -1,4 +1,3 @@
-"use client";
 import { signOut, useSession } from "next-auth/react";
 export default function UserInfo() {
   const { data: session }: any = useSession();
