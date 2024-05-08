@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { Quicksand } from "next/font/google";
 import DndExampleNo from "@/components/DndExampleNo";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 interface Item {
   id: number;
@@ -15,6 +16,7 @@ const quicksand = Quicksand({
 });
 function DragDropPage() {
   const router = useRouter();
+  const { data: session }: any = useSession();
   let firstItem3!: Item;
   let secondItem3!: Item;
   let thirdItem3!: Item;
@@ -28,7 +30,8 @@ function DragDropPage() {
     let a_items = "";
     let b_items = "";
     let c_items = [firstItem3.id, secondItem3.id, thirdItem3.id].toString();
-    let email = "boldoosw@gmail.com";
+    let email = session?.user.email;
+    let uid = session?.user.id;
 
     console.log("c items:", c_items);
 
@@ -42,6 +45,7 @@ function DragDropPage() {
           a_items,
           b_items,
           c_items,
+          uid: uid,
           email,
         }),
       });
