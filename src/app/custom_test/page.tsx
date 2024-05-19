@@ -26,7 +26,7 @@ export default function Page() {
       <Image className="sm:w-full" src={choose_lesson} alt="choose_lesson" />
       <Link
         href={`/custom_test/quiz/`}
-        className="flex items-center justify-center m-4 gap-1 px-5 py-4 font-semibold text-blue-500 transition-colors rounded-md outline duration-600 hover:bg-blue-600 hover:text-white"
+        className=" m-4 gap-1 px-5 py-4 font-semibold text-blue-500 transition-colors rounded-md outline duration-600 hover:bg-blue-600 hover:text-white"
       >
         {/* <TbArrowBigRightFilled className="text-lg" /> */}
         Хичээл сонголтын тест өгөх

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import prof_header from "@/assets/images/profession.png";
+import prof_header from "@/assets/images/choose-lesson.png";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import { useRouter } from "next/navigation";
