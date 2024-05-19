@@ -266,8 +266,8 @@ function LessonsPage() {
                 >
                   <h1>{eval(`onCloseModal`)}</h1>
                   <Image
-                    width={600}
-                    height={600}
+                    width={1600}
+                    height={1600}
                     className=" object-cover w-full"
                     src={`${basePath}/${lesson.img_detail}.png`}
                     alt=""

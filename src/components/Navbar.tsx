@@ -88,7 +88,7 @@ const navItems1: NavItem[] = [
     link: "#",
     children: [
       {
-        label: "Мэргэжил сонголтын тест",
+        label: "Хичээл сонголтын тест",
         link: "/custom_test",
       },
     ],
