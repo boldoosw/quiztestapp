@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import climov from "@/assets/images/klimov.png";
+import holland from "@/assets/images/holland_logo.png";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -15,11 +15,11 @@ export default function Page() {
   return (
     <div className="flex flex-col gap-5 py-5 md:flex-row-reverse md:justify-between">
       <div className="relative overflow-hidden rounded-2xl">
-        <div className="md:w-[24rem]">
+        <div className="md:w-[48rem]">
           {/* <Image src="/wallpaper.jpg" alt="" width={700} height={700} /> */}
           <Image
             className="absolute sm:h-full overflow-hidden"
-            src={climov}
+            src={holland}
             alt="logo"
             width={700}
             height={700}
