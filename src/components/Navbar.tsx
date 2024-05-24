@@ -108,7 +108,7 @@ const navItems1: NavItem[] = [
     link: "#",
     children: [
       {
-        label: "Мэргэжил",
+        label: "Мэргэжил Танилцуулга",
         link: "#",
       },
       {
@@ -149,7 +149,7 @@ const navItems2: NavItem[] = [
     link: "#",
     children: [
       {
-        label: "Мэргэжил",
+        label: "Мэргэжил Танилцуулга",
         link: "#",
       },
       {
