@@ -176,7 +176,7 @@ const Quiz = ({ questions }: Props) => {
       if (res.ok) {
         console.log("amjilttai hadgallaa");
         router.refresh();
-        router.push("/");
+        router.push("/lessons");
       } else {
         throw new Error("Failed to create a mbti");
       }

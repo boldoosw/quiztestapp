@@ -104,8 +104,18 @@ const navItems1: NavItem[] = [
     ],
   },
   {
-    label: "Мэдээ Мэдээлэл",
+    label: "Мэдээлэл",
     link: "#",
+    children: [
+      {
+        label: "Мэргэжил",
+        link: "#",
+      },
+      {
+        label: "ЭЕШ,ИДС",
+        link: "/universities",
+      },
+    ],
   },
 ];
 const navItems2: NavItem[] = [
@@ -133,13 +143,20 @@ const navItems2: NavItem[] = [
       },
     ],
   },
+
   {
-    label: "ЭЕШ,ИДС",
+    label: "Мэдээлэл",
     link: "#",
-  },
-  {
-    label: "Мэдээ Мэдээлэл",
-    link: "#",
+    children: [
+      {
+        label: "Мэргэжил",
+        link: "#",
+      },
+      {
+        label: "ЭЕШ,ИДС",
+        link: "/universities",
+      },
+    ],
   },
 ];
 export default function Navbar2() {

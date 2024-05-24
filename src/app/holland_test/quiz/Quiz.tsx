@@ -132,7 +132,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
         if (res.ok) {
           console.log("Mongodb -d amjilttai hadgallaa");
           router.refresh();
-          router.push("/");
+          router.push("/report");
         } else {
           throw new Error("Failed to create a holland to mongodb");
         }

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Quicksand } from "next/font/google";
 // Logo
-import Logo from "@/assets/images/holland_header.png";
+import Logo from "@/assets/images/holland_logo.png";
 // import Logo from "@/assets/react-quiz-logo.svg";
 import "@/app/globals.css";
 
