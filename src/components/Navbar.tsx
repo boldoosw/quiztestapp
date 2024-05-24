@@ -104,16 +104,20 @@ const navItems1: NavItem[] = [
     ],
   },
   {
-    label: "Мэдээлэл",
+    label: "Бусад",
     link: "#",
     children: [
+      {
+        label: "ЭЕШ,ИДС",
+        link: "/universities",
+      },
       {
         label: "Мэргэжил Танилцуулга",
         link: "#",
       },
       {
-        label: "ЭЕШ,ИДС",
-        link: "/universities",
+        label: "Мэдээ Мэдээлэл",
+        link: "#",
       },
     ],
   },
@@ -145,16 +149,20 @@ const navItems2: NavItem[] = [
   },
 
   {
-    label: "Мэдээлэл",
+    label: "Бусад",
     link: "#",
     children: [
+      {
+        label: "ЭЕШ,ИДС",
+        link: "/universities",
+      },
       {
         label: "Мэргэжил Танилцуулга",
         link: "#",
       },
       {
-        label: "ЭЕШ,ИДС",
-        link: "/universities",
+        label: "Мэдээ Мэдээлэл",
+        link: "#",
       },
     ],
   },
