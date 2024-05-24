@@ -9,11 +9,6 @@ const quicksand = Quicksand({
   variable: "--font-quicksand",
 });
 
-export const metadata = {
-  title: "Мэргэжил сонголтын тест",
-  description: "Мэргэжил сонголтын тест!",
-};
-
 const TABLE_HEAD_ASHUS = ["№", "Мэргэжлийн нэр", "ЭЕШалгалт1", "ЭЕШалгалт2"];
 
 const TABLE_ROWS_ASHUS = [
