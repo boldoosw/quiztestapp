@@ -113,7 +113,7 @@ const navItems1: NavItem[] = [
       },
       {
         label: "Мэргэжил Танилцуулга",
-        link: "#",
+        link: "/professions",
       },
       {
         label: "Мэдээ Мэдээлэл",
@@ -158,7 +158,7 @@ const navItems2: NavItem[] = [
       },
       {
         label: "Мэргэжил Танилцуулга",
-        link: "#",
+        link: "/professions",
       },
       {
         label: "Мэдээ Мэдээлэл",
