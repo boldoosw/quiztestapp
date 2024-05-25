@@ -13,7 +13,7 @@ const quicksand = Quicksand({
   variable: "--font-quicksand",
 });
 
-const basePath = "/assets/images/profession_images";
+const basePath = "/assets/images/lesson_images";
 const lesson_data = [
   {
     name: "Монгол хэл, Уран зохиол",
