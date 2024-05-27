@@ -805,7 +805,7 @@ function LessonsPage() {
                   <Image
                     width={900}
                     height={400}
-                    className=" w-full h-48"
+                    className=" w-full h-96"
                     src={`${basePath}/${profession.img_detail}.png`}
                     alt=""
                   />
