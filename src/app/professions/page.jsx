@@ -16,100 +16,649 @@ const quicksand = Quicksand({
 const basePath = "/assets/images/profession_images";
 const professions_data = [
   {
-    name: "Ирээдүйн мэргэжлүүд",
+    name: "Ирээдүйтэй мэргэжлүүд",
     img: "future_professions",
-    img_detail: "future_professions",
-    checked: false,
+    img_detail: "future_professions_detail",
+    content:
+      "Хөгжүүлэх, дизайн хийх, дүн шинжилгээ хийх - эдгээр нь бүх цаг үеийн мэргэжлийн ур чадвар юм. Тэд таныг ирээдүйн мэргэжлээр тохь тухтай байхад тань туслах болно. 5, 10, 20 жилийн дараа ямар мэргэжлүүд хамааралтай болох вэ - бид үүнийг мэргэжилтнүүдтэй хамт шийддэг.Мэргэжлийн загварын гол чиг хандлага бол дэвшил юм. Нэгэн цагт тэрээр барж тээвэрлэгч, утасны оператор, ус зөөгч нарын хөдөлмөрийг шаардлагагүй болгосон. Тэрээр одоо эрэлт хэрэгцээтэй цоо шинэ мэргэжлүүд - ирээдүйн мэргэжлийг бий болгож байна.Өнөөдөр технологи дэлхийг захирч байна. Үүний дагуу өндөр технологийн чиглэлээр мэргэшсэн ажилтнууд онцгой үнэлэгдэх болно. 3D болон биотехнологийг чадварлаг удирддаг, робот техник, интернетийн зүйлийг ойлгодог, дизайн хийх, загвар гаргах, дасан зохицох арга барилыг мэддэг хүмүүс. Энэ бүх ур чадвар нь ирээдүй юм. Тэгээд үсрэнгүй ойртож байна.",
+    details: [
+      {
+        content_title: "Биотехнологич",
+        content_detail: "",
+        content_image: "biology",
+      },
+      {
+        content_title: "Хөгжүүлэгч",
+        content_detail: "",
+        content_image: "programmer",
+      },
+      {
+        content_title: "Тоглоомын дизайнер",
+        content_detail: "",
+        content_image: "designer",
+      },
+      {
+        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_detail: "",
+        content_image: "cyber",
+      },
+      {
+        content_title: "Машин сургалтын мэргэжилтэн",
+        content_detail: "",
+        content_image: "machine_learning",
+      },
+      {
+        content_title: "Хотын тариачин",
+        content_detail: "",
+        content_image: "farmer",
+      },
+      {
+        content_title: "Стример",
+        content_detail: "",
+        content_image: "hutlugch",
+      },
+      {
+        content_title: "Кибер тоглогч",
+        content_detail: "",
+        content_image: "cyber_gamer",
+      },
+      {
+        content_title: "Тестер",
+        content_detail: "",
+        content_image: "tester",
+      },
+      {
+        content_title: "Тархвар судлаач",
+        content_detail: "",
+        content_image: "tarhvar_sudlaach",
+      },
+    ],
   },
   {
-    name: "Эмнэлгийн мэргэжлүүд",
+    name: "Анагаах ухааны мэргэжлүүд",
     img: "hospital_professions",
     img_detail: "hospital_professions",
-    checked: false,
+    content: "",
+    details: [
+      {
+        content_title: "Түргэн тусламжийн эмч",
+        content_detail: "",
+        content_image: "tt_doctor",
+      },
+      {
+        content_title: "Мэс заслын эмч",
+        content_detail: "",
+        content_image: "mz_doctor",
+      },
+      {
+        content_title: "Эмч",
+        content_detail: "",
+        content_image: "doctor",
+      },
+      {
+        content_title: "Шүдний эмч",
+        content_detail: "",
+        content_image: "dental_doctor",
+      },
+      {
+        content_title: "Анагаахын сувилагч",
+        content_detail: "",
+        content_image: "anagaah_suvilagch",
+      },
+      {
+        content_title: "Эм зүйч",
+        content_detail: "",
+        content_image: "em_zuich",
+      },
+    ],
   },
   {
     name: "Боловсрол дахь мэргэжлүүд",
     img: "education_professions",
     img_detail: "education_professions",
-    checked: false,
+    content: "",
+    details: [
+      {
+        content_title: "СӨБ -ийн багш",
+        content_detail: "",
+        content_image: "sub_teacher",
+      },
+      {
+        content_title: "ЕБС-ийн багш",
+        content_detail: "",
+        content_image: "ybs_teacher",
+      },
+      {
+        content_title: "Бага ангийн багш мэргэжил",
+        content_detail: "",
+        content_image: "baga_angi_teacher",
+      },
+    ],
   },
   {
     name: "Эдийн засгийн мэргэжлүүд",
     img: "economy_professions",
     img_detail: "economy_professions",
-    checked: false,
+    content: "",
+    details: [
+      {
+        content_title: "Биотехнологич",
+        content_detail: "",
+        content_image: "biology",
+      },
+      {
+        content_title: "Хөгжүүлэгч",
+        content_detail: "",
+        content_image: "programmer",
+      },
+      {
+        content_title: "Тоглоомын дизайнер",
+        content_detail: "",
+        content_image: "designer",
+      },
+      {
+        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_detail: "",
+        content_image: "cyber",
+      },
+      {
+        content_title: "Машин сургалтын мэргэжилтэн",
+        content_detail: "",
+        content_image: "machine_learning",
+      },
+      {
+        content_title: "Хотын тариачин",
+        content_detail: "",
+        content_image: "farmer",
+      },
+      {
+        content_title: "Стример",
+        content_detail: "",
+        content_image: "hutlugch",
+      },
+      {
+        content_title: "Кибер тоглогч",
+        content_detail: "",
+        content_image: "cyber_gamer",
+      },
+      {
+        content_title: "Тестер",
+        content_detail: "",
+        content_image: "tester",
+      },
+      {
+        content_title: "Тархвар судлаач",
+        content_detail: "",
+        content_image: "tarhvar_sudlaach",
+      },
+    ],
   },
   {
     name: "Хуулийн мэргэжлүүд",
     img: "layeour_professions",
     img_detail: "layeour_professions",
-    checked: false,
+    content: "",
+    details: [
+      {
+        content_title: "Биотехнологич",
+        content_detail: "",
+        content_image: "biology",
+      },
+      {
+        content_title: "Хөгжүүлэгч",
+        content_detail: "",
+        content_image: "programmer",
+      },
+      {
+        content_title: "Тоглоомын дизайнер",
+        content_detail: "",
+        content_image: "designer",
+      },
+      {
+        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_detail: "",
+        content_image: "cyber",
+      },
+      {
+        content_title: "Машин сургалтын мэргэжилтэн",
+        content_detail: "",
+        content_image: "machine_learning",
+      },
+      {
+        content_title: "Хотын тариачин",
+        content_detail: "",
+        content_image: "farmer",
+      },
+      {
+        content_title: "Стример",
+        content_detail: "",
+        content_image: "hutlugch",
+      },
+      {
+        content_title: "Кибер тоглогч",
+        content_detail: "",
+        content_image: "cyber_gamer",
+      },
+      {
+        content_title: "Тестер",
+        content_detail: "",
+        content_image: "tester",
+      },
+      {
+        content_title: "Тархвар судлаач",
+        content_detail: "",
+        content_image: "tarhvar_sudlaach",
+      },
+    ],
   },
   {
     name: "Шинжлэх ухааны мэргэжлүүд",
     img: "shu_professions",
     img_detail: "shu_professions",
-    checked: false,
+    content: "",
+    details: [
+      {
+        content_title: "Биотехнологич",
+        content_detail: "",
+        content_image: "biology",
+      },
+      {
+        content_title: "Хөгжүүлэгч",
+        content_detail: "",
+        content_image: "programmer",
+      },
+      {
+        content_title: "Тоглоомын дизайнер",
+        content_detail: "",
+        content_image: "designer",
+      },
+      {
+        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_detail: "",
+        content_image: "cyber",
+      },
+      {
+        content_title: "Машин сургалтын мэргэжилтэн",
+        content_detail: "",
+        content_image: "machine_learning",
+      },
+      {
+        content_title: "Хотын тариачин",
+        content_detail: "",
+        content_image: "farmer",
+      },
+      {
+        content_title: "Стример",
+        content_detail: "",
+        content_image: "hutlugch",
+      },
+      {
+        content_title: "Кибер тоглогч",
+        content_detail: "",
+        content_image: "cyber_gamer",
+      },
+      {
+        content_title: "Тестер",
+        content_detail: "",
+        content_image: "tester",
+      },
+      {
+        content_title: "Тархвар судлаач",
+        content_detail: "",
+        content_image: "tarhvar_sudlaach",
+      },
+    ],
   },
   {
     name: "Хөдөө аж ахуйн мэргэжлүүд",
     img: "huaa_professions",
     img_detail: "huaa_professions",
-    checked: false,
+    content: "",
+    details: [
+      {
+        content_title: "Биотехнологич",
+        content_detail: "",
+        content_image: "biology",
+      },
+      {
+        content_title: "Хөгжүүлэгч",
+        content_detail: "",
+        content_image: "programmer",
+      },
+      {
+        content_title: "Тоглоомын дизайнер",
+        content_detail: "",
+        content_image: "designer",
+      },
+      {
+        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_detail: "",
+        content_image: "cyber",
+      },
+      {
+        content_title: "Машин сургалтын мэргэжилтэн",
+        content_detail: "",
+        content_image: "machine_learning",
+      },
+      {
+        content_title: "Хотын тариачин",
+        content_detail: "",
+        content_image: "farmer",
+      },
+      {
+        content_title: "Стример",
+        content_detail: "",
+        content_image: "hutlugch",
+      },
+      {
+        content_title: "Кибер тоглогч",
+        content_detail: "",
+        content_image: "cyber_gamer",
+      },
+      {
+        content_title: "Тестер",
+        content_detail: "",
+        content_image: "tester",
+      },
+      {
+        content_title: "Тархвар судлаач",
+        content_detail: "",
+        content_image: "tarhvar_sudlaach",
+      },
+    ],
   },
   {
     name: "Дижитал мэргэжлүүд",
     img: "digital_professions",
     img_detail: "digital_professions",
-    checked: false,
+    content: "",
+    details: [
+      {
+        content_title: "Биотехнологич",
+        content_detail: "",
+        content_image: "biology",
+      },
+      {
+        content_title: "Хөгжүүлэгч",
+        content_detail: "",
+        content_image: "programmer",
+      },
+      {
+        content_title: "Тоглоомын дизайнер",
+        content_detail: "",
+        content_image: "designer",
+      },
+      {
+        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_detail: "",
+        content_image: "cyber",
+      },
+      {
+        content_title: "Машин сургалтын мэргэжилтэн",
+        content_detail: "",
+        content_image: "machine_learning",
+      },
+      {
+        content_title: "Хотын тариачин",
+        content_detail: "",
+        content_image: "farmer",
+      },
+      {
+        content_title: "Стример",
+        content_detail: "",
+        content_image: "hutlugch",
+      },
+      {
+        content_title: "Кибер тоглогч",
+        content_detail: "",
+        content_image: "cyber_gamer",
+      },
+      {
+        content_title: "Тестер",
+        content_detail: "",
+        content_image: "tester",
+      },
+      {
+        content_title: "Тархвар судлаач",
+        content_detail: "",
+        content_image: "tarhvar_sudlaach",
+      },
+    ],
   },
   {
     name: "Ажиллах мэргэжлүүд",
     img: "working_professions",
     img_detail: "working_professions",
-    checked: false,
+    content: "",
+    details: [
+      {
+        content_title: "Биотехнологич",
+        content_detail: "",
+        content_image: "biology",
+      },
+      {
+        content_title: "Хөгжүүлэгч",
+        content_detail: "",
+        content_image: "programmer",
+      },
+      {
+        content_title: "Тоглоомын дизайнер",
+        content_detail: "",
+        content_image: "designer",
+      },
+      {
+        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_detail: "",
+        content_image: "cyber",
+      },
+      {
+        content_title: "Машин сургалтын мэргэжилтэн",
+        content_detail: "",
+        content_image: "machine_learning",
+      },
+      {
+        content_title: "Хотын тариачин",
+        content_detail: "",
+        content_image: "farmer",
+      },
+      {
+        content_title: "Стример",
+        content_detail: "",
+        content_image: "hutlugch",
+      },
+      {
+        content_title: "Кибер тоглогч",
+        content_detail: "",
+        content_image: "cyber_gamer",
+      },
+      {
+        content_title: "Тестер",
+        content_detail: "",
+        content_image: "tester",
+      },
+      {
+        content_title: "Тархвар судлаач",
+        content_detail: "",
+        content_image: "tarhvar_sudlaach",
+      },
+    ],
   },
   {
     name: "Техникийн мэргэжлүүд",
     img: "technical_professions",
     img_detail: "technical_professions",
-    checked: false,
+    content: "",
+    details: [
+      {
+        content_title: "Биотехнологич",
+        content_detail: "",
+        content_image: "biology",
+      },
+      {
+        content_title: "Хөгжүүлэгч",
+        content_detail: "",
+        content_image: "programmer",
+      },
+      {
+        content_title: "Тоглоомын дизайнер",
+        content_detail: "",
+        content_image: "designer",
+      },
+      {
+        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_detail: "",
+        content_image: "cyber",
+      },
+      {
+        content_title: "Машин сургалтын мэргэжилтэн",
+        content_detail: "",
+        content_image: "machine_learning",
+      },
+      {
+        content_title: "Хотын тариачин",
+        content_detail: "",
+        content_image: "farmer",
+      },
+      {
+        content_title: "Стример",
+        content_detail: "",
+        content_image: "hutlugch",
+      },
+      {
+        content_title: "Кибер тоглогч",
+        content_detail: "",
+        content_image: "cyber_gamer",
+      },
+      {
+        content_title: "Тестер",
+        content_detail: "",
+        content_image: "tester",
+      },
+      {
+        content_title: "Тархвар судлаач",
+        content_detail: "",
+        content_image: "tarhvar_sudlaach",
+      },
+    ],
   },
   {
     name: "Цэргийн мэргэжлүүд",
     img: "military_professions",
     img_detail: "military_professions",
-    checked: false,
+    content: "",
+    details: [
+      {
+        content_title: "Биотехнологич",
+        content_detail: "",
+        content_image: "biology",
+      },
+      {
+        content_title: "Хөгжүүлэгч",
+        content_detail: "",
+        content_image: "programmer",
+      },
+      {
+        content_title: "Тоглоомын дизайнер",
+        content_detail: "",
+        content_image: "designer",
+      },
+      {
+        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_detail: "",
+        content_image: "cyber",
+      },
+      {
+        content_title: "Машин сургалтын мэргэжилтэн",
+        content_detail: "",
+        content_image: "machine_learning",
+      },
+      {
+        content_title: "Хотын тариачин",
+        content_detail: "",
+        content_image: "farmer",
+      },
+      {
+        content_title: "Стример",
+        content_detail: "",
+        content_image: "hutlugch",
+      },
+      {
+        content_title: "Кибер тоглогч",
+        content_detail: "",
+        content_image: "cyber_gamer",
+      },
+      {
+        content_title: "Тестер",
+        content_detail: "",
+        content_image: "tester",
+      },
+      {
+        content_title: "Тархвар судлаач",
+        content_detail: "",
+        content_image: "tarhvar_sudlaach",
+      },
+    ],
   },
   {
     name: "Соёл урлагийн мэргэжлүүд",
     img: "culture_professions",
     img_detail: "sport-culture_professions",
-    checked: false,
+    content: "",
+    details: [
+      {
+        content_title: "Биотехнологич",
+        content_detail: "",
+        content_image: "biology",
+      },
+      {
+        content_title: "Хөгжүүлэгч",
+        content_detail: "",
+        content_image: "programmer",
+      },
+      {
+        content_title: "Тоглоомын дизайнер",
+        content_detail: "",
+        content_image: "designer",
+      },
+      {
+        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_detail: "",
+        content_image: "cyber",
+      },
+      {
+        content_title: "Машин сургалтын мэргэжилтэн",
+        content_detail: "",
+        content_image: "machine_learning",
+      },
+      {
+        content_title: "Хотын тариачин",
+        content_detail: "",
+        content_image: "farmer",
+      },
+      {
+        content_title: "Стример",
+        content_detail: "",
+        content_image: "hutlugch",
+      },
+      {
+        content_title: "Кибер тоглогч",
+        content_detail: "",
+        content_image: "cyber_gamer",
+      },
+      {
+        content_title: "Тестер",
+        content_detail: "",
+        content_image: "tester",
+      },
+      {
+        content_title: "Тархвар судлаач",
+        content_detail: "",
+        content_image: "tarhvar_sudlaach",
+      },
+    ],
   },
 ];
 
-const Checkbox = ({ isChecked, label, checkHandler, index, isDisabled }) => {
-  return (
-    <div>
-      <input
-        className="mr-2"
-        type="checkbox"
-        id={`checkbox-${index}`}
-        name="lessons"
-        // checked={isChecked}
-        onChange={checkHandler}
-        // disabled={isDisabled}
-      />
-      <label
-        className="font-semibold text-sm leading-6 text-gray-700 my-2"
-        htmlFor={`checkbox-${index}`}
-      >
-        {label}
-      </label>
-    </div>
-  );
-};
 function LessonsPage() {
   const router = useRouter();
 
@@ -177,7 +726,6 @@ function LessonsPage() {
     setOpenModal8(false);
     setOpenModal9(false);
     setOpenModal11(false);
-    setOpenModal12(false);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -255,12 +803,45 @@ function LessonsPage() {
                 >
                   <h1>{eval(`onCloseModal`)}</h1>
                   <Image
-                    width={1600}
-                    height={1600}
-                    className=" object-cover w-full"
+                    width={900}
+                    height={400}
+                    className=" w-full h-48"
                     src={`${basePath}/${profession.img_detail}.png`}
                     alt=""
                   />
+                  <main
+                    className={`${quicksand.variable}  font-quicksand max-w-[900px] w-full flex flex-col items-center`}
+                  >
+                    {/* <Image className="sm:w-full" src={prof_header} alt="prof-logo" /> */}
+                    <h3>Мэргэжлийн каталог - салбараар</h3>
+                    <form onSubmit={handleSubmit}>
+                      <div
+                        key="main"
+                        className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-7 my-10"
+                      >
+                        {profession.details.map((detail, index) => (
+                          <>
+                            <div
+                              key={detail.content_title + index}
+                              className="flex flex-row bg-white p-2 rounded border shadow shadow-slate-500 max-w-xs md:max-w-none overflow-hidden cursor-hand items-center"
+                            >
+                              <Image
+                                width={160}
+                                height={200}
+                                className=" object-cover"
+                                src={`${basePath}/detail_images/${detail.content_image}.png`}
+                                alt=""
+                                onClick={eval(`onClickButton${index}`)}
+                              />
+                            </div>
+                          </>
+                        ))}
+                        <p className="text-red-600 mb-4 text-[16px]">
+                          {error && error}
+                        </p>
+                      </div>
+                    </form>
+                  </main>
                 </Modal>
               </div>
             </>
