@@ -659,7 +659,7 @@ const professions_data = [
   },
 ];
 
-function LessonsPage() {
+function ProfessionsPage() {
   const router = useRouter();
 
   const [checkedCount, setCheckedCount] = useState(0);
@@ -798,6 +798,7 @@ function LessonsPage() {
                 />
 
                 <Modal
+                  key={index}
                   open={eval(`openModal${index}`)}
                   onClose={eval(`onCloseModal`)}
                 >
@@ -809,18 +810,17 @@ function LessonsPage() {
                     src={`${basePath}/${profession.img_detail}.png`}
                     alt=""
                   />
-                  <main
-                    className={`${quicksand.variable}  font-quicksand max-w-[900px] w-full flex flex-col items-center`}
-                  >
-                    {/* <Image className="sm:w-full" src={prof_header} alt="prof-logo" /> */}
-                    <h3>Мэргэжлийн каталог - салбараар</h3>
-                    <form onSubmit={handleSubmit}>
-                      <div
-                        key="main"
-                        className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-7 my-10"
-                      >
-                        {profession.details.map((detail, index) => (
-                          <>
+
+                  {/* <Image className="sm:w-full" src={prof_header} alt="prof-logo" /> */}
+                  <h3>{profession.name}</h3>
+                  <form onSubmit={handleSubmit}>
+                    <div
+                      key="main"
+                      className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-7 my-10"
+                    >
+                      {profession.details.map((detail, index) => (
+                        <>
+                          <div className="flex flex-col">
                             <div
                               key={detail.content_title + index}
                               className="flex flex-row bg-white p-2 rounded border shadow shadow-slate-500 max-w-xs md:max-w-none overflow-hidden cursor-hand items-center"
@@ -834,26 +834,20 @@ function LessonsPage() {
                                 onClick={eval(`onClickButton${index}`)}
                               />
                             </div>
-                          </>
-                        ))}
-                        <p className="text-red-600 mb-4 text-[16px]">
-                          {error && error}
-                        </p>
-                      </div>
-                    </form>
-                  </main>
+                            <p className="text-sm">{detail.content_title}</p>
+                          </div>
+                        </>
+                      ))}
+                      <p className="text-red-600 mb-4 text-[16px]">
+                        {error && error}
+                      </p>
+                    </div>
+                  </form>
                 </Modal>
               </div>
             </>
           ))}
-          {checkedCount === 3 && (
-            <button
-              type="submit"
-              className="mb-2 me-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Хадгал
-            </button>
-          )}
+
           <p className="text-red-600 mb-4 text-[16px]">{error && error}</p>
         </div>
       </form>
@@ -861,4 +855,4 @@ function LessonsPage() {
   );
 }
 
-export default LessonsPage;
+export default ProfessionsPage;
