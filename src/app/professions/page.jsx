@@ -77,7 +77,7 @@ const professions_data = [
   {
     name: "Анагаах ухааны мэргэжлүүд",
     img: "hospital_professions",
-    img_detail: "hospital_professions",
+    img_detail: "hospital_professions_detail",
     content: "",
     details: [
       {
@@ -115,7 +115,7 @@ const professions_data = [
   {
     name: "Боловсрол дахь мэргэжлүүд",
     img: "education_professions",
-    img_detail: "education_professions",
+    img_detail: "education_professions_detail",
     content: "",
     details: [
       {
@@ -138,7 +138,7 @@ const professions_data = [
   {
     name: "Эдийн засгийн мэргэжлүүд",
     img: "economy_professions",
-    img_detail: "economy_professions",
+    img_detail: "economy_professions_detail",
     content: "",
     details: [
       {
@@ -196,7 +196,7 @@ const professions_data = [
   {
     name: "Хуулийн мэргэжлүүд",
     img: "layeour_professions",
-    img_detail: "layeour_professions",
+    img_detail: "layeour_professions_detail",
     content: "",
     details: [
       {
@@ -254,7 +254,7 @@ const professions_data = [
   {
     name: "Шинжлэх ухааны мэргэжлүүд",
     img: "shu_professions",
-    img_detail: "shu_professions",
+    img_detail: "shu_professions_detail",
     content: "",
     details: [
       {
@@ -312,7 +312,7 @@ const professions_data = [
   {
     name: "Хөдөө аж ахуйн мэргэжлүүд",
     img: "huaa_professions",
-    img_detail: "huaa_professions",
+    img_detail: "huaa_professions_detail",
     content: "",
     details: [
       {
@@ -370,7 +370,7 @@ const professions_data = [
   {
     name: "Дижитал мэргэжлүүд",
     img: "digital_professions",
-    img_detail: "digital_professions",
+    img_detail: "digital_professions_detail",
     content: "",
     details: [
       {
@@ -486,7 +486,7 @@ const professions_data = [
   {
     name: "Техникийн мэргэжлүүд",
     img: "technical_professions",
-    img_detail: "technical_professions",
+    img_detail: "technical_professions_detail",
     content: "",
     details: [
       {
@@ -544,7 +544,7 @@ const professions_data = [
   {
     name: "Цэргийн мэргэжлүүд",
     img: "military_professions",
-    img_detail: "military_professions",
+    img_detail: "military_professions_detail",
     content: "",
     details: [
       {
@@ -602,7 +602,7 @@ const professions_data = [
   {
     name: "Соёл урлагийн мэргэжлүүд",
     img: "culture_professions",
-    img_detail: "sport-culture_professions",
+    img_detail: "culture_professions_detail",
     content: "",
     details: [
       {
