@@ -140,12 +140,12 @@ function ProfessionsPage() {
             <>
               <div
                 key={profession.name + t_index}
-                className="flex flex-row bg-white p-2 rounded border shadow shadow-slate-500 max-w-xs md:max-w-none overflow-hidden cursor-hand items-center"
+                className="flex flex-row bg-white p-2 rounded border shadow shadow-slate-500 max-w-xs md:max-w-none overflow-hidden cursor-hand items-center "
               >
                 <Image
                   width={160}
                   height={200}
-                  className=" object-cover"
+                  className=" object-cover shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"
                   src={`${basePath}/${profession.img}.png`}
                   alt=""
                   onClick={eval(`onClickButton${t_index}`)}
