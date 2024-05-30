@@ -13,6 +13,9 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    PUBLIC_URL: "/",
+  },
 };
 
 module.exports = nextConfig;

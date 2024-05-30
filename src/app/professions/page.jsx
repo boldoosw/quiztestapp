@@ -145,7 +145,7 @@ function ProfessionsPage() {
                 <Image
                   width={160}
                   height={200}
-                  className=" object-cover shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"
+                  className=" object-cover overflow-hidden cursor-hand shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 "
                   src={`${basePath}/${profession.img}.png`}
                   alt=""
                   onClick={eval(`onClickButton${t_index}`)}
@@ -182,8 +182,11 @@ function ProfessionsPage() {
                               key={detail.content_title + p_index}
                               className="flex flex-row bg-white p-2 rounded border shadow shadow-slate-500 max-w-xs md:max-w-none overflow-hidden cursor-hand items-center"
                             >
-                              <Link
+                              {/* <Link
                                 href={`/professions/static?t=${t_index}&&p=${p_index}`}
+                              > */}
+                              <Link
+                                href={`/professions/future?t=${t_index}&&p=${p_index}`}
                               >
                                 <Image
                                   width={160}
