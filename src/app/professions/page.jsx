@@ -75,6 +75,7 @@ function ProfessionsPage() {
     setOpenModal7(false);
     setOpenModal8(false);
     setOpenModal9(false);
+    setOpenModal10(false);
     setOpenModal11(false);
   };
   const handleSubmit = async (e) => {
@@ -126,7 +127,10 @@ function ProfessionsPage() {
   return (
     <main className={`max-w-[900px] w-full flex flex-col items-center`}>
       {/* <Image className="sm:w-full" src={prof_header} alt="prof-logo" /> */}
-      <h3>Мэргэжлийн каталог - салбараар</h3>
+
+      <h2 className="text-m font-semibold mt-8">
+        Мэргэжлийн каталог - салбараар
+      </h2>
       <form onSubmit={handleSubmit}>
         <div
           key="main"
@@ -162,7 +166,10 @@ function ProfessionsPage() {
                   />
 
                   {/* <Image className="sm:w-full" src={prof_header} alt="prof-logo" /> */}
-                  <h3>{profession.name}</h3>
+
+                  <h2 className="text-m font-semibold mt-8">
+                    {profession.name}
+                  </h2>
                   <form onSubmit={handleSubmit}>
                     <div
                       key="main"

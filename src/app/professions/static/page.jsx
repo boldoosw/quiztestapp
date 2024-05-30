@@ -34,6 +34,7 @@ function ProfessionPage() {
         />
         <h3>{professions_data[type]?.details[profession]?.content_title}</h3>
       </div>
+      <div>{professions_data[type]?.details[profession]?.content_detail}</div>
     </main>
   );
 }
