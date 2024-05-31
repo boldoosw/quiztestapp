@@ -25,7 +25,7 @@ function ProfessionPage() {
       >
         <div className="space-y-3 p-4">
           <h2 className="text-sm font-bold md:text-3xl">
-            Ирээдүйтэй мэргэжлүүд
+            {professions_data[type]?.name}
           </h2>
 
           <p className="text-sm text-gray-800">
