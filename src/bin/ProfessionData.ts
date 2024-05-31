@@ -1,6 +1,7 @@
 export const professionsData = [
   {
     name: "Ирээдүйтэй мэргэжлүүд",
+    profession_name: "future_professions",
     img: "future_professions",
     img_detail: "future_professions_detail",
     content:
@@ -60,6 +61,7 @@ export const professionsData = [
   },
   {
     name: "Анагаах ухааны мэргэжлүүд",
+    profession_name: "hospital_professions",
     img: "hospital_professions",
     img_detail: "hospital_professions_detail",
     content: "",
@@ -98,8 +100,9 @@ export const professionsData = [
   },
   {
     name: "Боловсрол дахь мэргэжлүүд",
+    profession_name: "education_professions",
     img: "education_professions",
-    img_detail: "education_professions_detail",
+   img_detail: "education_professions_detail",
     content: "",
     details: [
       {
@@ -121,6 +124,7 @@ export const professionsData = [
   },
   {
     name: "Эдийн засгийн мэргэжлүүд",
+    profession_name: "economy_professions",
     img: "economy_professions",
     img_detail: "economy_professions_detail",
     content: "",
@@ -185,6 +189,7 @@ export const professionsData = [
   },
   {
     name: "Хуулийн мэргэжлүүд",
+    profession_name: "layeour_professions",
     img: "layeour_professions",
     img_detail: "layeour_professions_detail",
     content: "",
@@ -243,6 +248,7 @@ export const professionsData = [
   },
   {
     name: "Шинжлэх ухааны мэргэжлүүд",
+    profession_name: "shu_professions",
     img: "shu_professions",
     img_detail: "shu_professions_detail",
     content: "",
@@ -301,6 +307,7 @@ export const professionsData = [
   },
   {
     name: "Хөдөө аж ахуйн мэргэжлүүд",
+    profession_name: "huaa_professions",
     img: "huaa_professions",
     img_detail: "huaa_professions_detail",
     content: "",
@@ -359,6 +366,7 @@ export const professionsData = [
   },
   {
     name: "Дижитал мэргэжлүүд",
+    profession_name: "digital_professions",
     img: "digital_professions",
     img_detail: "digital_professions_detail",
     content: "",
@@ -417,6 +425,7 @@ export const professionsData = [
   },
   {
     name: "Ажиллах мэргэжлүүд",
+    profession_name: "working_professions",
     img: "working_professions",
     img_detail: "working_professions",
     content: "",
@@ -475,6 +484,7 @@ export const professionsData = [
   },
   {
     name: "Техникийн мэргэжлүүд",
+    profession_name: "technical_professions",
     img: "technical_professions",
     img_detail: "technical_professions_detail",
     content: "",
@@ -533,6 +543,7 @@ export const professionsData = [
   },
  {
     name: "Цэргийн мэргэжлүүд",
+    profession_name: "military_professions",
     img: "military_professions",
     img_detail: "military_professions_detail",
     content: "",
@@ -591,6 +602,7 @@ export const professionsData = [
   },
   {
     name: "Соёл урлагийн мэргэжлүүд",
+    profession_name: "culture_professions",
     img: "culture_professions",
     img_detail: "culture_professions_detail",
     content: "",

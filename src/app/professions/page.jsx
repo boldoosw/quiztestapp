@@ -186,7 +186,8 @@ function ProfessionsPage() {
                                 href={`/professions/static?t=${t_index}&&p=${p_index}`}
                               > */}
                               <Link
-                                href={`/professions/future?t=${t_index}&&p=${p_index}`}
+                                href={`/professions/${profession?.profession_name}?t=${t_index}&&p=${p_index}&&#${detail?.content_title}`}
+                                // href={`/professions/future#mysection?t=${t_index}&&p=${p_index}`}
                               >
                                 <Image
                                   width={160}

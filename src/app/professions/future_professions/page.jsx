@@ -173,7 +173,9 @@ function ProfessionPage() {
               Ирээдүйд хамгийн эрэлт хэрэгцээтэй 10 мэргэжил.
             </p>
           </blockquote>
-          <h2 className="text-sm font-bold md:text-xl mb-4">Биотехнологич</h2>
+          <h2 className="text-sm font-bold md:text-xl mb-4">
+            <div id="Биотехнологич"> Биотехнологич</div>
+          </h2>
           <figure>
             <p className="text-sm text-gray-800">
               Байгаль орчныг хамгаалах, газар тариалан эрхлэх үед хүрээлэн буй
@@ -352,7 +354,7 @@ function ProfessionPage() {
           <br />
           <br />
           <h2 className="text-sm font-bold md:text-xl mb-4">
-            Программ хөгжүүлэгч
+            <div id="Хөгжүүлэгч">Программ хөгжүүлэгч</div>
           </h2>
           <figure>
             <p className="text-sm text-gray-800">
@@ -678,7 +680,7 @@ function ProfessionPage() {
           </p>
           <br />
           <h2 className="text-sm font-bold md:text-xl mb-4">
-            ТОГЛООМЫН ДИЗАЙНЕР МЭРГЭЖИЛ
+            <div id="Тоглоомын дизайнер"> ТОГЛООМЫН ДИЗАЙНЕР МЭРГЭЖИЛ</div>
           </h2>
           <figure>
             <p className="text-sm text-gray-800">
@@ -808,7 +810,8 @@ function ProfessionPage() {
             </p>
           </figure>
           <h2 className="text-sm font-bold md:text-xl mb-4">
-            Кибер аюулгүй байдлын мэргэжилтэн
+            <div id="Кибер аюулгүй байдлын мэргэжилтэн"></div> Кибер аюулгүй
+            байдлын мэргэжилтэн
           </h2>
           <figure>
             <p className="text-sm text-gray-800">
@@ -984,7 +987,9 @@ function ProfessionPage() {
           </figure>
           <br />
           <h2 className="text-sm font-bold md:text-xl mb-4">
-            МАШИН СУРГАЛТЫН МЭРГЭЖИЛТЭН
+            <div id="Машин сургалтын мэргэжилтэн">
+              МАШИН СУРГАЛТЫН МЭРГЭЖИЛТЭН
+            </div>
           </h2>
           <figure>
             <p className="text-sm text-gray-800">
@@ -1163,7 +1168,9 @@ function ProfessionPage() {
             </p>
           </figure>
           <br />
-          <h2 className="text-sm font-bold md:text-xl mb-4">Хотын фермер</h2>
+          <h2 className="text-sm font-bold md:text-xl mb-4">
+            <div id="Хотын тариачин">Хотын фермер</div>
+          </h2>
           <figure>
             <p className="text-sm text-gray-800">
               Хотын фермер бол хотод газар тариалан, үр тариа тариалах чиглэлээр
@@ -1280,7 +1287,7 @@ function ProfessionPage() {
           </figure>
           <br />
           <h2 className="text-sm font-bold md:text-xl mb-4">
-            FM НЭВТРҮҮЛЭГ ХӨТЛӨГЧ МЭРГЭЖИЛ{" "}
+            <div id="Стример"> FM НЭВТРҮҮЛЭГ ХӨТЛӨГЧ МЭРГЭЖИЛ</div>
           </h2>
           <figure>
             <p className="text-sm text-gray-800">
@@ -1364,7 +1371,9 @@ function ProfessionPage() {
             </p>
           </figure>
           <br />
-          <h2 className="text-sm font-bold md:text-xl mb-4">Кибертоглогч </h2>
+          <h2 className="text-sm font-bold md:text-xl mb-4">
+            <div id="Кибер тоглогч">Кибертоглогч</div>{" "}
+          </h2>
           <figure>
             <p className="text-sm text-gray-800">
               Цахим спортын хүн бол мэргэжлийн компьютер тоглоомын тоглогч юм.
@@ -1542,7 +1551,9 @@ function ProfessionPage() {
           </figure>
 
           <br />
-          <h2 className="text-sm font-bold md:text-xl mb-4"> Тест туршигч </h2>
+          <h2 className="text-sm font-bold md:text-xl mb-4">
+            <div id="Тестер"> Тест туршигч</div>{" "}
+          </h2>
           <figure>
             <p className="text-sm text-gray-800">
               Тестер бол бүтээгдэхүүний туршилтанд оролцдог мэргэжилтэн бөгөөд
@@ -1672,8 +1683,7 @@ function ProfessionPage() {
 
           <br />
           <h2 className="text-sm font-bold md:text-xl mb-4">
-            {" "}
-            ЭПИДЕМИОЛОГ/ ТАРХВАР СУДЛААЧ{" "}
+            <div id="Тархвар судлаач">ЭПИДЕМИОЛОГ/ ТАРХВАР СУДЛААЧ</div>
           </h2>
           <figure>
             <p className="text-sm text-gray-800">
