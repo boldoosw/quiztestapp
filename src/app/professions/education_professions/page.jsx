@@ -125,7 +125,7 @@ function ProfessionPage() {
               width={900}
               height={400}
               className=" w-full h-96"
-              src={`${basePath}/detail_images/${professions_data[type]?.details[profession]?.content_image}.png`}
+              src={`${basePath}/detail_images/sub_teacher.png`}
               alt=""
             />
 
@@ -377,7 +377,7 @@ function ProfessionPage() {
               width={900}
               height={400}
               className=" w-full h-96"
-              src={`${basePath}/detail_images/doctor.png`}
+              src={`${basePath}/detail_images/baga_angi_teacher.png`}
               alt=""
             />
             <figcaption className="mt-3 text-sm text-center text-gray-500">
@@ -457,60 +457,6 @@ function ProfessionPage() {
               байна. Тиймээс бага ангийн багшийн мэргэжил маш их эрэлт
               хэрэгцээтэй байдаг.
             </p>
-          </figure>
-          <br />
-          <h2 className="text-sm font-bold md:text-xl mb-4">
-            <div id="Шүдний эмч">Шүдний эмч</div>
-          </h2>
-          <figure>
-            <p className="text-sm text-gray-800"></p>
-            <Image
-              width={900}
-              height={400}
-              className=" w-full h-96"
-              src={`${basePath}/detail_images/dental_doctor.png`}
-              alt=""
-            />
-            <figcaption className="mt-3 text-sm text-center text-gray-500">
-              Шүдний эмч
-            </figcaption>
-            <p className="text-sm text-gray-800"></p>
-          </figure>
-          <br />
-          <h2 className="text-sm font-bold md:text-xl mb-4">
-            <div id="Анагаахын сувилагч">Анагаахын сувилагч</div>
-          </h2>
-          <figure>
-            <p className="text-sm text-gray-800"></p>
-            <Image
-              width={900}
-              height={400}
-              className=" w-full h-96"
-              src={`${basePath}/detail_images/anagaah_suvilagch.png`}
-              alt=""
-            />
-            <figcaption className="mt-3 text-sm text-center text-gray-500">
-              Анагаахын сувилагч
-            </figcaption>
-            <p className="text-sm text-gray-800"></p>
-          </figure>
-          <br />
-          <h2 className="text-sm font-bold md:text-xl mb-4">
-            <div id="Эм зүйч">Эм зүйч</div>
-          </h2>
-          <figure>
-            <p className="text-sm text-gray-800"></p>
-            <Image
-              width={900}
-              height={400}
-              className=" w-full h-96"
-              src={`${basePath}/detail_images/em_zuich.png`}
-              alt=""
-            />
-            <figcaption className="mt-3 text-sm text-center text-gray-500">
-              Эм зүйч
-            </figcaption>
-            <p className="text-sm text-gray-800"></p>
           </figure>
         </div>
       </main>
