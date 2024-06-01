@@ -229,55 +229,36 @@ export const professionsData = [
     content: "",
     details: [
       {
-        content_title: "Биотехнологич",
+        content_title: "Биологч",
         content_detail: "",
-        content_image: "biology",
+        content_image: "biologich",
       },
       {
-        content_title: "Хөгжүүлэгч",
+        content_title: "Биотехнолог",
         content_detail: "",
-        content_image: "programmer",
+        content_image: "biotechnology",
       },
       {
-        content_title: "Тоглоомын дизайнер",
+        content_title: "Геолог",
         content_detail: "",
-        content_image: "designer",
+        content_image: "geotechnology",
       },
       {
-        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_title: "Физикч",
         content_detail: "",
-        content_image: "cyber",
+        content_image: "physic",
       },
       {
-        content_title: "Машин сургалтын мэргэжилтэн",
+        content_title: "Химич",
         content_detail: "",
-        content_image: "machine_learning",
+        content_image: "chemics",
       },
       {
-        content_title: "Хотын тариачин",
+        content_title: "Экологч",
         content_detail: "",
-        content_image: "farmer",
+        content_image: "ecology",
       },
-      {
-        content_title: "Стример",
-        content_detail: "",
-        content_image: "hutlugch",
-      },
-      {
-        content_title: "Кибер тоглогч",
-        content_detail: "",
-        content_image: "cyber_gamer",
-      },
-      {
-        content_title: "Тестер",
-        content_detail: "",
-        content_image: "tester",
-      },
-      {
-        content_title: "Тархвар судлаач",
-        content_detail: "",
-        content_image: "tarhvar_sudlaach",
-      },
+     
     ],
   },
   {
@@ -288,55 +269,11 @@ export const professionsData = [
     content: "",
     details: [
       {
-        content_title: "Биотехнологич",
-        content_detail: "",
-        content_image: "biology",
-      },
-      {
-        content_title: "Хөгжүүлэгч",
-        content_detail: "",
-        content_image: "programmer",
-      },
-      {
-        content_title: "Тоглоомын дизайнер",
-        content_detail: "",
-        content_image: "designer",
-      },
-      {
-        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
-        content_detail: "",
-        content_image: "cyber",
-      },
-      {
-        content_title: "Машин сургалтын мэргэжилтэн",
-        content_detail: "",
-        content_image: "machine_learning",
-      },
-      {
-        content_title: "Хотын тариачин",
+        content_title: "Хотын фермер",
         content_detail: "",
         content_image: "farmer",
       },
-      {
-        content_title: "Стример",
-        content_detail: "",
-        content_image: "hutlugch",
-      },
-      {
-        content_title: "Кибер тоглогч",
-        content_detail: "",
-        content_image: "cyber_gamer",
-      },
-      {
-        content_title: "Тестер",
-        content_detail: "",
-        content_image: "tester",
-      },
-      {
-        content_title: "Тархвар судлаач",
-        content_detail: "",
-        content_image: "tarhvar_sudlaach",
-      },
+      
     ],
   },
   {
@@ -347,55 +284,26 @@ export const professionsData = [
     content: "",
     details: [
       {
-        content_title: "Биотехнологич",
+        content_title: "Програмист мэргэжил",
         content_detail: "",
-        content_image: "biology",
+        content_image: "programmist",
       },
       {
-        content_title: "Хөгжүүлэгч",
+        content_title: "Мэдээллийн шинжээч мэргэжил",
         content_detail: "",
-        content_image: "programmer",
+        content_image: "system_analyst",
       },
       {
-        content_title: "Тоглоомын дизайнер",
+        content_title: "вэб дизайнер",
         content_detail: "",
         content_image: "designer",
       },
       {
-        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
-        content_detail: "",
-        content_image: "cyber",
-      },
-      {
-        content_title: "Машин сургалтын мэргэжилтэн",
+        content_title: "Машин сургалт",
         content_detail: "",
         content_image: "machine_learning",
       },
-      {
-        content_title: "Хотын тариачин",
-        content_detail: "",
-        content_image: "farmer",
-      },
-      {
-        content_title: "Стример",
-        content_detail: "",
-        content_image: "hutlugch",
-      },
-      {
-        content_title: "Кибер тоглогч",
-        content_detail: "",
-        content_image: "cyber_gamer",
-      },
-      {
-        content_title: "Тестер",
-        content_detail: "",
-        content_image: "tester",
-      },
-      {
-        content_title: "Тархвар судлаач",
-        content_detail: "",
-        content_image: "tarhvar_sudlaach",
-      },
+      
     ],
   },
   {
@@ -405,56 +313,13 @@ export const professionsData = [
     img_detail: "working_professions",
     content: "",
     details: [
-      {
-        content_title: "Биотехнологич",
-        content_detail: "",
-        content_image: "biology",
-      },
-      {
-        content_title: "Хөгжүүлэгч",
-        content_detail: "",
-        content_image: "programmer",
-      },
-      {
-        content_title: "Тоглоомын дизайнер",
-        content_detail: "",
-        content_image: "designer",
-      },
-      {
-        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
-        content_detail: "",
-        content_image: "cyber",
-      },
-      {
-        content_title: "Машин сургалтын мэргэжилтэн",
-        content_detail: "",
-        content_image: "machine_learning",
-      },
+     
       {
         content_title: "Хотын тариачин",
         content_detail: "",
         content_image: "farmer",
       },
-      {
-        content_title: "Стример",
-        content_detail: "",
-        content_image: "hutlugch",
-      },
-      {
-        content_title: "Кибер тоглогч",
-        content_detail: "",
-        content_image: "cyber_gamer",
-      },
-      {
-        content_title: "Тестер",
-        content_detail: "",
-        content_image: "tester",
-      },
-      {
-        content_title: "Тархвар судлаач",
-        content_detail: "",
-        content_image: "tarhvar_sudlaach",
-      },
+      
     ],
   },
   {
@@ -465,55 +330,11 @@ export const professionsData = [
     content: "",
     details: [
       {
-        content_title: "Биотехнологич",
+        content_title: "Инженер – техникийн салбар",
         content_detail: "",
-        content_image: "biology",
+        content_image: "technical",
       },
-      {
-        content_title: "Хөгжүүлэгч",
-        content_detail: "",
-        content_image: "programmer",
-      },
-      {
-        content_title: "Тоглоомын дизайнер",
-        content_detail: "",
-        content_image: "designer",
-      },
-      {
-        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
-        content_detail: "",
-        content_image: "cyber",
-      },
-      {
-        content_title: "Машин сургалтын мэргэжилтэн",
-        content_detail: "",
-        content_image: "machine_learning",
-      },
-      {
-        content_title: "Хотын тариачин",
-        content_detail: "",
-        content_image: "farmer",
-      },
-      {
-        content_title: "Стример",
-        content_detail: "",
-        content_image: "hutlugch",
-      },
-      {
-        content_title: "Кибер тоглогч",
-        content_detail: "",
-        content_image: "cyber_gamer",
-      },
-      {
-        content_title: "Тестер",
-        content_detail: "",
-        content_image: "tester",
-      },
-      {
-        content_title: "Тархвар судлаач",
-        content_detail: "",
-        content_image: "tarhvar_sudlaach",
-      },
+      
     ],
   },
  {
@@ -524,114 +345,115 @@ export const professionsData = [
     content: "",
     details: [
       {
-        content_title: "Биотехнологич",
+        content_title: "Аврагч",
         content_detail: "",
-        content_image: "biology",
+        content_image: "avragch",
       },
       {
-        content_title: "Хөгжүүлэгч",
+        content_title: "Гал сөнөөгч",
         content_detail: "",
-        content_image: "programmer",
+        content_image: "galsunuugch",
       },
       {
-        content_title: "Тоглоомын дизайнер",
+        content_title: "Цагдаа",
         content_detail: "",
-        content_image: "designer",
+        content_image: "tsagdaa",
       },
       {
-        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_title: "Нисгэгч",
         content_detail: "",
-        content_image: "cyber",
+        content_image: "nisgegch",
       },
       {
-        content_title: "Машин сургалтын мэргэжилтэн",
+        content_title: "Онгоцны үйлчлэгч",
         content_detail: "",
-        content_image: "machine_learning",
+        content_image: "stuardess",
       },
       {
-        content_title: "Хотын тариачин",
+        content_title: "Нохой сургагч",
         content_detail: "",
-        content_image: "farmer",
+        content_image: "nohoisurgagch",
       },
-      {
-        content_title: "Стример",
-        content_detail: "",
-        content_image: "hutlugch",
-      },
-      {
-        content_title: "Кибер тоглогч",
-        content_detail: "",
-        content_image: "cyber_gamer",
-      },
-      {
-        content_title: "Тестер",
-        content_detail: "",
-        content_image: "tester",
-      },
-      {
-        content_title: "Тархвар судлаач",
-        content_detail: "",
-        content_image: "tarhvar_sudlaach",
-      },
+     
     ],
   },
   {
     name: "Соёл урлагийн мэргэжлүүд",
     profession_name: "culture_professions",
     img: "culture_professions",
-    img_detail: "culture_professions_detail",
+    img_detail: "urlag",
     content: "",
     details: [
       {
-        content_title: "Биотехнологич",
+        content_title: "FM НЭВТРҮҮЛЭГ ХӨТЛӨГЧ МЭРГЭЖИЛ",
         content_detail: "",
-        content_image: "biology",
+        content_image: "fm_hutlugch",
       },
       {
-        content_title: "Хөгжүүлэгч",
+        content_title: "Блоггер",
         content_detail: "",
-        content_image: "programmer",
+        content_image: "blogger",
       },
       {
-        content_title: "Тоглоомын дизайнер",
+        content_title: "Жүжигчин",
+        content_detail: "",
+        content_image: "jujigchin",
+      },
+      {
+        content_title: "Хөгжимчин",
+        content_detail: "",
+        content_image: "hugjimchin",
+      },
+      {
+        content_title: "Зохиолч",
+        content_detail: "",
+        content_image: "zohiolch",
+      },
+      {
+        content_title: "Зураач",
+        content_detail: "",
+        content_image: "zuraach",
+      },
+      {
+        content_title: "Уран дархан",
+        content_detail: "",
+        content_image: "darhan",
+      },
+      {
+        content_title: " Уран оёдолчин",
+        content_detail: "",
+        content_image: "oydolchin",
+      },
+      {
+        content_title: "Загвар зохион бүтээгч",
         content_detail: "",
         content_image: "designer",
       },
       {
-        content_title: "Кибер аюулгүй байдлын мэргэжилтэн",
+        content_title: "Загвар өмгөгч",
         content_detail: "",
-        content_image: "cyber",
+        content_image: "model",
       },
       {
-        content_title: "Машин сургалтын мэргэжилтэн",
+        content_title: "Архитектор",
         content_detail: "",
-        content_image: "machine_learning",
+        content_image: "architector",
       },
       {
-        content_title: "Хотын тариачин",
+        content_title: "Найруулагч",
         content_detail: "",
-        content_image: "farmer",
+        content_image: "nairuulagch",
       },
       {
-        content_title: "Стример",
+        content_title: "Сэтгүүлч",
         content_detail: "",
-        content_image: "hutlugch",
-      },
-      {
-        content_title: "Кибер тоглогч",
+        content_image: "setguulch",
+      }, {
+        content_title: "Редактор",
         content_detail: "",
-        content_image: "cyber_gamer",
+        content_image: "redactor",
       },
-      {
-        content_title: "Тестер",
-        content_detail: "",
-        content_image: "tester",
-      },
-      {
-        content_title: "Тархвар судлаач",
-        content_detail: "",
-        content_image: "tarhvar_sudlaach",
-      },
+
     ],
   },
 ];
