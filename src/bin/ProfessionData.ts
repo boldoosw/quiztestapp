@@ -381,7 +381,7 @@ export const professionsData = [
     name: "Соёл урлагийн мэргэжлүүд",
     profession_name: "culture_professions",
     img: "culture_professions",
-    img_detail: "urlag",
+    img_detail: "culture_professions_detail",
     content: "",
     details: [
       {
