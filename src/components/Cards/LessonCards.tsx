@@ -88,7 +88,7 @@ const lesson_data = [
   },
 ];
 
-const basePath = "/assets/images/profession_images";
+const basePath = "/assets/images/lesson_images";
 
 function LessonCards() {
   const [lesson_ids, setData] = useState([]);
@@ -115,7 +115,7 @@ function LessonCards() {
           className="flex flex-col cursor-pointer bg-white justify-center items-center  rounded-full shadow-2xl w-full card-item-div max-w-screen-md border-e-black p-8"
         >
           <Image
-            src={`/assets/images/profession_images/${lesson_data[id].img_detail}.png`}
+            src={`${basePath}/${lesson_data[id].img_detail}.png`}
             alt="box_img"
             className="w-[500px] "
             width={500}
