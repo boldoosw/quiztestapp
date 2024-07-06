@@ -176,7 +176,7 @@ export default function YesNoChart({ email }: { email: String }) {
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
             <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
               <h3 className="font-medium text-black dark:text-white">
-                A. Та мэргэжилээ сонгосон уу: (
+                A. Чи мэргэжил сонгохдоо юу бодолцож сонголт хийсэн бэ? (
                 {a_items.length > 2 ? "Тийм" : "Үгүй"})
               </h3>
             </div>
@@ -221,7 +221,7 @@ export default function YesNoChart({ email }: { email: String }) {
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
             <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
               <h3 className="font-medium text-black dark:text-white">
-                B. Та мэргэжилээ сонгосон уу (
+                B. Чи сонгосон мэргэжлийн талаар юу мэдэх вэ ? (
                 {a_items.length > 2 ? "Тийм" : "Үгүй"})
               </h3>
             </div>

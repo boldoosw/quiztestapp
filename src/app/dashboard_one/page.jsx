@@ -98,9 +98,9 @@ const DashboardOne = () => {
               perferendis? A, temporibus.
             </div>
             <div className=" text-center  p-4 text-[14px] mt-8 w-full">
-              <button className="btn btn-primary" onClick={downloadPDF}>
+              {/* <button className="btn btn-primary" onClick={downloadPDF}>
                 Download PDF
-              </button>
+              </button> */}
             </div>
           </div>
         </main>
