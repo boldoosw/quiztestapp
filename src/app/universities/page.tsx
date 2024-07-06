@@ -1678,7 +1678,7 @@ export default function TableWithStripedRows() {
           </table>
         </div>
       </div>
-      <div className="w-full bg-white mb-6 shadow-lg rounded">
+      {/* <div className="w-full bg-white mb-6 shadow-lg rounded">
         <div className="w-full p-4">
           <h3>
             <p className="font-bold">ХААИС-Хөдөө аж ахуйн их сургууль</p>
@@ -1746,7 +1746,7 @@ export default function TableWithStripedRows() {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }
