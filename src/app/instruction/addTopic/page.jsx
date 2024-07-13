@@ -16,7 +16,8 @@ export default function AddTopic() {
       alert("Title and description are required.");
       return;
     }
-    const { NEXT_PUBLIC_APP_API_ENDPOINT } = process.env;
+    const NEXT_PUBLIC_APP_API_ENDPOINT =
+      process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
     try {
       const res = await fetch(`${NEXT_PUBLIC_APP_API_ENDPOINT}/api/topics`, {
         method: "POST",
@@ -27,7 +28,7 @@ export default function AddTopic() {
       });
 
       if (res.ok) {
-        router.push("/");
+        router.push("/instruction");
       } else {
         throw new Error("Failed to create a topic");
       }

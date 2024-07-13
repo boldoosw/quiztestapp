@@ -2,12 +2,15 @@ import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 
-const { NEXT_PUBLIC_APP_API_ENDPOINT } = process.env;
+const NEXT_PUBLIC_APP_API_ENDPOINT = process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
 
 const getTopics = async () => {
   try {
+    // const res = await fetch(`${NEXT_PUBLIC_APP_API_ENDPOINT}/api/topics`, {
+    //   cache: "no-store",
+    // });
+
     const res = await fetch(`${NEXT_PUBLIC_APP_API_ENDPOINT}/api/topics`, {
-      // const res = await fetch("http://localhost:3000/api/topics", {
       cache: "no-store",
     });
 

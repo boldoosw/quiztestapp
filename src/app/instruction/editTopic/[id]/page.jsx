@@ -1,9 +1,8 @@
 import EditTopicForm from "@/components/EditTopicForm";
 
 const getTopicById = async (id) => {
+  const NEXT_PUBLIC_APP_API_ENDPOINT = process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
   try {
-    const { NEXT_PUBLIC_APP_API_ENDPOINT } = process.env;
-
     const res = await fetch(
       `${NEXT_PUBLIC_APP_API_ENDPOINT}/api/topics/${id}`,
       {
