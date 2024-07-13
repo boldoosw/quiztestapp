@@ -13,24 +13,20 @@ export default function EditTopicForm({ id, title, description }) {
     e.preventDefault();
 
     try {
-      const res = await fetch(
-        `https://quiztestapp.vercel.app/api/topics/${id}`,
-        {
-          // const res = await fetch(`hlocalhostttp://:3000/api/topics/${id}`, {
-          method: "PUT",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify({ newTitle, newDescription }),
-        }
-      );
+      const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ newTitle, newDescription }),
+      });
 
       if (!res.ok) {
         throw new Error("Failed to update topic");
       }
 
       router.refresh();
-      router.push("/profession");
+      router.push("/");
     } catch (error) {
       console.log(error);
     }
@@ -43,7 +39,7 @@ export default function EditTopicForm({ id, title, description }) {
         value={newTitle}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Мэргэжил"
+        placeholder="Topic Title"
       />
 
       <input
@@ -51,11 +47,11 @@ export default function EditTopicForm({ id, title, description }) {
         value={newDescription}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Мэргэжилийн дэлгэрэнгүй тайлбар мэдээлэл"
+        placeholder="Topic Description"
       />
 
       <button className="bg-green-600 font-bold text-white py-3 px-6 w-fit">
-        Мэргэжил өөрчлөх
+        Update Topic
       </button>
     </form>
   );

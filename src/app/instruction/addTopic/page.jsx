@@ -18,7 +18,7 @@ export default function AddTopic() {
     }
 
     try {
-      const res = await fetch(`/api/topics`, {
+      const res = await fetch("http://localhost:3000/api/topics", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -27,8 +27,7 @@ export default function AddTopic() {
       });
 
       if (res.ok) {
-        router.refresh();
-        router.push("/profession");
+        router.push("/");
       } else {
         throw new Error("Failed to create a topic");
       }
@@ -44,7 +43,7 @@ export default function AddTopic() {
         value={title}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Мэргэжил"
+        placeholder="Topic Title"
       />
 
       <input
@@ -52,14 +51,14 @@ export default function AddTopic() {
         value={description}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Мэргэжлийн дэлгэрэнгүй"
+        placeholder="Topic Description"
       />
 
       <button
         type="submit"
         className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
       >
-        Мэргэжил оруулах
+        Add Topic
       </button>
     </form>
   );

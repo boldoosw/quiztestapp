@@ -7,10 +7,6 @@ import CustomChart from "@/components/Charts/CustomChart";
 import YesNoChart from "@/components/Charts/YesNoChart";
 import LessonCards from "@/components/Cards/LessonCards";
 import UserInfo from "@/components/UserInfo";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
-import domToPdf from "dom-to-pdf";
-// import { fetchUser } from "@/app/lib/data";
 
 const DashboardOne = () => {
   const searchParams = useSearchParams();
@@ -20,53 +16,10 @@ const DashboardOne = () => {
 
   // const user = await fetchUser(id);
 
-  const pdfRef = useRef();
-  const downloadPDF = () => {
-    const input = pdfRef.current;
-    html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4", false);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      const imgWidth = canvas.width;
-      const imgHeight = canvas.height;
-      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-      const imgX = (pdfWidth - imgWidth * ratio) / 2;
-      const imgY = 30;
-      pdf.addImage(
-        imgData,
-        "PNG",
-        imgX,
-        imgY,
-        imgWidth * ratio,
-        imgHeight * ratio
-      );
-      pdf.save("8-9анги.pdf");
-    });
-  };
-
-  const element = document.querySelector(".summary-report-container");
-
-  const options = {
-    filename: "test.pdf",
-  };
-
-  const generatePdf = () => {
-    const element = document.querySelector(".summary-report-container");
-
-    const options = {
-      filename: "test.pdf",
-    };
-
-    return domToPdf(element, options, () => {
-      console.log("done");
-      // callback function
-    });
-  };
   return (
     <>
       {/* <!-- ===== Content Area Start ===== --> */}
-      <div ref={pdfRef}>
+      <div>
         {/* <!-- ===== Main Content Start ===== --> */}
         <main>
           <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
@@ -96,11 +49,6 @@ const DashboardOne = () => {
               quo ea itaque laborum, exercitationem earum saepe commodi
               laudantium! Dolore repudiandae minima ducimus suscipit, minus
               perferendis? A, temporibus.
-            </div>
-            <div className=" text-center  p-4 text-[14px] mt-8 w-full">
-              {/* <button className="btn btn-primary" onClick={downloadPDF}>
-                Download PDF
-              </button> */}
             </div>
           </div>
         </main>

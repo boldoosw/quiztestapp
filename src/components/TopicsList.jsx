@@ -1,11 +1,10 @@
-"use client";
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 
 const getTopics = async () => {
   try {
-    const res = await fetch(`/api/topics`, {
+    const res = await fetch("http://localhost:3000/api/topics", {
       cache: "no-store",
     });
 
@@ -20,11 +19,11 @@ const getTopics = async () => {
 };
 
 export default async function TopicsList() {
-  const topics = await getTopics();
+  const { topics } = await getTopics();
 
   return (
-    <div>
-      {topics?.map((t, index) => (
+    <>
+      {topics.map((t) => (
         <div
           key={t._id}
           className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start"
@@ -36,12 +35,12 @@ export default async function TopicsList() {
 
           <div className="flex gap-2">
             <RemoveBtn id={t._id} />
-            <Link href={`/profession/editTopic/${t._id}`}>
+            <Link href={`/instruction/editTopic/${t._id}`}>
               <HiPencilAlt size={24} />
             </Link>
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }
