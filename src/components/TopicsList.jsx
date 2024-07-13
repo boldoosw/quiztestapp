@@ -2,9 +2,11 @@ import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 
+const { NEXT_PUBLIC_APP_API_ENDPOINT } = process.env;
+
 const getTopics = async () => {
   try {
-    const res = await fetch("https://quiztestapp.vercel.app/api/topics", {
+    const res = await fetch(`${NEXT_PUBLIC_APP_API_ENDPOINT}/api/topics`, {
       // const res = await fetch("http://localhost:3000/api/topics", {
       cache: "no-store",
     });
