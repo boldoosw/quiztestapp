@@ -10,12 +10,9 @@ export default function RemoveBtn({ id }) {
     const NEXT_PUBLIC_APP_API_ENDPOINT =
       process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
     if (confirmed) {
-      const res = await fetch(
-        `${NEXT_PUBLIC_APP_API_ENDPOINT}/api/topics?id=${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const res = await fetch(`/api/topics?id=${id}`, {
+        method: "DELETE",
+      });
 
       if (res.ok) {
         router.refresh();
