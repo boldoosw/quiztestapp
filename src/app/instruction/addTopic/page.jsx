@@ -16,9 +16,9 @@ export default function AddTopic() {
       alert("Title and description are required.");
       return;
     }
-
+    const { NEXT_PUBLIC_APP_API_ENDPOINT } = process.env;
     try {
-      const res = await fetch("http://localhost:3000/api/topics", {
+      const res = await fetch(`${NEXT_PUBLIC_APP_API_ENDPOINT}/api/topics`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
