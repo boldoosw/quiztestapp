@@ -44,7 +44,7 @@ export default function AddTopic() {
         value={title}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Topic Title"
+        placeholder="Зөвлөмжийн нэр"
       />
 
       <input
@@ -52,7 +52,7 @@ export default function AddTopic() {
         value={description}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Topic Description"
+        placeholder="Зөвлөмж дэлгэрэнгүй мэдээлэл"
       />
 
       <button
