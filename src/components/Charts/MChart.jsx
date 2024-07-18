@@ -224,11 +224,16 @@ export function MChart({ email }) {
 
   let labels = null;
 
+  console.log(climov_items);
+
   if (climov_items.length > 0 && holland_items.length > 0)
     labels = [
-      matrix[climov_items[0]][holland_items[0]].split(","),
-      matrix[climov_items[1]][holland_items[1]].split(","),
-      matrix[climov_items[2]][holland_items[2]].split(","),
+      matrix[Number(climov_items[0])][Number(holland_items[0])].split(","),
+      matrix[Number(climov_items[1])][Number(holland_items[1])].split(","),
+      matrix[Number(climov_items[2])][Number(holland_items[2])].split(","),
+      // matrix[climov_items[0]][holland_items[0]].split(","),
+      // matrix[climov_items[1]][holland_items[1]].split(","),
+      // matrix[climov_items[2]][holland_items[2]].split(","),
     ];
 
   let chartdata1 =

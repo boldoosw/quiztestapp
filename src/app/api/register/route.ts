@@ -13,15 +13,16 @@ export const POST = async (request: any) => {
   if (existingUser) {
     return new NextResponse("Email is already in use", { status: 400 });
   }
-
-  const hashedPassword = await bcrypt.hash(password, 5);
+  const salt = await bcrypt.genSalt(5);
+  const hashedPassword = await bcrypt.hash(password, salt);
   const newUser = new User({
     lastname,
     firstname,
     phone,
     email,
     password: hashedPassword,
-    role
+    role,
+    topic_id:""
   });
 
   try {

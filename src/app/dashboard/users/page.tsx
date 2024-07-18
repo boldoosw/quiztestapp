@@ -27,7 +27,7 @@ const UsersPage = async ({ searchParams }: any) => {
               <td>Имайл хаяг</td>
               <td>Утас</td>
               <td>Үүсгэсэн огноо</td>
-              <td>Эрх</td>
+              <td>Хэрэглэгч</td>
               <td>Төлөв</td>
               <td>Үйлдлүүд</td>
             </tr>
@@ -50,8 +50,20 @@ const UsersPage = async ({ searchParams }: any) => {
                 <td>{user.email}</td>{" "}
                 <td>{user.phone ? user.phone : "байхгүй"}</td>
                 <td>{user.createdAt?.toString().slice(4, 16)}</td>
-                <td>{user.role === "admin" ? "Админ" : "Хэрэглэгч"}</td>
-                <td>{user.email ? "идэвхтэй" : "идэвхгүй"}</td>
+                <td>
+                  {user.role === "admin"
+                    ? "Админ"
+                    : user.role === "angi_8_9"
+                    ? "8,9 анги"
+                    : "10-12 анги"}
+                </td>
+                <td>
+                  <Link href={`/dashboard/users/${user.id}`}>
+                    <button className={`${styles.button} ${styles.view}`}>
+                      View
+                    </button>
+                  </Link>
+                </td>
                 <td>
                   <div className={styles.buttons}>
                     {user.role === "angi_8_9" && (

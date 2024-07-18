@@ -9,25 +9,25 @@ import bcrypt from "bcryptjs";
 // import { signIn } from "../auth";
 
 export const addUser = async (formData) => {
-  const { username, email, password, phone, address, isAdmin, isActive } =
+  const { lastname, firstname, phone, email, password, role } =
     Object.fromEntries(formData);
 
   try {
     connectMongoDB();
 
-    const salt = await bcrypt.genSalt(10);
+    const salt = await bcrypt.genSalt(5);
     const hashedPassword = await bcrypt.hash(password, salt);
 
     const newUser = new User({
-      username,
+      lastname,
+      firstname,
+      phone,
       email,
       password: hashedPassword,
-      phone,
-      address,
-      isAdmin,
-      isActive,
+      role,
+      topic_id: "",
     });
-
+    console.log(newUser);
     await newUser.save();
   } catch (err) {
     console.log(err);
@@ -39,23 +39,22 @@ export const addUser = async (formData) => {
 };
 
 export const updateUser = async (formData) => {
-  const { id, username, email, password, phone, address, isAdmin, isActive } =
+  const { id, lastname, firstname, phone, email, password, role } =
     Object.fromEntries(formData);
 
   try {
     connectMongoDB();
 
-    const salt = await bcrypt.genSalt(10);
+    const salt = await bcrypt.genSalt(5);
     const hashedPassword = await bcrypt.hash(password, salt);
 
     const updateFields = {
-      username,
+      lastname,
+      firstname,
+      phone,
       email,
       password: hashedPassword,
-      phone,
-      address,
-      isAdmin,
-      isActive,
+      role,
     };
 
     Object.keys(updateFields).forEach(

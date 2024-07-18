@@ -5,10 +5,13 @@ import connectMongoDB from "@/utils/db";
 export const fetchUsers = async (q, page) => {
   const regex = new RegExp(q, "i");
 
-  const ITEM_PER_PAGE = 2;
+  const ITEM_PER_PAGE = 5;
 
   try {
     connectMongoDB();
+
+    // await User.updateMany({}, { $set: { topic_id: "" } });
+
     const count = await User.find({ email: { $regex: regex } }).count();
     const users = await User.find({
       $or: [

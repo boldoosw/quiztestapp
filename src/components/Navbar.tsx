@@ -167,6 +167,12 @@ const navItems2: NavItem[] = [
     ],
   },
 ];
+const navItems3: NavItem[] = [
+  {
+    label: "Зөвлөмжүүд",
+    link: "/instruction",
+  },
+];
 export default function Navbar2() {
   const [animationParent] = useAutoAnimate();
   const [isSideMenuOpen, setSideMenue] = useState(false);
@@ -222,6 +228,8 @@ export default function Navbar2() {
                   ? navItems1
                   : session?.user?.role === "angi10_12"
                   ? navItems2
+                  : session?.user?.role === "admin"
+                  ? navItems3
                   : navItems)?.map((d, i) => (
                 <Link
                   key={i}

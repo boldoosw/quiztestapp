@@ -29,6 +29,10 @@ const userSchema = new Schema(
       type: String,
       required: false,
     },
+    topic_id: {
+      type: String,
+      required: false,
+    },
   },
   { timestamps: true }
 );
