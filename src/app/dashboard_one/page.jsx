@@ -1,21 +1,32 @@
 "use client";
-import React, { useRef } from "react";
+
 import { useSearchParams } from "next/navigation";
-import { useSession } from "next-auth/react";
+import { useSession, useEffect, useState } from "next-auth/react";
 
 import CustomChart from "@/components/Charts/CustomChart";
 import YesNoChart from "@/components/Charts/YesNoChart";
 import LessonCards from "@/components/Cards/LessonCards";
 import UserInfo from "@/components/UserInfo";
 
-const DashboardOne = () => {
+const DashboardOne = async () => {
   const searchParams = useSearchParams();
   const { data: session, status: sessionStatus } = useSession();
 
   const email = searchParams ? searchParams.get("email") : session.user?.email;
+  const id = searchParams ? searchParams.get("id") : session.user?._id;
+  const [searchedUser, setData] = useState({});
+  async function fetchUserData() {
+    const { data } = await axios.get(`/api/user`, {
+      params: { user_email: email },
+    });
 
-  // const user = await fetchUser(id);
-
+    setData({ ...data.existinguser });
+    // console.log("user_data:", user_data?.firstname);
+  }
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+  console.log("searchUser:", searchedUser);
   return (
     <>
       {/* <!-- ===== Content Area Start ===== --> */}
@@ -41,14 +52,7 @@ const DashboardOne = () => {
 
             <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8 w-full">
               Зөвлөмж.<br></br>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
-              officia reiciendis aliquid doloribus hic laborum provident ut
-              eligendi facilis minus magnam ipsum ipsa optio dignissimos,
-              excepturi iusto facere consectetur, sed perferendis porro. Eum
-              totam dolorem natus enim perferendis deleniti cum expedita nulla
-              quo ea itaque laborum, exercitationem earum saepe commodi
-              laudantium! Dolore repudiandae minima ducimus suscipit, minus
-              perferendis? A, temporibus.
+              {searchParams.get("id")}
             </div>
           </div>
         </main>

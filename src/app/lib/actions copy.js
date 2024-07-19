@@ -39,17 +39,22 @@ export const addUser = async (formData) => {
 };
 
 export const updateUser = async (formData) => {
-  const { id, lastname, firstname, role, topic_id } =
+  const { id, lastname, firstname, phone, email, password, role } =
     Object.fromEntries(formData);
 
   try {
     connectMongoDB();
 
+    const salt = await bcrypt.genSalt(5);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
     const updateFields = {
       lastname,
       firstname,
+      phone,
+      email,
+      password: hashedPassword,
       role,
-      topic_id,
     };
 
     Object.keys(updateFields).forEach(

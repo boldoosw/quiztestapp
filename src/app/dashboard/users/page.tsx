@@ -60,21 +60,25 @@ const UsersPage = async ({ searchParams }: any) => {
                 <td>
                   <Link href={`/dashboard/users/${user.id}`}>
                     <button className={`${styles.button} ${styles.view}`}>
-                      View
+                      Зөвлөмж засах
                     </button>
                   </Link>
                 </td>
                 <td>
                   <div className={styles.buttons}>
                     {user.role === "angi_8_9" && (
-                      <Link href={`/dashboard_one?email=${user.email}`}>
+                      <Link
+                        href={`/dashboard_one?email=${user.email}&&id=${user._id}`}
+                      >
                         <button className={`${styles.button} ${styles.view}`}>
                           Тайлан
                         </button>
                       </Link>
                     )}
                     {user.role === "angi10_12" && (
-                      <Link href={`/dashboard_two?email=${user.email}`}>
+                      <Link
+                        href={`/dashboard_two?email=${user.email}&&id=${user._id}`}
+                      >
                         <button className={`${styles.button} ${styles.view}`}>
                           Тайлан
                         </button>
