@@ -1,12 +1,8 @@
 import axios from "axios";
 import { signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import User from "@/models/User";
-import { data } from "autoprefixer";
 
 const UserInfo = ({ email }: { email: String }) => {
-  const { data: session }: any = useSession();
-
   const [searchedUser, setData] = useState({});
 
   const [user_email, setEmail] = useState(email);
@@ -17,13 +13,11 @@ const UserInfo = ({ email }: { email: String }) => {
     });
 
     setData({ ...data.existinguser });
-    // console.log("user_data:", user_data?.firstname);
   }
 
   useEffect(() => {
     fetchUserData();
   }, []);
-  console.log("searchUser:", searchedUser);
   return (
     <>
       <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">

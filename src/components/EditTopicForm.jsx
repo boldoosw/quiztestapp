@@ -14,13 +14,17 @@ export default function EditTopicForm({ id, title, description }) {
     const { NEXT_PUBLIC_APP_API_ENDPOINT } =
       process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
     try {
-      const res = await fetch(`/api/topics/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ newTitle, newDescription }),
-      });
+      // const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+      const res = await fetch(
+        `https://quiztestapp.vercel.app/api/topics/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({ newTitle, newDescription }),
+        }
+      );
 
       if (!res.ok) {
         throw new Error("Failed to update topic");

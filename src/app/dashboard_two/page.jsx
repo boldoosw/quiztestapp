@@ -8,14 +8,15 @@ import HollandChart from "@/components/Charts/HollandChart";
 import { MChart } from "@/components/Charts/MChart";
 import YesNoChart from "@/components/Charts/YesNoChart";
 import UserInfo from "@/components/UserInfo";
-
+import TopicInfo from "@/components/TopicInfo";
 const DashboardTwo = () => {
   const [loader, setLoader] = useState(false);
   const searchParams = useSearchParams();
+
   const { data: session, status: sessionStatus } = useSession();
 
   const email = searchParams.get("email");
-
+  const topic_id = searchParams.get("topic_id");
   if (sessionStatus === "loading") {
     return <h1>Ачааллаж байна...</h1>;
   }
@@ -38,16 +39,8 @@ const DashboardTwo = () => {
         <div className="mt-4  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
           {/* <MChart email={email} /> */}
         </div>
-
-        <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8 w-full">
-          Зөвлөмж.<br></br>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
-          officia reiciendis aliquid doloribus hic laborum provident ut eligendi
-          facilis minus magnam ipsum ipsa optio dignissimos, excepturi iusto
-          facere consectetur, sed perferendis porro. Eum totam dolorem natus
-          enim perferendis deleniti cum expedita nulla quo ea itaque laborum,
-          exercitationem earum saepe commodi laudantium! Dolore repudiandae
-          minima ducimus suscipit, minus perferendis? A, temporibus.
+        <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
+          <TopicInfo topic_id={topic_id} />
         </div>
       </div>
     </main>

@@ -2,7 +2,6 @@ import { fetchUsers } from "@/app/lib/data";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import Search from "@/app/ui/dashboard/search/search";
 import styles from "@/app/ui/dashboard/users/users.module.css";
-import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -68,7 +67,7 @@ const UsersPage = async ({ searchParams }: any) => {
                   <div className={styles.buttons}>
                     {user.role === "angi_8_9" && (
                       <Link
-                        href={`/dashboard_one?email=${user.email}&&id=${user._id}`}
+                        href={`/dashboard_one?email=${user.email}&topic_id=${user.topic_id}`}
                       >
                         <button className={`${styles.button} ${styles.view}`}>
                           Тайлан
@@ -77,7 +76,7 @@ const UsersPage = async ({ searchParams }: any) => {
                     )}
                     {user.role === "angi10_12" && (
                       <Link
-                        href={`/dashboard_two?email=${user.email}&&id=${user._id}`}
+                        href={`/dashboard_two?email=${user.email}&topic_id=${user.topic_id}`}
                       >
                         <button className={`${styles.button} ${styles.view}`}>
                           Тайлан
