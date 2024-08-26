@@ -1,8 +1,8 @@
 "use client";
-
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { userRef, useSession, useEffect, useState } from "next-auth/react";
-
+import tailan from "@/assets/images/tailan_zurag/tailan_header.png";
 import CustomChart from "@/components/Charts/CustomChart";
 import YesNoChart from "@/components/Charts/YesNoChart";
 import LessonCards from "@/components/Cards/LessonCards";
@@ -24,6 +24,9 @@ const DashboardOne = async () => {
       <div>
         {/* <!-- ===== Main Content Start ===== --> */}
         <main>
+          <div className="flex flex-col  bg-white justify-center py-6 px-10 items-center rounded-tr-[35px] rounded-tl-[35px] rounded-bl-[35px] rounded-br-[35px] shadow-2xl md:min-h-[160px] w-full card-item-div  min-h-[160px]">
+            <Image className="h-[80px] sm:h-full " src={tailan} alt="logo" />
+          </div>
           <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
             <div className="  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
               <UserInfo email={email} />
