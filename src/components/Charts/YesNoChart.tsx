@@ -172,6 +172,19 @@ export default function YesNoChart({ email }: { email: String }) {
   if (a_items.length > 0 && b_items.length > 0)
     return a_items.length > 2 ? (
       <>
+        <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div
+              className={
+                "border-b border-stroke  text-black   px-7 py-4 dark:border-strokedark bg-gray-300 "
+              }
+            >
+              <h3 className="font-medium dark:text-white">
+                1.ТҮРГЭН ТАНДАЛТЫН ТЕСТИЙН ҮР ДҮНГ ДООР ҮЗҮҮЛЭВ.
+              </h3>
+            </div>
+          </div>
+        </div>
         <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-3">
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
             <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
@@ -265,6 +278,19 @@ export default function YesNoChart({ email }: { email: String }) {
       </>
     ) : (
       <>
+        <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div
+              className={
+                "border-b border-stroke  text-black   px-7 py-4 dark:border-strokedark bg-gray-300 "
+              }
+            >
+              <h3 className="font-medium dark:text-white">
+                1.ТҮРГЭН ТАНДАЛТЫН ТЕСТИЙН ҮР ДҮНГ ДООР ҮЗҮҮЛЭВ.
+              </h3>
+            </div>
+          </div>
+        </div>
         <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-3">
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
             <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">

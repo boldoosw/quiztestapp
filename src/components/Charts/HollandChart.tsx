@@ -102,7 +102,7 @@ function HollandChart({ email }: { email: String | undefined }) {
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
           <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
             <h3 className="font-medium text-black dark:text-white">
-              Холландын тестийн үр дүн
+              3. Холландын тестийн үр дүн
             </h3>
           </div>
           <div className=" h-full ">

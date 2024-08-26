@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { userRef, useSession, useEffect, useState } from "next-auth/react";
 import tailan from "@/assets/images/tailan_zurag/tailan_header.png";
+import home8_9 from "@/assets/images/8-9.png";
+import home10_12 from "@/assets/images/10-12.png";
 import CustomChart from "@/components/Charts/CustomChart";
 import YesNoChart from "@/components/Charts/YesNoChart";
 import LessonCards from "@/components/Cards/LessonCards";
@@ -26,6 +28,18 @@ const DashboardOne = async () => {
         <main>
           <div className="flex flex-col  bg-white justify-center py-6 px-10 items-center rounded-tr-[35px] rounded-tl-[35px] rounded-bl-[35px] rounded-br-[35px] shadow-2xl md:min-h-[160px] w-full card-item-div  min-h-[160px]">
             <Image className="h-[80px] sm:h-full " src={tailan} alt="logo" />
+          </div>
+          <div className="flex flex-col mt-6  bg-white justify-center py-6 px-10 items-center rounded-tr-[35px] rounded-tl-[35px] rounded-bl-[35px] rounded-br-[35px] shadow-2xl md:min-h-[340px] w-full card-item-div  min-h-[260px]">
+            <Image className="h-[80px] sm:h-full " src={home8_9} alt="logo" />
+            <div className="mt-4">
+              <button
+                type="button"
+                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                onClick={() => router.push("/about8_9")}
+              >
+                START / ГАРАА
+              </button>
+            </div>
           </div>
           <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
             <div className="  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
