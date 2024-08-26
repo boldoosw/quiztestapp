@@ -37,7 +37,7 @@ const DashboardTwo = () => {
           <HollandChart email={email} />
         </div>
         <div className="mt-4  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-          {/* <MChart email={email} /> */}
+          <MChart email={email} />
         </div>
         <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
           <TopicInfo topic_id={topic_id} />
