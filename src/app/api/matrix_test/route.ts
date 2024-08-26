@@ -2,7 +2,7 @@ import connectMongoDB from "@/utils/db";
 import MatrixQuiz from "@/models/MatrixQuiz";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request:NextRequest) {
+export async function POST(request: NextRequest) {
   const { climov_items, holland_items, uid, email } = await request.json();
   await connectMongoDB();
 
@@ -26,18 +26,18 @@ export async function GET(
   request: NextRequest,
   { params }: { params: { user_email: string } }
 ) {
-
   const by_email = request.nextUrl.searchParams.get("user_email");
   console.log("my search email:", by_email);
   await connectMongoDB();
 
   const existingMatrixQuiz = await MatrixQuiz.findOne({
-    email: "boldoosw@gmail.com",
+    // email: "boldoosw@gmail.com",
+    email: by_email,
   });
   return NextResponse.json({ existingMatrixQuiz });
 }
 
-export async function DELETE(request:NextRequest) {
+export async function DELETE(request: NextRequest) {
   const id = request.nextUrl.searchParams.get("id");
   await connectMongoDB();
   await MatrixQuiz.findByIdAndDelete(id);
