@@ -27,12 +27,12 @@ export async function GET(
   { params }: { params: { user_email: string } }
 ) {
   const by_email = request.nextUrl.searchParams.get("user_email");
-  console.log("my search email:", by_email);
-  await connectMongoDB();
 
+  await connectMongoDB();
+  console.log("my search1 email:", by_email);
   const existingMatrixQuiz = await MatrixQuiz.findOne({
-    // email: "boldoosw@gmail.com",
-    email: by_email,
+    email: "boldoosw@gmail.com",
+    // email: by_email,
   });
   return NextResponse.json({ existingMatrixQuiz });
 }

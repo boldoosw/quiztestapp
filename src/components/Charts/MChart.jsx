@@ -193,6 +193,7 @@ export function MChart({ email }) {
       params: { user_email: user_email },
     });
     try {
+      // console.log(data.existingClimovQuiz);
       setClimovItems(data.existingMatrixQuiz.climov_items.split(","));
       setHollandItems(data.existingMatrixQuiz.holland_items.split(","));
     } catch (error) {
