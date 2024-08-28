@@ -17,9 +17,7 @@ export async function GET(
 
   await connectMongoDB();
 
-  let existingTopic = await Topic.findOne({
-    _id: by_topic,
-  });
+  let existingTopic;
 
   let existingTopic1 = await Topic.findOne({
     _id: "6618836048d3e3894809ea5c",
