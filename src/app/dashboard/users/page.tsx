@@ -67,7 +67,7 @@ const UsersPage = async ({ searchParams }: any) => {
                   <div className={styles.buttons}>
                     {user.role === "angi_8_9" && (
                       <Link
-                        href={`/dashboard_one?email=${user.email}&topic_id=${user.topic_id}`}
+                        href={`/dashboard_one?email=${user.email}&topic_id=${user.topic_id}&role=${user.role}`}
                       >
                         <button className={`${styles.button} ${styles.view}`}>
                           Тайлан
@@ -76,7 +76,7 @@ const UsersPage = async ({ searchParams }: any) => {
                     )}
                     {user.role === "angi10_12" && (
                       <Link
-                        href={`/dashboard_two?email=${user.email}&topic_id=${user.topic_id}`}
+                        href={`/dashboard_two?email=${user.email}&topic_id=${user.topic_id}&role=${user.role}`}
                       >
                         <button className={`${styles.button} ${styles.view}`}>
                           Тайлан

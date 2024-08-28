@@ -166,7 +166,6 @@ export default function YesNoChart({ email }: { email: String }) {
 
   useEffect(() => {
     fetchData();
-    console.log("chart dororh id:", user_email);
   }, []);
 
   if (a_items.length > 0 && b_items.length > 0)

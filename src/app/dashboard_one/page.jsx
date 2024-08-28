@@ -14,9 +14,11 @@ import TopicInfo from "@/components/TopicInfo";
 const DashboardOne = async () => {
   const searchParams = useSearchParams();
   const { data: session, status: sessionStatus } = useSession();
-
+  const role = searchParams ? searchParams.get("role") : session?.user?.role;
   const email = searchParams ? searchParams.get("email") : session.user?.email;
-  const topic_id = searchParams ? searchParams.get("topic_id") : "";
+  const topic_id = searchParams
+    ? searchParams.get("topic_id")
+    : session.user?.topic_id;
   if (sessionStatus === "loading") {
     return <h1>Ачааллаж байна...</h1>;
   }
@@ -59,7 +61,7 @@ const DashboardOne = async () => {
 
             <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8   grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
               {/* {topic_id} */}
-              <TopicInfo topic_id={topic_id} />
+              <TopicInfo role={role} topic_id={topic_id} />
             </div>
           </div>
         </main>

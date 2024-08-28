@@ -89,7 +89,7 @@ function HollandChart({ email }: { email: String | undefined }) {
       params: { user_email: user_email },
     });
 
-    setData(data.existingHollandQuiz.hollandquiz_items.split(","));
+    setData(data.existingHollandQuiz?.hollandquiz_items.split(","));
     setIds(data.existingHollandQuiz.top_items.split(","));
   }
   useEffect(() => {

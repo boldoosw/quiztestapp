@@ -248,7 +248,7 @@ function MatrixChart() {
     console.log("climov_items:", climov_items);
     let holland_items = hollandArray.toString();
     console.log("holland items:", holland_items);
-    let email = "boldoosw@gmail.com";
+    let email = "nominjin@gmail.com";
 
     try {
       const res = await fetch("/api/matrix_test", {

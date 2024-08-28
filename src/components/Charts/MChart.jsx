@@ -186,6 +186,7 @@ export function MChart({ email }) {
   const [holland_data, setHollandData] = useState([]);
   const [holland_top_ids, setHollandIds] = useState([]);
   const [user_email, setEmail] = useState(email);
+  console.log("mchart email:", email);
 
   async function fetchData() {
     // Fetch data from your API here.
@@ -193,34 +194,35 @@ export function MChart({ email }) {
       params: { user_email: user_email },
     });
     try {
-      // console.log(data.existingClimovQuiz);
+      console.log(data.existingClimovQuiz);
       setClimovItems(data.existingMatrixQuiz.climov_items.split(","));
       setHollandItems(data.existingMatrixQuiz.holland_items.split(","));
     } catch (error) {
       throw new Error();
     }
   }
-  async function fetchHollandData() {
-    // Fetch data from your API here.
-    const { data } = await axios.get(`/api/holland_test`, {
-      params: { user_email: user_email },
-    });
-    setHollandData(data.existingHollandQuiz.hollandquiz_items.split(","));
-    setHollandIds(data.existingHollandQuiz.top_items.split(","));
-  }
+
   async function fetchClimovData() {
     // Fetch data from your API here.
     const { data } = await axios.get(`/api/climov_test`, {
-      params: { user_email: user_email },
+      params: { user_email: email },
     });
     setClimovData(data.existingClimovQuiz.climovquiz_items.split(","));
     setClimovIds(data.existingClimovQuiz.top_items.split(","));
   }
+  async function fetchHollandData() {
+    // Fetch data from your API here.
+    const { data } = await axios.get(`/api/holland_test`, {
+      params: { user_email: email },
+    });
+    setHollandData(data.existingHollandQuiz.hollandquiz_items.split(","));
+    setHollandIds(data.existingHollandQuiz.top_items.split(","));
+  }
 
   useEffect(() => {
+    // fetchClimovData();
+    // fetchHollandData();
     fetchData();
-    fetchClimovData();
-    fetchHollandData();
   }, []);
 
   let labels = null;

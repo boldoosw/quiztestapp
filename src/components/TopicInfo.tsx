@@ -1,16 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const TopicInfo = ({ topic_id }: { topic_id: String }) => {
+type Props = {
+  topic_id: string;
+  role: string;
+};
+
+const TopicInfo: React.FC<Props> = ({ topic_id, role }) => {
   const [searchedTopic, setData] = useState({});
 
   // const [topic, setTopic] = useState(topic_id);
 
   async function fetchTopicData() {
     const { data } = await axios.get(`/api/topic`, {
-      params: { topic_id: topic_id },
+      params: { topic_id: topic_id, role: role },
     });
-
+    // console.log("topic info dotorh role:", role);
+    // console.log("topic info dotorh topic_id:", topic_id);
     setData({ ...data.existingTopic });
   }
 
