@@ -226,8 +226,6 @@ export function MChart({ email }) {
 
   let labels = null;
 
-  console.log(climov_items[0]);
-
   if (climov_items.length > 0 && holland_items.length > 0)
     labels = [
       matrix[Number(climov_items[0])][Number(holland_items[0])],
