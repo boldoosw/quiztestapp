@@ -1,11 +1,11 @@
 import connectMongoDB from "@/utils/db";
 import Lesson from "@/models/Lesson";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request) {
+export async function POST(request: NextRequest) {
   const { checkbox_items, email } = await request.json();
   await connectMongoDB();
-  const existingLesson = await Lesson.findOne({ email: "boldoosw@gmail.com" });
+  const existingLesson = await Lesson.findOne({ email: email });
   if (existingLesson) {
     await Lesson.findByIdAndDelete(existingLesson._id);
     // return new NextResponse("Email is already in use", { status: 400 });
@@ -14,14 +14,18 @@ export async function POST(request) {
   return NextResponse.json({ message: "Lesson Created" }, { status: 201 });
 }
 
-export async function GET() {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { user_email: string } }
+) {
+  const by_email = request.nextUrl.searchParams.get("user_email");
   await connectMongoDB();
 
-  const existingLesson = await Lesson.findOne({ email: "boldoosw@gmail.com" });
+  const existingLesson = await Lesson.findOne({ email: by_email });
   return NextResponse.json({ existingLesson });
 }
 
-export async function DELETE(request) {
+export async function DELETE(request: NextRequest) {
   const id = request.nextUrl.searchParams.get("id");
   await connectMongoDB();
   await Lesson.findByIdAndDelete(id);
