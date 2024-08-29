@@ -20,7 +20,7 @@ const DashboardOne = async () => {
     ? searchParams.get("topic_id")
     : session.user?.topic_id;
   if (sessionStatus === "loading") {
-    return <h1>Ачааллаж байна...</h1>;
+    return <h1>Түр хүлээнэ үү...</h1>;
   }
   return (
     <>

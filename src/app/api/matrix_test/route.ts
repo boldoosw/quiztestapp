@@ -31,8 +31,8 @@ export async function GET(
   await connectMongoDB();
   console.log("my search1 email:", by_email);
   const existingMatrixQuiz = await MatrixQuiz.findOne({
-    email: "boldoosw@gmail.com",
-    // email: by_email,
+    // email: "boldoosw@gmail.com",
+    email: by_email,
   });
   return NextResponse.json({ existingMatrixQuiz });
 }

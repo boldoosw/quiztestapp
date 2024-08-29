@@ -4,15 +4,14 @@ import React, { useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useSession } from "next-auth/react";
 import tailan from "@/assets/images/tailan_zurag/tailan_header.png";
-import home8_9 from "@/assets/images/8-9.png";
 import home10_12 from "@/assets/images/10-12.png";
 import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
 import { MChart } from "@/components/Charts/MChart";
-import { MatrixChart } from "@/components/Charts/MatrixChart";
 import YesNoChart from "@/components/Charts/YesNoChart";
 import UserInfo from "@/components/UserInfo";
 import TopicInfo from "@/components/TopicInfo";
+
 const DashboardTwo = () => {
   const [loader, setLoader] = useState(false);
   const searchParams = useSearchParams();
@@ -20,16 +19,18 @@ const DashboardTwo = () => {
   const { data: session, status: sessionStatus } = useSession();
 
   const role = searchParams ? searchParams.get("role") : session?.user?.role;
-  // const email = searchParams.get("email");
-  // const topic_id = searchParams.get("topic_id");
+
   const email = searchParams ? searchParams.get("email") : session.user?.email;
+
   const topic_id = searchParams
     ? searchParams.get("topic_id")
     : session.user?.topic_id;
 
   if (sessionStatus === "loading") {
-    return <h1>Ачааллаж байна...</h1>;
+    return <h1>Түр хүлээнэ үү...</h1>;
   }
+  //code
+
   return (
     <main>
       <div className="flex flex-col  bg-white justify-center py-6 px-10 items-center rounded-tr-[35px] rounded-tl-[35px] rounded-bl-[35px] rounded-br-[35px] shadow-2xl md:min-h-[160px] w-full card-item-div  min-h-[160px]">
@@ -62,7 +63,7 @@ const DashboardTwo = () => {
           <HollandChart email={email} />
         </div>
         <div className="mt-4  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-          {/* <MChart email={email} /> */}
+          <MChart email={email} />
           {/* <MatrixChart /> */}
         </div>
         <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">

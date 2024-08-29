@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
 import MChart from "@/components/Charts/MChart";
+import { MatrixChart } from "@/components/Charts/MatrixChart";
 import { useSearchParams } from "next/navigation";
 
 const MatrixTest = () => {
@@ -15,7 +16,7 @@ const MatrixTest = () => {
         <ClimovChart email={email} />
         <HollandChart email={email} />
       </div>
-      <MChart email={email} />
+      <MatrixChart email={email} />
     </div>
   );
 };

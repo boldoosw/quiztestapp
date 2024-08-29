@@ -176,7 +176,7 @@ const CustomRadioButton = ({ label, selected, onSelect }) => (
   </li>
 );
 
-function MatrixChart() {
+export function MatrixChart({ email }) {
   const [error, setError] = useState("");
   const router = useRouter();
   const [selectedClimov_0, setClimovValue_0] = useState(null);
@@ -351,4 +351,4 @@ function MatrixChart() {
   );
 }
 
-export default MatrixChart;
+// export default MatrixChart;

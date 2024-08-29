@@ -185,8 +185,7 @@ export function MChart({ email }) {
   const [climov_top_ids, setClimovIds] = useState([]);
   const [holland_data, setHollandData] = useState([]);
   const [holland_top_ids, setHollandIds] = useState([]);
-  const [user_email, setEmail] = useState(email);
-  console.log("mchart email:", email);
+  const user_email = email;
 
   async function fetchData() {
     // Fetch data from your API here.
@@ -194,7 +193,7 @@ export function MChart({ email }) {
       params: { user_email: user_email },
     });
     try {
-      console.log(data.existingClimovQuiz);
+      console.log("climov data:", data.existingClimovQuiz);
       setClimovItems(data.existingMatrixQuiz.climov_items.split(","));
       setHollandItems(data.existingMatrixQuiz.holland_items.split(","));
     } catch (error) {
@@ -220,23 +219,20 @@ export function MChart({ email }) {
   }
 
   useEffect(() => {
-    // fetchClimovData();
-    // fetchHollandData();
+    fetchClimovData();
+    fetchHollandData();
     fetchData();
   }, []);
 
   let labels = null;
 
-  console.log(climov_items);
+  console.log(climov_items[0]);
 
   if (climov_items.length > 0 && holland_items.length > 0)
     labels = [
-      matrix[Number(climov_items[0])][Number(holland_items[0])].split(","),
-      matrix[Number(climov_items[1])][Number(holland_items[1])].split(","),
-      matrix[Number(climov_items[2])][Number(holland_items[2])].split(","),
-      // matrix[climov_items[0]][holland_items[0]].split(","),
-      // matrix[climov_items[1]][holland_items[1]].split(","),
-      // matrix[climov_items[2]][holland_items[2]].split(","),
+      matrix[Number(climov_items[0])][Number(holland_items[0])],
+      matrix[Number(climov_items[1])][Number(holland_items[1])],
+      matrix[Number(climov_items[2])][Number(holland_items[2])],
     ];
 
   let chartdata1 =

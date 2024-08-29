@@ -1,10 +1,10 @@
 import connectMongoDB from "@/utils/db";
 import ClimovQuiz from "@/models/ClimovQuiz";
+import MatrixQuiz from "@/models/MatrixQuiz";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request:NextRequest) {
+export async function POST(request: NextRequest) {
   const { climovquiz_items, top_items, uid, email } = await request.json();
-
 
   await connectMongoDB();
   const existingClimovQuiz = await ClimovQuiz.findOne({
@@ -19,7 +19,29 @@ export async function POST(request:NextRequest) {
     uid,
     email,
   });
-  return NextResponse.json({ message: "Климовын тестийг амжилттай бөглөлөө." }, { status: 201 });
+
+  const existingMatrixQuiz = await MatrixQuiz.findOne({
+    email: email,
+  });
+
+  if (existingMatrixQuiz) {
+    // await MatrixQuiz.findByIdAndDelete(existingMatrixQuiz._id);
+    await MatrixQuiz.findByIdAndUpdate(existingMatrixQuiz._id, {
+      climov_items: climovquiz_items,
+    });
+    // return new NextResponse("Email is already in use", { status: 400 });
+  } else {
+    await MatrixQuiz.create({
+      climov_items: climovquiz_items,
+      holland_items: "",
+      uid,
+      email,
+    });
+  }
+  return NextResponse.json(
+    { message: "Климовын тестийг амжилттай бөглөлөө." },
+    { status: 201 }
+  );
 }
 
 export async function GET(
@@ -27,7 +49,6 @@ export async function GET(
   { params }: { params: { user_email: string } }
 ) {
   const by_email = request.nextUrl.searchParams.get("user_email");
-  
 
   await connectMongoDB();
 
@@ -37,7 +58,7 @@ export async function GET(
   return NextResponse.json({ existingClimovQuiz });
 }
 
-export async function DELETE(request:NextRequest) {
+export async function DELETE(request: NextRequest) {
   const id = request.nextUrl.searchParams.get("id");
   await connectMongoDB();
   await ClimovQuiz.findByIdAndDelete(id);
