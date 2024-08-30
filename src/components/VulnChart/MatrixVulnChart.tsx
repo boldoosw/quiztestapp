@@ -32,7 +32,7 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
           labels: labels,
           datasets: [
             {
-              label: "Танд нэн тохиромжтой",
+              label: "Танд тохиромжтой",
               data: data,
               backgroundColor: [
                 "rgb(8, 189, 74)",
@@ -47,7 +47,7 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
           ],
         }}
         height={300}
-        width={500}
+        width={400}
         options={{
           indexAxis: "y",
           maintainAspectRatio: false,
@@ -60,11 +60,11 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
           responsive: true,
           plugins: {
             legend: {
-              position: "right",
-
+              position: "top",
               labels: {
                 usePointStyle: true,
                 boxWidth: 9,
+                textAlign: "left",
               },
             },
             title: {
