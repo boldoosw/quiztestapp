@@ -5,7 +5,7 @@ import prof_header from "@/assets/images/choose-lesson.png";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import { useRouter } from "next/navigation";
-
+import { useSession } from "next-auth/react";
 import { Quicksand } from "next/font/google";
 
 const quicksand = Quicksand({
@@ -111,6 +111,7 @@ const Checkbox = ({ isChecked, label, checkHandler, index, isDisabled }) => {
   );
 };
 function LessonsPage() {
+  const { data: session, status: sessionStatus } = useSession();
   const router = useRouter();
 
   const [checkedCount, setCheckedCount] = useState(0);
@@ -189,7 +190,8 @@ function LessonsPage() {
     }
     let checkbox_items = checkArray.toString();
 
-    let email = "boldoosw@gmail.com";
+    // let email = "boldoosw@gmail.com";
+    let email = session?.user.email;
     try {
       const res = await fetch(`/api/lesson_test`, {
         method: "POST",

@@ -90,42 +90,59 @@ const lesson_data = [
 
 const basePath = "/assets/images/lesson_images";
 
-function LessonCards() {
+function LessonCards({ email }: { email: String }) {
   const [lesson_ids, setData] = useState([]);
-
+  const [user_email, setEmail] = useState(email);
   async function fetchSelected3LessonData() {
     // Fetch data from your API here.
-    const { data } = await axios.get(`/api/lesson_test`);
+    const { data } = await axios.get(`/api/lesson_test`, {
+      params: { user_email: email },
+    });
     // let mydata = data.data.existingCustomQuiz.customquiz_items.split(",");
-    setData(data.existingLesson.checkbox_items.split(","));
-    console.log(data.existingLesson.checkbox_items.split(","));
+    setData(data.existingLesson?.checkbox_items.split(","));
+    // console.log(data.existingLesson?.checkbox_items.split(","));
   }
   useEffect(() => {
     fetchSelected3LessonData();
   }, []);
 
-  return lesson_ids.length > 0 ? (
+  return lesson_ids?.length > 0 ? (
     lesson_ids.map((id) => (
-      <div
-        key={id}
-        className="flex flex-col gap-5  md:flex-row md:justify-between m-4 "
-      >
-        <div
-          //  key={arr_index[0]}
-          className="flex flex-col cursor-pointer bg-white justify-center items-center  rounded-full shadow-2xl w-full card-item-div max-w-screen-md border-e-black p-8"
-        >
+      <>
+        <div className="flex flex-col  bg-white justify-center py-6 px-10 items-center rounded-tr-[35px] rounded-tl-[35px] rounded-bl-[35px] rounded-br-[35px] shadow-2xl md:min-h-[160px] w-full card-item-div  min-h-[160px] m-4">
           <Image
+            className="h-[80px] sm:h-full "
             src={`${basePath}/${lesson_data[id].img_detail}.png`}
-            alt="box_img"
-            className="w-[500px] "
-            width={500}
-            height={500}
+            alt="logo"
+            width={1024}
+            height={1024}
           />
           <p className="text-[14px] semi-bold uppercase ">
             {lesson_data[id].name}
           </p>
         </div>
-      </div>
+      </>
+      // <div
+      //   key={id}
+      //   className="flex flex-col gap-5  md:flex-row md:justify-between m-4 "
+      // >
+
+      //   <div
+      //     //  key={arr_index[0]}
+      //     className="flex flex-col cursor-pointer bg-white justify-center items-center  rounded-full shadow-2xl w-full card-item-div max-w-screen-md border-e-black p-8"
+      //   >
+      //     <Image
+      //       src={`${basePath}/${lesson_data[id].img_detail}.png`}
+      //       alt="box_img"
+      //       className="w-[500px] "
+      //       width={500}
+      //       height={500}
+      //     />
+      //     <p className="text-[14px] semi-bold uppercase ">
+      //       {lesson_data[id].name}
+      //     </p>
+      //   </div>
+      // </div>
     ))
   ) : (
     <div>

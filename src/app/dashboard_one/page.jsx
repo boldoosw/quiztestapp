@@ -55,8 +55,8 @@ const DashboardOne = async () => {
             <div className=" text-black text-bold text-center  p-4 text-[14px]">
               Танд ойр мэргэжлүүдийг доор зургаар үзүүлэв.
             </div>
-            <div className="grid grid-cols-1 gap-4  md:grid-cols-2 md:gap-6 xl:grid-cols-3  2xl:gap-7.5">
-              <LessonCards />
+            <div>
+              <LessonCards email={email} />
             </div>
 
             <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8   grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">

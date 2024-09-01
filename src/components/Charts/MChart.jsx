@@ -229,8 +229,10 @@ export function MChart({ email }) {
   if (climov_items.length > 0 && holland_items.length > 0)
     labels = [
       matrix[Number(climov_items[0])][Number(holland_items[0])],
+      matrix[0][0],
       matrix[Number(climov_items[1])][Number(holland_items[1])],
-      matrix[Number(climov_items[2])][Number(holland_items[2])],
+      // matrix[Number(climov_items[2])][Number(holland_items[2])],
+      // "asdfasdfasdfa",
     ];
 
   let chartdata1 =
@@ -247,6 +249,7 @@ export function MChart({ email }) {
     chartdata1.toFixed(),
     chartdata2.toFixed(),
     chartdata3.toFixed(),
+    12,
   ];
 
   return (
