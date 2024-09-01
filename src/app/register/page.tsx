@@ -141,6 +141,7 @@ const Register = () => {
                     onChange={(e) => setRole(e.target.value)}
                   />
                   <i className="pl-2">8,9 дүгээр анги</i>
+                  <i className="pl-2">хичээл сонголт</i>
                 </label>
 
                 <label className="bg-gray-100 text-gray-700 my-3 flex cursor-pointer rounded-md px-3  py-2 hover:bg-indigo-300 ">
@@ -150,7 +151,8 @@ const Register = () => {
                     value="angi10_12"
                     onChange={(e) => setRole(e.target.value)}
                   />
-                  <i className="pl-2">10,11,12 дугаар анги</i>
+                  <i className="pl-2">10,11,12 дугаар анги </i>
+                  <i className="pl-2">мэргэжил сонголт</i>
                 </label>
               </div>
             </div>
