@@ -193,7 +193,7 @@ export function MChart({ email }) {
       params: { user_email: user_email },
     });
     try {
-      console.log("climov data:", data.existingClimovQuiz);
+      console.log("matrix data:", data.existingMatrixQuiz);
       setClimovItems(data.existingMatrixQuiz.climov_items.split(","));
       setHollandItems(data.existingMatrixQuiz.holland_items.split(","));
     } catch (error) {
@@ -229,9 +229,8 @@ export function MChart({ email }) {
   if (climov_items.length > 0 && holland_items.length > 0)
     labels = [
       matrix[Number(climov_items[0])][Number(holland_items[0])],
-      matrix[0][0],
       matrix[Number(climov_items[1])][Number(holland_items[1])],
-      // matrix[Number(climov_items[2])][Number(holland_items[2])],
+      matrix[Number(climov_items[2])][0],
       // "asdfasdfasdfa",
     ];
 
