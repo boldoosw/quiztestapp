@@ -52,7 +52,7 @@ const UsersPage = async ({ searchParams }: any) => {
                 <td>
                   {user.role === "admin"
                     ? "Админ"
-                    : user.role === "angi_8_9"
+                    : user.role === "angi8_9"
                     ? "8,9 анги"
                     : "10-12 анги"}
                 </td>
@@ -65,7 +65,7 @@ const UsersPage = async ({ searchParams }: any) => {
                 </td>
                 <td>
                   <div className={styles.buttons}>
-                    {user.role === "angi_8_9" && (
+                    {user.role === "angi8_9" && (
                       <Link
                         href={`/dashboard_one?email=${user.email}&topic_id=${user.topic_id}&role=${user.role}`}
                       >

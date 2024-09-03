@@ -26,7 +26,7 @@ export default function Home() {
   }, []);
   return (
     <div>
-      {session?.user?.role === "angi_8_9" && (
+      {session?.user?.role === "angi8_9" && (
         <>
           {" "}
           <main>

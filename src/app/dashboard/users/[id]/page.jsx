@@ -49,7 +49,7 @@ const SingleUserPage = async ({ params }) => {
             <option value="angi10_12" selected={user.role === "angi10_12"}>
               10-12 анги
             </option>
-            <option value="angi_8_9" selected={user.role === "angi_8_9"}>
+            <option value="angi8_9" selected={user.role === "angi8_9"}>
               8-9 анги
             </option>
           </select>

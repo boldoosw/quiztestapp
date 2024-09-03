@@ -26,7 +26,7 @@ export async function GET(
     _id: "662270d35f7a4dc2efab6ae7",
   });
   // if (by_topic === "") {
-  if (role === "angi_8_9") existingTopic = existingTopic1;
+  if (role === "angi8_9") existingTopic = existingTopic1;
   if (role === "angi10_12") existingTopic = existingTopic2;
   // }
   // if (by_topic === "")

@@ -185,7 +185,7 @@ export default function Navbar2() {
   }
 
   // if (!session) {
-  //   navItems = session?.user?.role === "angi_8_9" ? navItems1 : navItems2;
+  //   navItems = session?.user?.role === "angi8_9" ? navItems1 : navItems2;
   // }
   // navItems = navItems1;
 
@@ -224,7 +224,7 @@ export default function Navbar2() {
           ) : (
             <>
               {(navItems =
-                session?.user?.role === "angi_8_9"
+                session?.user?.role === "angi8_9"
                   ? navItems1
                   : session?.user?.role === "angi10_12"
                   ? navItems2

@@ -137,7 +137,7 @@ const Register = () => {
                   <input
                     type="radio"
                     name="role"
-                    value="angi_8_9"
+                    value="angi8_9"
                     onChange={(e) => setRole(e.target.value)}
                   />
                   <i className="pl-2">8,9 дүгээр анги</i>

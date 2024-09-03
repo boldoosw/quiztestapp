@@ -23,8 +23,8 @@ function CustomChart({ email }: { email: String }) {
       params: { user_email: user_email },
     });
     // let mydata = data.data.existingCustomQuiz.customquiz_items.split(",");
-    setData(data.existingCustomQuiz.customquiz_items.split(","));
-    console.log(data.existingCustomQuiz.customquiz_items.split(","));
+    setData(data.existingCustomQuiz?.customquiz_items.split(","));
+    console.log(data.existingCustomQuiz?.customquiz_items.split(","));
   }
   useEffect(() => {
     fetchPointsData();

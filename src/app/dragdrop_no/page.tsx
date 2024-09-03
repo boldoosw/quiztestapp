@@ -52,7 +52,7 @@ function DragDropPage() {
       if (res.ok) {
         console.log("amjilttai hadgallaa");
         router.refresh();
-        if (session?.user.role === "angi_8_9") router.push("/custom_test");
+        if (session?.user.role === "angi8_9") router.push("/custom_test");
         if (session?.user.role === "angi10_12") router.push("/climov_test");
       } else {
         throw new Error("Failed to create a yes no");

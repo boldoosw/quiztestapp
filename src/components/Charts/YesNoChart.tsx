@@ -156,9 +156,9 @@ export default function YesNoChart({ email }: { email: String }) {
       params: { user_email: user_email },
     });
     try {
-      setAItems(data.existingYesNo.a_items.split(","));
-      setBItems(data.existingYesNo.b_items.split(","));
-      setCItems(data.existingYesNo.c_items.split(","));
+      setAItems(data.existingYesNo?.a_items.split(","));
+      setBItems(data.existingYesNo?.b_items.split(","));
+      setCItems(data.existingYesNo?.c_items.split(","));
     } catch (error) {
       throw new Error();
     }
@@ -168,7 +168,7 @@ export default function YesNoChart({ email }: { email: String }) {
     fetchData();
   }, []);
 
-  if (a_items.length > 0 && b_items.length > 0)
+  if (a_items?.length > 0 && b_items?.length > 0)
     return a_items.length > 2 ? (
       <>
         <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
