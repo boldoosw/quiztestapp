@@ -19,7 +19,8 @@ const UsersPage = async ({ searchParams }: any) => {
             {/* <button className={styles.addButton}>Шинээр нэмэх</button> */}
           </Link>
         </div>
-        <table className={styles.table}>
+        {/* <table className={styles.table}> */}
+        <table className="table-auto overflow-scroll w-full">
           <thead>
             <tr>
               <td>Овог Нэр</td>
