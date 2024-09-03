@@ -4,14 +4,13 @@ import { useSearchParams } from "next/navigation";
 import { userRef, useSession, useEffect, useState } from "next-auth/react";
 import tailan from "@/assets/images/tailan_zurag/tailan_header.png";
 import home8_9 from "@/assets/images/8-9.png";
-import home10_12 from "@/assets/images/10-12.png";
 import CustomChart from "@/components/Charts/CustomChart";
 import YesNoChart from "@/components/Charts/YesNoChart";
 import LessonCards from "@/components/Cards/LessonCards";
 import UserInfo from "@/components/UserInfo";
 import TopicInfo from "@/components/TopicInfo";
 
-const DashboardOne = async () => {
+const DashboardOne = () => {
   const searchParams = useSearchParams();
   const { data: session, status: sessionStatus } = useSession();
   const role = searchParams ? searchParams.get("role") : session?.user?.role;
