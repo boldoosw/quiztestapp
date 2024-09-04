@@ -24,7 +24,7 @@ const Pagination = ({ count }) => {
   };
 
   return (
-    <div className="mt-4 flex justify-between ">
+    <div className="mt-4  flex justify-between ">
       <Button
         className={styles.button}
         text="Өмнөх"

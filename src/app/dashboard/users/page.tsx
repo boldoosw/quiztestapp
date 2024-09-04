@@ -12,7 +12,7 @@ const UsersPage = async ({ searchParams }: any) => {
 
   return (
     <main>
-      <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+      <div className=" mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
         <div className={styles.top}>
           <Search placeholder="Имайл хаягаар хайлт хийнэ үү..." />
           <Link href="/dashboard/users/add">
@@ -20,7 +20,7 @@ const UsersPage = async ({ searchParams }: any) => {
           </Link>
         </div>
         {/* <table className={styles.table}> */}
-        <table className="table-auto overflow-scroll w-full">
+        <table className={styles.table}>
           <thead>
             <tr>
               <td>Овог Нэр</td>

@@ -183,6 +183,7 @@ export function MChart({ email }) {
 
   const [climov_data, setClimovData] = useState([]);
   const [climov_top_ids, setClimovIds] = useState([]);
+
   const [holland_data, setHollandData] = useState([]);
   const [holland_top_ids, setHollandIds] = useState([]);
   const user_email = email;
@@ -224,13 +225,25 @@ export function MChart({ email }) {
     fetchData();
   }, []);
 
+  const labels_old = [
+    holland_labels[holland_top_ids[0]] +
+      " ба " +
+      climov_labels[climov_top_ids[0]],
+    holland_labels[holland_top_ids[1]] +
+      " ба " +
+      climov_labels[climov_top_ids[1]],
+    holland_labels[holland_top_ids[2]] +
+      " ба " +
+      climov_labels[climov_top_ids[2]],
+  ];
+  console.log(labels_old);
   let labels = null;
 
   if (climov_items.length > 0 && holland_items.length > 0)
     labels = [
-      matrix[Number(climov_items[0])][Number(holland_items[0])],
-      matrix[0][0],
-      matrix[Number(climov_items[1])][Number(holland_items[1])],
+      matrix[climov_top_ids[0]][holland_top_ids[0]],
+      matrix[climov_top_ids[1]][holland_top_ids[1]],
+      matrix[climov_top_ids[2]][holland_top_ids[2]],
       // matrix[Number(climov_items[2])][Number(holland_items[2])],
       // "asdfasdfasdfa",
     ];
