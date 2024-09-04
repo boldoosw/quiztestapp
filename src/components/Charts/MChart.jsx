@@ -186,21 +186,21 @@ export function MChart({ email }) {
 
   const [holland_data, setHollandData] = useState([]);
   const [holland_top_ids, setHollandIds] = useState([]);
-  const user_email = email;
+  // const user_email = email;
 
-  async function fetchData() {
-    // Fetch data from your API here.
-    const { data } = await axios.get(`/api/matrix_test`, {
-      params: { user_email: user_email },
-    });
-    try {
-      console.log("climov data:", data.existingMatrixQuiz);
-      setClimovItems(data.existingMatrixQuiz.climov_items.split(","));
-      setHollandItems(data.existingMatrixQuiz.holland_items.split(","));
-    } catch (error) {
-      throw new Error();
-    }
-  }
+  // async function fetchData() {
+  //   // Fetch data from your API here.
+  //   const { data } = await axios.get(`/api/matrix_test`, {
+  //     params: { user_email: user_email },
+  //   });
+  //   try {
+  //     // console.log("climov data:", data.existingMatrixQuiz);
+  //     setClimovItems(data.existingMatrixQuiz.climov_items.split(","));
+  //     setHollandItems(data.existingMatrixQuiz.holland_items.split(","));
+  //   } catch (error) {
+  //     throw new Error();
+  //   }
+  // }
 
   async function fetchClimovData() {
     // Fetch data from your API here.
@@ -208,6 +208,7 @@ export function MChart({ email }) {
       params: { user_email: email },
     });
     setClimovData(data.existingClimovQuiz.climovquiz_items.split(","));
+    setClimovItems(data.existingClimovQuiz.climovquiz_items.split(","));
     setClimovIds(data.existingClimovQuiz.top_items.split(","));
   }
   async function fetchHollandData() {
@@ -216,13 +217,14 @@ export function MChart({ email }) {
       params: { user_email: email },
     });
     setHollandData(data.existingHollandQuiz.hollandquiz_items.split(","));
+    setHollandItems(data.existingHollandQuiz.hollandquiz_items.split(","));
     setHollandIds(data.existingHollandQuiz.top_items.split(","));
   }
 
   useEffect(() => {
     fetchClimovData();
     fetchHollandData();
-    fetchData();
+    // fetchData();
   }, []);
 
   const labels_old = [
@@ -236,7 +238,7 @@ export function MChart({ email }) {
       " ба " +
       climov_labels[climov_top_ids[2]],
   ];
-  console.log(labels_old);
+  // console.log(labels_old);
   let labels = null;
 
   if (climov_items.length > 0 && holland_items.length > 0)
@@ -244,8 +246,6 @@ export function MChart({ email }) {
       matrix[climov_top_ids[0]][holland_top_ids[0]],
       matrix[climov_top_ids[1]][holland_top_ids[1]],
       matrix[climov_top_ids[2]][holland_top_ids[2]],
-      // matrix[Number(climov_items[2])][Number(holland_items[2])],
-      // "asdfasdfasdfa",
     ];
 
   let chartdata1 =
