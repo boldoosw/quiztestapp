@@ -5,7 +5,7 @@ import TanStackTable from "@/components/TanStackTable";
 import Link from "next/link";
 export default function page() {
   return (
-    <div className="pt-4 min-h-screen w-full bg-gray-900">
+    <div className="pt-4 min-h-screen w-full bg-gray-700 rounded-lg">
       <TanStackTable />
     </div>
   );

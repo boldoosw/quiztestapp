@@ -1,3 +1,4 @@
+"use client";
 import {
   createColumnHelper,
   flexRender,
@@ -6,7 +7,7 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { USERS } from "@/lib/data";
+import { USERS } from "@/lib/userdata";
 import { useState } from "react";
 import DownloadBtn from "@/components/DownloadBtn";
 import DebouncedInput from "@/components/DebouncedInput";
@@ -19,7 +20,7 @@ const TanStackTable = () => {
     columnHelper.accessor("", {
       id: "S.No",
       cell: (info) => <span>{info.row.index + 1}</span>,
-      header: "S.No",
+      header: "№",
     }),
     columnHelper.accessor("profile", {
       cell: (info) => (
@@ -40,17 +41,29 @@ const TanStackTable = () => {
       cell: (info) => <span>{info.getValue()}</span>,
       header: "Нэр",
     }),
-    columnHelper.accessor("age", {
+    columnHelper.accessor("email", {
       cell: (info) => <span>{info.getValue()}</span>,
-      header: "Age",
+      header: "Email",
     }),
-    columnHelper.accessor("visits", {
+    columnHelper.accessor("phone", {
       cell: (info) => <span>{info.getValue()}</span>,
-      header: "Visits",
+      header: "Утас",
     }),
-    columnHelper.accessor("progress", {
+    columnHelper.accessor("created_date", {
       cell: (info) => <span>{info.getValue()}</span>,
-      header: "Progress",
+      header: "Үүссэн огноо",
+    }),
+    columnHelper.accessor("role", {
+      cell: (info) => <span>{info.getValue()}</span>,
+      header: "Эрх",
+    }),
+    columnHelper.accessor("topic", {
+      cell: (info) => <span>{info.getValue()}</span>,
+      header: "Зөвлөмж",
+    }),
+    columnHelper.accessor("report", {
+      cell: (info) => <span>{info.getValue()}</span>,
+      header: "Тайлан",
     }),
   ];
   const [data] = useState(() => [...USERS]);
@@ -83,7 +96,7 @@ const TanStackTable = () => {
           <DownloadBtn data={data} fileName={"peoples"} />
         </div>
         <table className="border border-gray-700 w-full text-left">
-          <thead className="bg-indigo-600">
+          <thead className="bg-indigo-500">
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
