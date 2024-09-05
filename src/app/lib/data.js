@@ -10,8 +10,6 @@ export const fetchUsers = async (q, page) => {
   try {
     connectMongoDB();
 
-    // await User.updateMany({}, { $set: { topic_id: "" } });
-
     const count = await User.find({ email: { $regex: regex } }).count();
     const users = await User.find({
       $or: [
@@ -29,9 +27,19 @@ export const fetchUsers = async (q, page) => {
     throw new Error("Failed to fetch users!");
   }
 };
+export const fetchAllUsers = async () => {
+  try {
+    connectMongoDB();
 
+    const count = await User.find().count();
+    const users = await User.find();
+    return { count, users };
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to fetch users!");
+  }
+};
 export const fetchUser = async (id) => {
-  console.log(id);
   try {
     connectMongoDB();
     const user = await User.findById(id);

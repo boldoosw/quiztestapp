@@ -24,7 +24,7 @@ const Pagination = ({ count }) => {
   };
 
   return (
-    <div className="mt-4  flex justify-between ">
+    <div className="flex items-center justify-center mt-2 gap-2">
       <Button
         className={styles.button}
         text="Өмнөх"

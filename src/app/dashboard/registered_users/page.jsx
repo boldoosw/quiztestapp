@@ -68,6 +68,7 @@ const TanStackTable = () => {
   ];
   const [data] = useState(() => [...USERS]);
   const [globalFilter, setGlobalFilter] = useState("");
+  console.log("users:", data);
 
   const table = useReactTable({
     data,
