@@ -7,6 +7,8 @@ export const fetchUsers = async (q, page) => {
 
   const ITEM_PER_PAGE = 5;
 
+  const sort = { _id: -1 };
+
   try {
     connectMongoDB();
 
@@ -19,6 +21,7 @@ export const fetchUsers = async (q, page) => {
         { phone: { $regex: regex } },
       ],
     })
+      .sort(sort)
       .limit(ITEM_PER_PAGE)
       .skip(ITEM_PER_PAGE * (page - 1));
     return { count, users };
