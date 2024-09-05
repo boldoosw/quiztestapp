@@ -60,7 +60,7 @@ const UsersPage = async ({ searchParams }: any) => {
                 <td>
                   <Link href={`/dashboard/users/${user.id}`}>
                     <button className={`${styles.button} ${styles.view}`}>
-                      Зөвлөмж солих
+                      Зөвлөмж
                     </button>
                   </Link>
                 </td>
