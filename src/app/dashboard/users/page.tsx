@@ -1,3 +1,4 @@
+import { deleteUser } from "@/app/lib/actions";
 import { fetchUsers } from "@/app/lib/data";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import Search from "@/app/ui/dashboard/search/search";
@@ -59,7 +60,7 @@ const UsersPage = async ({ searchParams }: any) => {
                 </td>
                 <td>
                   <Link href={`/dashboard/users/${user.id}`}>
-                    <button className={`${styles.button} ${styles.view}`}>
+                    <button className={`${styles.button} ${styles.edit}`}>
                       Зөвлөмж
                     </button>
                   </Link>
@@ -70,7 +71,7 @@ const UsersPage = async ({ searchParams }: any) => {
                       <Link
                         href={`/dashboard_one?email=${user.email}&topic_id=${user.topic_id}&role=${user.role}`}
                       >
-                        <button className={`${styles.button} ${styles.view}`}>
+                        <button className={`${styles.button} ${styles.report}`}>
                           Тайлан
                         </button>
                       </Link>
@@ -79,18 +80,17 @@ const UsersPage = async ({ searchParams }: any) => {
                       <Link
                         href={`/dashboard_two?email=${user.email}&topic_id=${user.topic_id}&role=${user.role}`}
                       >
-                        <button className={`${styles.button} ${styles.view}`}>
+                        <button className={`${styles.button} ${styles.report}`}>
                           Тайлан
                         </button>
                       </Link>
                     )}
-                    {/* <form action={deleteUser}> */}
-                    {/* <form>
+                    <form action={deleteUser}>
                       <input type="hidden" name="id" value={user.id} />
                       <button className={`${styles.button} ${styles.delete}`}>
-                        Delete
+                        Устгах
                       </button>
-                    </form> */}
+                    </form>
                   </div>
                 </td>
               </tr>

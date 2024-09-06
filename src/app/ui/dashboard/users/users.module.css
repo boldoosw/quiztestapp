@@ -55,6 +55,12 @@
 .view{
   background-color: teal;
 }
+.edit {
+  background-color: rgb(140, 161, 97);
+}
+.report {
+  background-color: rgb(82, 141, 82);
+}
 
 .delete{
   background-color: crimson;

@@ -1,7 +1,11 @@
 "use server";
-
 import { revalidatePath } from "next/cache";
 import User from "@/models/User";
+import ClimovQuiz from "@/models/ClimovQuiz";
+import CustomQuiz from "@/models/CustomQuiz";
+import HollandQuiz from "@/models/HollandQuiz";
+import Lesson from "@/models/Lesson";
+import MatrixQuiz from "@/models/MatrixQuiz";
 import Product from "@/models/Product";
 import connectMongoDB from "@/utils/db";
 import { redirect } from "next/navigation";
@@ -67,6 +71,56 @@ export const updateUser = async (formData) => {
   redirect("/dashboard/users");
 };
 
+export const deleteUser = async (formData) => {
+  const { id } = Object.fromEntries(formData);
+
+  try {
+    connectMongoDB();
+    const existingUser = await User.findById(id);
+
+    if (existingUser) {
+      const existingClimovQuiz = await ClimovQuiz.findOne({
+        email: existingUser.email,
+      });
+      if (existingClimovQuiz) {
+        await ClimovQuiz.findByIdAndDelete(existingClimovQuiz._id);
+      }
+
+      const existingHollandQuiz = await HollandQuiz.findOne({
+        email: existingUser.email,
+      });
+      if (existingHollandQuiz) {
+        await HollandQuiz.findByIdAndDelete(existingHollandQuiz._id);
+      }
+      const existingCustomQuiz = await CustomQuiz.findOne({
+        email: existingUser.email,
+      });
+      if (existingCustomQuiz) {
+        await CustomQuiz.findByIdAndDelete(existingCustomQuiz._id);
+      }
+      const existingLesson = await Lesson.findOne({
+        email: existingUser.email,
+      });
+      if (existingLesson) {
+        await Lesson.findByIdAndDelete(existingLesson._id);
+      }
+      const existingMatrixQuiz = await MatrixQuiz.findOne({
+        email: existingUser.email,
+      });
+      if (existingMatrixQuiz) {
+        await MatrixQuiz.findByIdAndDelete(existingMatrixQuiz._id);
+      }
+
+      await User.findByIdAndDelete(existingUser.id);
+    }
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to delete user!");
+  }
+
+  revalidatePath("/dashboard/users");
+};
+
 export const addProduct = async (formData) => {
   const { title, desc, price, stock, color, size } =
     Object.fromEntries(formData);
@@ -122,20 +176,6 @@ export const updateProduct = async (formData) => {
 
   revalidatePath("/dashboard/products");
   redirect("/dashboard/products");
-};
-
-export const deleteUser = async (formData) => {
-  const { id } = Object.fromEntries(formData);
-
-  try {
-    connectMongoDB();
-    await User.findByIdAndDelete(id);
-  } catch (err) {
-    console.log(err);
-    throw new Error("Failed to delete user!");
-  }
-
-  revalidatePath("/dashboard/products");
 };
 
 export const deleteProduct = async (formData) => {
