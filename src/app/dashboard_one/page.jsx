@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { userRef, useSession, useEffect, useState } from "next-auth/react";
 import tailan from "@/assets/images/tailan_zurag/tailan_header.png";
+import contactus from "@/assets/images/contactus.png";
 import home8_9 from "@/assets/images/8-9.png";
 import CustomChart from "@/components/Charts/CustomChart";
 import YesNoChart from "@/components/Charts/YesNoChart";
@@ -62,6 +63,10 @@ const DashboardOne = () => {
               {/* {topic_id} */}
               <TopicInfo role={role} topic_id={topic_id} />
             </div>
+          </div>
+          <div className="flex flex-col  bg-white justify-center py-6 px-10 items-center rounded-tr-[35px] rounded-bl-[35px] shadow-2xl md:min-h-[340px] w-full card-item-div  min-h-[260px]">
+            <Image className="h-[80px] sm:h-full " src={contactus} alt="logo" />
+            <div className="mt-4"></div>
           </div>
         </main>
         {/* <!-- ===== Main Content End ===== --> */}

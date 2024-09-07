@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useSession } from "next-auth/react";
 import tailan from "@/assets/images/tailan_zurag/tailan_header.png";
+import contactus from "@/assets/images/contactus.png";
 import home10_12 from "@/assets/images/10-12.png";
 import ClimovChart from "@/components/Charts/ClimovChart";
 import HollandChart from "@/components/Charts/HollandChart";
@@ -69,6 +70,10 @@ const DashboardTwo = () => {
         <div className="bg-[#a03043] text-white text-center  p-4 text-[14px] mt-8  grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
           <TopicInfo topic_id={topic_id} role={role} />
         </div>
+      </div>
+      <div className="flex flex-col  bg-white justify-center py-6 px-10 items-center rounded-tr-[35px] rounded-bl-[35px] shadow-2xl md:min-h-[340px] w-full card-item-div  min-h-[260px]">
+        <Image className="h-[80px] sm:h-full " src={contactus} alt="logo" />
+        <div className="mt-4"></div>
       </div>
     </main>
   );
