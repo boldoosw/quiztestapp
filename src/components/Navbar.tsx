@@ -290,40 +290,14 @@ function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
 
           <>
             {(navItems0 = navItems4)?.map((d, i) => (
-              <Link
+              <SingleNavItem
                 key={i}
-                href={d.link ?? "#"}
-                className="relative group  px-2 py-3 transition-all "
+                label={d.label}
+                iconImage={d.iconImage}
+                link={d.link}
               >
-                <p className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-black ">
-                  <span>{d.label}</span>
-                  {d.children && (
-                    <IoIosArrowDown className=" rotate-180  transition-all group-hover:rotate-0" />
-                  )}
-                </p>
-
-                {/* dropdown */}
-                {d.children && (
-                  <div className="absolute   right-0   top-10 hidden w-auto  flex-col gap-1   rounded-lg bg-white py-3 shadow-md  transition-all group-hover:flex ">
-                    {d.children.map((ch, i) => (
-                      <Link
-                        key={i}
-                        href={ch.link ?? "#"}
-                        className=" flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black  "
-                      >
-                        {/* image */}
-                        {ch.iconImage && (
-                          <Image src={ch.iconImage} alt="item-icon" />
-                        )}
-                        {/* item */}
-                        <span className="whitespace-nowrap   pl-3 ">
-                          {ch.label}
-                        </span>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </Link>
+                {d.children}
+              </SingleNavItem>
             ))}
           </>
           <Link
@@ -369,19 +343,6 @@ function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
             </>
           )}
         </div>
-
-        {/* <section className="  flex  flex-col   gap-8  mt-4 items-center">
-          <Link href="/login">
-            <button className="h-fit text-neutral-400 transition-all hover:text-black/90">
-              Нэвтрэх
-            </button>
-          </Link>
-          <Link href="/register">
-            <button className="w-full  max-w-[200px]  rounded-xl border-2 border-neutral-400 px-4 py-2 text-neutral-400 transition-all hover:border-black hover:text-black/90">
-              Бүртгүүлэх
-            </button>
-          </Link>
-        </section> */}
       </div>
     </div>
   );
