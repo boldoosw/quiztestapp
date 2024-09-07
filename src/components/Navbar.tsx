@@ -21,56 +21,8 @@ type NavItem = {
   iconImage?: string;
 };
 
-let navItems: NavItem[] = [
-  // {
-  //   label: "Тестүүд",
-  //   link: "#",
-  //   children: [
-  //     {
-  //       label: "Климов Тест",
-  //       link: "/climov_test",
-  //     },
-  //     {
-  //       label: "Холланд тест",
-  //       link: "/holland_test",
-  //     },
-  //     {
-  //       label: "Үр дүнгийн матриц",
-  //       link: "/matrix_test",
-  //     },
-  //     {
-  //       label: "MBTI тест",
-  //       link: "/custom_test",
-  //     },
-  //     {
-  //       label: "Асуулга",
-  //       link: "/job",
-  //     },
-  //   ],
-  // },
-  // {
-  //   label: "Хичээл сонголт",
-  //   link: "/lessons",
-  // },
-  // {
-  //   label: "Мэргэжил сонголт",
-  //   link: "/profession",
-  // },
-  // {
-  //   label: "Тайлан",
-  //   link: "#",
-  //   children: [
-  //     {
-  //       label: "Тайлан 8-9р анги",
-  //       link: "/dashboard_one",
-  //     },
-  //     {
-  //       label: "Тайлан 10,11,12 анги",
-  //       link: "/dashboard_two",
-  //     },
-  //   ],
-  // },
-];
+let navItems0: NavItem[] = [];
+let navItems: NavItem[] = [];
 
 const navItems1: NavItem[] = [
   {
@@ -103,24 +55,6 @@ const navItems1: NavItem[] = [
       },
     ],
   },
-  {
-    label: "Бусад",
-    link: "#",
-    children: [
-      {
-        label: "ЭЕШ,ИДС",
-        link: "/universities",
-      },
-      {
-        label: "Мэргэжил Танилцуулга",
-        link: "/professions",
-      },
-      {
-        label: "Мэдээ Мэдээлэл",
-        link: "#",
-      },
-    ],
-  },
 ];
 const navItems2: NavItem[] = [
   {
@@ -147,9 +81,16 @@ const navItems2: NavItem[] = [
       },
     ],
   },
-
+];
+const navItems3: NavItem[] = [
   {
-    label: "Бусад",
+    label: "Зөвлөмжүүд",
+    link: "/instruction",
+  },
+];
+const navItems4: NavItem[] = [
+  {
+    label: "Мэдээ мэдээлэл",
     link: "#",
     children: [
       {
@@ -160,17 +101,7 @@ const navItems2: NavItem[] = [
         label: "Мэргэжил Танилцуулга",
         link: "/professions",
       },
-      {
-        label: "Мэдээ Мэдээлэл",
-        link: "#",
-      },
     ],
-  },
-];
-const navItems3: NavItem[] = [
-  {
-    label: "Зөвлөмжүүд",
-    link: "/instruction",
   },
 ];
 export default function Navbar2() {
@@ -183,11 +114,6 @@ export default function Navbar2() {
   function closeSideMenu() {
     setSideMenue(false);
   }
-
-  // if (!session) {
-  //   navItems = session?.user?.role === "angi8_9" ? navItems1 : navItems2;
-  // }
-  // navItems = navItems1;
 
   return (
     <div className="bg-white mx-auto flex  w-full max-w-7xl justify-between px-4 py-4 text-sm">
@@ -202,6 +128,52 @@ export default function Navbar2() {
         </div>
         {isSideMenuOpen && <MobileNav closeSideMenu={closeSideMenu} />}
         <div className="hidden md:flex items-center gap-4 transition-all">
+          <>
+            {(navItems0 = navItems4)?.map((d, i) => (
+              <Link
+                key={i}
+                href={d.link ?? "#"}
+                className="relative group  px-2 py-3 transition-all "
+              >
+                <p className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-black ">
+                  <span>{d.label}</span>
+                  {d.children && (
+                    <IoIosArrowDown className=" rotate-180  transition-all group-hover:rotate-0" />
+                  )}
+                </p>
+
+                {/* dropdown */}
+                {d.children && (
+                  <div className="absolute   right-0   top-10 hidden w-auto  flex-col gap-1   rounded-lg bg-white py-3 shadow-md  transition-all group-hover:flex ">
+                    {d.children.map((ch, i) => (
+                      <Link
+                        key={i}
+                        href={ch.link ?? "#"}
+                        className=" flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black  "
+                      >
+                        {/* image */}
+                        {ch.iconImage && (
+                          <Image src={ch.iconImage} alt="item-icon" />
+                        )}
+                        {/* item */}
+                        <span className="whitespace-nowrap   pl-3 ">
+                          {ch.label}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </Link>
+            ))}
+          </>
+          <Link
+            href="/contact"
+            className="relative group  px-2 py-3 transition-all "
+          >
+            <p className="flex cursor-pointer items-center gap-2 text-neutral-900 group-hover:text-black ">
+              <span>Холбоо барих</span>
+            </p>
+          </Link>
           {!session ? (
             <>
               <Link
@@ -315,6 +287,53 @@ function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
               {d.children}
             </SingleNavItem>
           ))}
+
+          <>
+            {(navItems0 = navItems4)?.map((d, i) => (
+              <Link
+                key={i}
+                href={d.link ?? "#"}
+                className="relative group  px-2 py-3 transition-all "
+              >
+                <p className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-black ">
+                  <span>{d.label}</span>
+                  {d.children && (
+                    <IoIosArrowDown className=" rotate-180  transition-all group-hover:rotate-0" />
+                  )}
+                </p>
+
+                {/* dropdown */}
+                {d.children && (
+                  <div className="absolute   right-0   top-10 hidden w-auto  flex-col gap-1   rounded-lg bg-white py-3 shadow-md  transition-all group-hover:flex ">
+                    {d.children.map((ch, i) => (
+                      <Link
+                        key={i}
+                        href={ch.link ?? "#"}
+                        className=" flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black  "
+                      >
+                        {/* image */}
+                        {ch.iconImage && (
+                          <Image src={ch.iconImage} alt="item-icon" />
+                        )}
+                        {/* item */}
+                        <span className="whitespace-nowrap   pl-3 ">
+                          {ch.label}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </Link>
+            ))}
+          </>
+          <Link
+            href="/contact"
+            className="relative group  px-2 py-3 transition-all "
+          >
+            <p className="flex cursor-pointer items-center gap-2 text-neutral-900 group-hover:text-black ">
+              <span>Холбоо барих</span>
+            </p>
+          </Link>
           {!session ? (
             <>
               <Link
