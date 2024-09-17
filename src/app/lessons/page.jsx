@@ -204,7 +204,7 @@ function LessonsPage() {
       if (res.ok) {
         console.log("amjilttai hadgallaa");
         router.refresh();
-        router.push("/report");
+        router.push("/tailan1");
       } else {
         throw new Error("Failed to create a mbti");
       }

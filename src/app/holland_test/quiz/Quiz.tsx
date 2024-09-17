@@ -6,9 +6,7 @@ import { useRouter } from "next/navigation";
 import Button from "@/components/Button/Button";
 // Types
 import { QuestionsState } from "@/types/quiz";
-import VulnChart from "@/components/VulnChart/HollandVulnChart";
 import HollandQuestionCard from "@/components/QuestionCard/HollandQuestionCard";
-import async from "../../layout";
 import { useSession } from "next-auth/react";
 import HollandChart from "@/components/Charts/HollandChart";
 
@@ -102,11 +100,9 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
       let hollandquiz_items =
         `${chartData[0]},${chartData[1]},${chartData[2]},${chartData[3]},${chartData[4]},${chartData[5]}`.toString();
 
-      console.log("chart data", chartData);
-
-      console.log(
-        `${top3[0].name}:${top3[0].score},${top3[1].name}:${top3[1].score},${top3[2].name}:${top3[2].score}`
-      );
+      // console.log(
+      //   `${top3[0].name}:${top3[0].score},${top3[1].name}:${top3[1].score},${top3[2].name}:${top3[2].score}`
+      // );
 
       let top_items = `${top3[0].id},${top3[1].id},${top3[2].id}`.toString();
 
@@ -132,7 +128,7 @@ const Quiz = ({ questions, totalQuestions }: Props) => {
         if (res.ok) {
           console.log("Mongodb -d amjilttai hadgallaa");
           router.refresh();
-          router.push("/report");
+          router.push("/tailan2");
         } else {
           throw new Error("Failed to create a holland to mongodb");
         }

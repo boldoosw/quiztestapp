@@ -1,14 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { Quicksand } from "next/font/google";
 import Image from "next/image";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { professionsData } from "@/bin/ProfessionData";
-
+import "@/app/globals.css";
 const basePath = "/assets/images/profession_images";
-
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  variable: "--font-quicksand",
+});
 function ProfessionsPage() {
   const router = useRouter();
   const [professions_data, setData] = useState([]);
@@ -78,145 +82,95 @@ function ProfessionsPage() {
     setOpenModal10(false);
     setOpenModal11(false);
   };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    let checkArray = [];
-    for (let i = 0; i < 12; i++) {
-      if (e.target[i].checked === true) {
-        checkArray.push(i);
-      }
-    }
-    let checkbox_items = checkArray.toString();
 
-    let email = "boldoosw@gmail.com";
-    try {
-      const res = await fetch(`/api/lesson_test`, {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ checkbox_items, email }),
-      });
-
-      if (res.ok) {
-        console.log("amjilttai hadgallaa");
-        router.refresh();
-        router.push("/report");
-      } else {
-        throw new Error("Failed to create a mbti");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const handleChange = (e) => {
-    // Destructuring
-    const { checked } = e.target;
-
-    // Case 1 : The user checks the box
-    if (checked) setCheckedCount(checkedCount + 1);
-    // Case 2 : The user unchecks the box
-    else if (checkedCount >= 1) setCheckedCount(checkedCount - 1);
-
-    console.log("checked count:", checkedCount);
-    const disabled = checkedCount > 2;
-  };
   useEffect(() => {
     setData(professionsData);
   }, []);
   return (
-    <main className={`max-w-[900px] w-full flex flex-col items-center`}>
+    <main
+      className={` ${quicksand.variable}  font-quicksand  m-auto max-w-[900px] w-full flex flex-col items-center`}
+    >
       {/* <Image className="sm:w-full" src={prof_header} alt="prof-logo" /> */}
 
       <h2 className="text-m font-semibold mt-8">
         Мэргэжлийн каталог - салбараар
       </h2>
-      <form onSubmit={handleSubmit}>
-        <div
-          key="main"
-          className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-7 my-10"
-        >
-          {professions_data.map((profession, t_index) => (
-            <>
-              <div
-                key={profession.name + t_index}
-                className="flex flex-row bg-white p-2 rounded border shadow shadow-slate-500 max-w-xs md:max-w-none overflow-hidden cursor-hand items-center "
+
+      <div
+        key="main"
+        className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-7 my-10"
+      >
+        {professions_data.map((profession, t_index) => (
+          <>
+            <div
+              key={profession.name + t_index}
+              className="flex flex-row bg-white p-2 rounded border shadow shadow-slate-500 max-w-xs md:max-w-none overflow-hidden cursor-hand items-center "
+            >
+              <Image
+                width={160}
+                height={200}
+                className=" object-cover overflow-hidden cursor-hand shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 "
+                src={`${basePath}/${profession.img}.png`}
+                alt=""
+                onClick={eval(`onClickButton${t_index}`)}
+              />
+
+              <Modal
+                key={t_index}
+                open={eval(`openModal${t_index}`)}
+                onClose={eval(`onCloseModal`)}
               >
+                <h1>{eval(`onCloseModal`)}</h1>
                 <Image
-                  width={160}
-                  height={200}
-                  className=" object-cover overflow-hidden cursor-hand shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 "
-                  src={`${basePath}/${profession.img}.png`}
+                  width={900}
+                  height={400}
+                  className=" w-full h-96"
+                  src={`${basePath}/${profession.img_detail}.png`}
                   alt=""
-                  onClick={eval(`onClickButton${t_index}`)}
                 />
 
-                <Modal
-                  key={t_index}
-                  open={eval(`openModal${t_index}`)}
-                  onClose={eval(`onCloseModal`)}
+                {/* <Image className="sm:w-full" src={prof_header} alt="prof-logo" /> */}
+
+                <h2 className="text-m font-semibold mt-8">{profession.name}</h2>
+
+                <div
+                  key="main"
+                  className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-7 my-10"
                 >
-                  <h1>{eval(`onCloseModal`)}</h1>
-                  <Image
-                    width={900}
-                    height={400}
-                    className=" w-full h-96"
-                    src={`${basePath}/${profession.img_detail}.png`}
-                    alt=""
-                  />
+                  {profession.details.map((detail, p_index) => (
+                    <>
+                      <div className="flex flex-col">
+                        <div
+                          key={detail.content_title + p_index}
+                          className="flex flex-row bg-white p-2 rounded border shadow shadow-slate-500 max-w-xs md:max-w-none overflow-hidden cursor-hand items-center"
+                        >
+                          <Link
+                            href={`/professions/${profession?.profession_name}?t=${t_index}&&p=${p_index}&&#${detail?.content_title}`}
+                          >
+                            <Image
+                              width={160}
+                              height={200}
+                              className=" object-cover"
+                              src={`${basePath}/detail_images/${detail.content_image}.png`}
+                              alt=""
+                            />
+                          </Link>
+                        </div>
+                        <p className="text-sm">{detail.content_title}</p>
+                      </div>
+                    </>
+                  ))}
+                  <p className="text-red-600 mb-4 text-[16px]">
+                    {error && error}
+                  </p>
+                </div>
+              </Modal>
+            </div>
+          </>
+        ))}
 
-                  {/* <Image className="sm:w-full" src={prof_header} alt="prof-logo" /> */}
-
-                  <h2 className="text-m font-semibold mt-8">
-                    {profession.name}
-                  </h2>
-                  <form onSubmit={handleSubmit}>
-                    <div
-                      key="main"
-                      className="w-full grid justify-center md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-7 my-10"
-                    >
-                      {profession.details.map((detail, p_index) => (
-                        <>
-                          <div className="flex flex-col">
-                            <div
-                              key={detail.content_title + p_index}
-                              className="flex flex-row bg-white p-2 rounded border shadow shadow-slate-500 max-w-xs md:max-w-none overflow-hidden cursor-hand items-center"
-                            >
-                              {/* <Link
-                                href={`/professions/static?t=${t_index}&&p=${p_index}`}
-                              > */}
-                              <Link
-                                href={`/professions/${profession?.profession_name}?t=${t_index}&&p=${p_index}&&#${detail?.content_title}`}
-                                // href={`/professions/future#mysection?t=${t_index}&&p=${p_index}`}
-                              >
-                                <Image
-                                  width={160}
-                                  height={200}
-                                  className=" object-cover"
-                                  src={`${basePath}/detail_images/${detail.content_image}.png`}
-                                  alt=""
-                                  // onClick={eval(`onClickButton${index}`)}
-                                  // onClick={() => console.log("hi")}
-                                />
-                              </Link>
-                            </div>
-                            <p className="text-sm">{detail.content_title}</p>
-                          </div>
-                        </>
-                      ))}
-                      <p className="text-red-600 mb-4 text-[16px]">
-                        {error && error}
-                      </p>
-                    </div>
-                  </form>
-                </Modal>
-              </div>
-            </>
-          ))}
-
-          <p className="text-red-600 mb-4 text-[16px]">{error && error}</p>
-        </div>
-      </form>
+        <p className="text-red-600 mb-4 text-[16px]">{error && error}</p>
+      </div>
     </main>
   );
 }
