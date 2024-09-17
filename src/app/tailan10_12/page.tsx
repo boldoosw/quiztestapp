@@ -13,7 +13,7 @@ import card9 from "@/assets/images/tailan_zurag/jishee_tailan/1012/9.png";
 import card10 from "@/assets/images/tailan_zurag/jishee_tailan/1012/10.png";
 import card11 from "@/assets/images/tailan_zurag/jishee_tailan/1012/11.png";
 import card12 from "@/assets/images/tailan_zurag/jishee_tailan/1012/12.png";
-import card13 from "@/assets/images/tailan_zurag/jishee_tailan/1012/12.png";
+import card13 from "@/assets/images/tailan_zurag/jishee_tailan/1012/13.png";
 
 const cardList = [
   {
