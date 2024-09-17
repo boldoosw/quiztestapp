@@ -90,7 +90,7 @@ const navItems3: NavItem[] = [
 ];
 const navItems4: NavItem[] = [
   {
-    label: "Мэдээ мэдээлэл",
+    label: "Мэргэжил Танилцуулга",
     link: "#",
     children: [
       {
