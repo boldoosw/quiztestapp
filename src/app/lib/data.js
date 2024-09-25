@@ -1,11 +1,10 @@
 import User from "@/models/User";
 import Product from "@/models/Product";
 import connectMongoDB from "@/utils/db";
+import { ITEM_PER_PAGE } from "@/lib/settings";
 
 export const fetchUsers = async (q, page) => {
   const regex = new RegExp(q, "i");
-
-  const ITEM_PER_PAGE = 5;
 
   const sort = { _id: -1 };
 
@@ -55,8 +54,6 @@ export const fetchUser = async (id) => {
 export const fetchProducts = async (q, page) => {
   console.log(q);
   const regex = new RegExp(q, "i");
-
-  const ITEM_PER_PAGE = 2;
 
   try {
     connectMongoDB();

@@ -20,7 +20,6 @@ const UsersPage = async ({ searchParams }: any) => {
             {/* <button className={styles.addButton}>Шинээр нэмэх</button> */}
           </Link>
         </div>
-        {/* <table className={styles.table}> */}
         <table className={styles.table}>
           <thead>
             <tr>
