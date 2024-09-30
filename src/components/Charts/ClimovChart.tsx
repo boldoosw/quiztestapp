@@ -82,11 +82,24 @@ function ClimovChart({ email }: { email: String }) {
 
   return (
     <>
+      <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
+        <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+          <div
+            className={
+              "border-b border-stroke  text-black   px-7 py-4 dark:border-strokedark bg-gray-300 "
+            }
+          >
+            <h3 className="font-medium dark:text-white">
+              2. Климовын тестийн үр дүн
+            </h3>
+          </div>
+        </div>
+      </div>
       <div className="col-span-12 text-center rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
           <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
             <h3 className="font-medium text-black dark:text-white">
-              2. Климовын тестийн үр дүн
+              Климовын тестийн үр дүнг доорх графикаар үзүүлэв.
             </h3>
           </div>
           <div className=" h-full">

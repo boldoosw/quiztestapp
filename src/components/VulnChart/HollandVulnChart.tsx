@@ -33,7 +33,7 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
           //   labels: ["Хүн", "Байгаль", "Амьтан", "Техник", "Тэмдэгт"],
           datasets: [
             {
-              label: "Холландын тестийн үр дүнг графикаар үзүүлэв.",
+              label: "Хамгийн өндөр үзүүлэлттэй",
               data: data,
               //   data: [15, 12, 6, 7, 40],
               backgroundColor: [
@@ -53,7 +53,7 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
         width={500}
         options={{
           indexAxis: "y",
-          maintainAspectRatio: false,
+          maintainAspectRatio: true,
         }}
       />
     </div>

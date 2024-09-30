@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import contactus from "@/assets/images/contactus.png";
+import contactus from "@/assets/images/tailan_zurag/contactus-new.png";
 
 function ContactPage() {
   return (

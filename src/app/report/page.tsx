@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Quicksand } from "next/font/google";
-import report_img from "@/assets/images/tailan_zurag/tulbur.png";
+import report_img from "@/assets/images/tailan_zurag/tulbur-new.png";
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 
