@@ -47,7 +47,8 @@ export default function AddTopic() {
         placeholder="Зөвлөмжийн нэр"
       />
 
-      <input
+      <textarea
+        rows="10"
         onChange={(e) => setDescription(e.target.value)}
         value={description}
         className="border border-slate-500 px-8 py-2"
