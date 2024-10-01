@@ -63,9 +63,9 @@ const VulnChart: React.FC<Props> = ({ labels, data }) => {
           },
           responsive: true,
           plugins: {
-            // legend: {
-            //   position: "right",
-            // },
+            legend: {
+              position: "right",
+            },
             title: {
               display: true,
               text: "Хичээл сонголтын үр дүнг графикаар харуулав.",

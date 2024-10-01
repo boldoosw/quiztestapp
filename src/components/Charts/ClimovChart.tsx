@@ -106,6 +106,7 @@ function ClimovChart({ email }: { email: String }) {
             <div className="text-black text-center mt-8">
               <VulnChart labels={climov_label} data={climov_data} />
             </div>
+
             <div className="flex flex-col  text-sm text-left m-4">
               <div className="flex flex-row content-center">
                 <div
@@ -155,6 +156,19 @@ function ClimovChart({ email }: { email: String }) {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="col-span-12  rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
+        <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+          <div
+            className={
+              "border-b border-stroke  text-black   px-7 py-4 dark:border-strokedark bg-gray-300 "
+            }
+          >
+            <h3 className="font-medium dark:text-white">
+              Климовын тестийн үр дүнгийн тайлбар
+            </h3>
           </div>
         </div>
       </div>
