@@ -36,7 +36,12 @@ export default async function TopicsList() {
         >
           <div>
             <h2 className="font-bold text-2xl">{t.title}</h2>
-            <div>{t.description}</div>
+
+            <div
+              className="ProseMirror whitespace-pre-line border border-slate-700 px-6 py-4 rounded-lg"
+              style={{ whiteSpace: "pre-line" }}
+              dangerouslySetInnerHTML={{ __html: t.description }}
+            />
           </div>
 
           <div className="flex gap-2">

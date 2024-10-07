@@ -23,15 +23,16 @@ export default function AddTopic() {
       content: content,
       description: description,
     };
-    console.log(data);
+    console.log(data.description);
 
-    if (!title || !content) {
+    if (!title || !description) {
       alert("Title and description are required.");
       return;
     }
     const NEXT_PUBLIC_APP_API_ENDPOINT =
       process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
     try {
+      console.log("desc:", description);
       const res = await fetch(`${NEXT_PUBLIC_APP_API_ENDPOINT}/api/topics`, {
         method: "POST",
         headers: {
