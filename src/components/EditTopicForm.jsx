@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Tiptap from "@/components/Tiptap";
@@ -16,14 +15,19 @@ export default function EditTopicForm({ id, title, description }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const NEXT_PUBLIC_APP_API_ENDPOINT =
+      process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
     try {
-      const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ newTitle, newDescription }),
-      });
+      const res = await fetch(
+        `${NEXT_PUBLIC_APP_API_ENDPOINT}/api/topics/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({ newTitle, newDescription }),
+        }
+      );
 
       if (!res.ok) {
         throw new Error("Failed to update topic");
