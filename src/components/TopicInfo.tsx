@@ -30,9 +30,17 @@ const TopicInfo: React.FC<Props> = ({ topic_id, role }) => {
           <h3 className="font-medium text-white dark:text-white">Зөвлөмж</h3>
         </div>
 
-        <div className="mb-5.5 text-white flex flex-col gap-5.5 sm:flex-row py-7">
+        <div
+          className="ProseMirror whitespace-pre-line border border-slate-700 px-6 py-4 rounded-lg"
+          style={{ whiteSpace: "pre-line" }}
+          dangerouslySetInnerHTML={{
+            __html: !searchedTopic ? "" : (searchedTopic as any).description,
+          }}
+        />
+
+        {/* <div className="mb-5.5 text-white flex flex-col gap-5.5 sm:flex-row py-7">
           <div>{!searchedTopic ? "" : (searchedTopic as any).description}</div>
-        </div>
+        </div> */}
       </div>
     </>
   );
