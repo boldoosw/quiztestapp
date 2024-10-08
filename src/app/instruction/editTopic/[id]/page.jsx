@@ -1,3 +1,4 @@
+"use client";
 import EditTopicForm from "@/components/EditTopicForm";
 
 const getTopicById = async (id) => {
