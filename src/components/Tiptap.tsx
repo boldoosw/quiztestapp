@@ -10,6 +10,7 @@ const Tiptap = ({ onChange, content }: any) => {
     onChange(newContent);
   };
   const editor = useEditor({
+    content: content,
     extensions: [StarterKit, Underline],
     immediatelyRender: false,
     editorProps: {

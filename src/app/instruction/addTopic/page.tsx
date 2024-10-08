@@ -100,10 +100,7 @@ export default function AddTopic() {
   //   }
   // };
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-3xl w-full grid place-items-center mx-auto pt-10 mb-10"
-    >
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input
         onChange={(e) => setTitle(e.target.value)}
         value={title}

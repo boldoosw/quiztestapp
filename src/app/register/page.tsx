@@ -35,11 +35,11 @@ const Register = () => {
       return;
     }
     if (lastname === "") {
-      setError("Өөрийн овог оруулна уу!!!!");
+      setError("Өөрийн  овог нэрээ оруулна уу!!!!");
       return;
     }
     if (firstname === "") {
-      setError("Өөрийн нэрээ оруулна уу!!!!");
+      setError("Өөрийн сургууль ангиа оруулна уу!!!!");
       return;
     }
     if (phone === "") {
@@ -102,13 +102,13 @@ const Register = () => {
             <input
               type="text"
               className="border-gray-300 mb-4 w-full rounded border px-3 py-2 text-black focus:border-blue-400 focus:text-black focus:outline-none"
-              placeholder="Овог"
+              placeholder="Овог Нэр"
               required
             />
             <input
               type="text"
               className="border-gray-300 mb-4 w-full rounded border px-3 py-2 text-black focus:border-blue-400 focus:text-black focus:outline-none"
-              placeholder="Нэр"
+              placeholder="Сургууль анги"
               required
             />
             <input

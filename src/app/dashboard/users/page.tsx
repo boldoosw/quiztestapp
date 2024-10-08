@@ -24,6 +24,7 @@ const UsersPage = async ({ searchParams }: any) => {
           <thead>
             <tr>
               <td>Овог Нэр</td>
+              <td>Сургууль Анги</td>
               <td>Имайл хаяг</td>
               <td>Утас</td>
               <td>Үүсгэсэн огноо</td>
@@ -44,9 +45,10 @@ const UsersPage = async ({ searchParams }: any) => {
                       height={40}
                       className={styles.userImage}
                     />
-                    {user.lastname + " " + user.firstname}
+                    {user.lastname}
                   </div>
                 </td>
+                <td>{user.firstname}</td>
                 <td>{user.email}</td>{" "}
                 <td>{user.phone ? user.phone : "байхгүй"}</td>
                 <td>{user.createdAt?.toString().slice(4, 16)}</td>
