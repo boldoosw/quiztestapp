@@ -45,7 +45,7 @@ const UserInfo = ({ email }: { email: String }) => {
                       id="fullName"
                       placeholder=""
                       defaultValue={
-                        !searchedUser ? "" : (searchedUser as any).firstname
+                        !searchedUser ? "" : (searchedUser as any).lastname
                       }
                     />
                   </div>

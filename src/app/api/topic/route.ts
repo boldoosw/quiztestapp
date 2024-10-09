@@ -20,7 +20,7 @@ export async function GET(
   let existingTopic;
 
   let existingTopic1 = await Topic.findOne({
-    _id: "6618836048d3e3894809ea5c",
+    _id: "6705dee28ed2b0d079c1a0dc",
   });
   let existingTopic2 = await Topic.findOne({
     _id: "662270d35f7a4dc2efab6ae7",

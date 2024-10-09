@@ -31,7 +31,7 @@ const TopicInfo: React.FC<Props> = ({ topic_id, role }) => {
         </div>
 
         <div
-          className="ProseMirror whitespace-pre-line border border-slate-700 px-6 py-4 rounded-lg"
+          className="ProseMirror whitespace-pre-line text-left px-6 py-4 "
           style={{ whiteSpace: "pre-line" }}
           dangerouslySetInnerHTML={{
             __html: !searchedTopic ? "" : (searchedTopic as any).description,
