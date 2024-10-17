@@ -273,6 +273,18 @@ export const professionsData = [
         content_detail: "",
         content_image: "farmer",
       },
+      {
+        content_title: "МАЛЫН ЭМЧ",
+        content_detail: "",
+        content_image: "animal_doctor",
+      },
+      
+      
+      {
+        content_title: "АГРОНОМЧ",
+        content_detail: "",
+        content_image: "agronomich",
+      },
       
     ],
   },
@@ -323,7 +335,7 @@ export const professionsData = [
     ],
   },
   {
-    name: "Техникийн мэргэжлүүд",
+    name: "ИНЖЕНЕР – ТЕХНИКИЙН МЭРГЭЖИЛҮҮД",
     profession_name: "technical_professions",
     img: "technical_professions",
     img_detail: "technical_professions_detail",
