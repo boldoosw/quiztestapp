@@ -20,10 +20,10 @@ export async function GET(
   let existingTopic;
 
   let existingTopic1 = await Topic.findOne({
-    _id: "6705dee28ed2b0d079c1a0dc",
+    _id: "671502618887264dc494c9e3",
   });
   let existingTopic2 = await Topic.findOne({
-    _id: "662270d35f7a4dc2efab6ae7",
+    _id: "6715063d4876372365b07464",
   });
   // if (by_topic === "") {
   if (role === "angi8_9") existingTopic = existingTopic1;
