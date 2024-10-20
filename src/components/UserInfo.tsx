@@ -113,23 +113,42 @@ const UserInfo = ({ email }: { email: String }) => {
                 </div>
               </div>
 
-              <div className="mb-5.5">
-                <label
-                  className="mb-3 block text-sm font-medium text-black dark:text-white"
-                  htmlFor="Username"
-                >
-                  Нэвтрэх нэр
-                </label>
-                <input
-                  className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-                  type="text"
-                  name="Username"
-                  id="Username"
-                  placeholder="boldoosw"
-                  defaultValue={
-                    !searchedUser ? "" : (searchedUser as any).email
-                  }
-                />
+              <div className="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
+                <div className="w-full sm:w-1/2">
+                  <label
+                    className="mb-3 block text-sm font-medium text-black dark:text-white"
+                    htmlFor="Username"
+                  >
+                    Нэвтрэх нэр
+                  </label>
+                  <input
+                    className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+                    type="text"
+                    name="Username"
+                    id="Username"
+                    placeholder="boldoosw"
+                    defaultValue={
+                      !searchedUser ? "" : (searchedUser as any).email
+                    }
+                  />
+                </div>
+                <div className="w-full sm:w-1/2">
+                  <label
+                    className="mb-3 block text-sm font-medium text-black dark:text-white"
+                    htmlFor="phoneNumber"
+                  >
+                    Фэйсбүүк хаяг
+                  </label>
+                  <input
+                    className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+                    type="text"
+                    name="facebook"
+                    id="facebook"
+                    defaultValue={
+                      !searchedUser ? "" : (searchedUser as any).facebook
+                    }
+                  />
+                </div>
               </div>
             </form>
           </div>
