@@ -11,7 +11,8 @@ declare module "next-auth" {
             firstname: string,
             lastname: string,
             phone: string,
-            email:string,
+            email: string,
+            facebook:string,
         } & DefaultSession
     }
 
@@ -20,7 +21,8 @@ declare module "next-auth" {
         firstname:string,
         lastname: string,
         phone: string,
-         email:string,
+        email: string,
+        facebook:string,
          id:string,
     }
 }
@@ -32,6 +34,7 @@ declare module "next-auth/jwt" {
         lastname: string,
         phone: string,
         email: string,
+        facebook:string,
          id:string,
     }
 }

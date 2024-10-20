@@ -3,6 +3,7 @@ import { Card, Typography } from "@material-tailwind/react";
 import { Quicksand } from "next/font/google";
 
 import "@/app/globals.css";
+import Link from "next/link";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -1261,6 +1262,152 @@ export default function TableWithStripedRows() {
     <main
       className={`${quicksand.variable}  font-quicksand max-w-[900px] w-full m-auto flex flex-col items-center`}
     >
+      <div className="w-full bg-white mb-6 shadow-lg rounded grid grid-cols-3 gap-4 place-items-stretch p-4">
+        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+          <svg
+            className="fill-current w-4 h-4 mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+          </svg>
+          <Link
+            className="py-4"
+            href="/assets/pdfs/ashus.pdf"
+            locale={false}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>АШУҮИС</span>
+          </Link>
+        </button>
+        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+          <svg
+            className="fill-current w-4 h-4 mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+          </svg>
+          <Link
+            className="py-4"
+            href="/assets/pdfs/mubis.pdf"
+            locale={false}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>МУБИС</span>
+          </Link>
+        </button>
+        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+          <svg
+            className="fill-current w-4 h-4 mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+          </svg>
+          <Link
+            className="py-4"
+            href="/assets/pdfs/muis.pdf"
+            locale={false}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>МУИС</span>
+          </Link>{" "}
+        </button>
+        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+          <svg
+            className="fill-current w-4 h-4 mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+          </svg>
+          <Link
+            className="py-4"
+            href="/assets/pdfs/suis.pdf"
+            locale={false}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>СУИС</span>
+          </Link>
+        </button>
+        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+          <svg
+            className="fill-current w-4 h-4 mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+          </svg>
+          <Link
+            className="py-4"
+            href="/assets/pdfs/sezis.pdf"
+            locale={false}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>СЭЗИС</span>
+          </Link>
+        </button>
+        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+          <svg
+            className="fill-current w-4 h-4 mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+          </svg>
+          <Link
+            className="py-4"
+            href="/assets/pdfs/haais.pdf"
+            locale={false}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>ХААИС</span>
+          </Link>
+        </button>
+        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+          <svg
+            className="fill-current w-4 h-4 mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+          </svg>
+          <Link
+            className="py-4"
+            href="/assets/pdfs/hsis.pdf"
+            locale={false}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>ХСИС</span>
+          </Link>
+        </button>
+        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+          <svg
+            className="fill-current w-4 h-4 mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+          </svg>
+          <Link
+            className="py-4"
+            href="/assets/pdfs/shutis.pdf"
+            locale={false}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>ШУТИС</span>
+          </Link>
+        </button>
+      </div>
       <div className="w-full bg-white mb-6 shadow-lg rounded">
         <div className="w-full p-4">
           <h3>
@@ -1343,6 +1490,7 @@ export default function TableWithStripedRows() {
           </table>
         </div>
       </div>
+
       <div className="w-full bg-white mb-6 shadow-lg rounded">
         <div className="w-full p-4">
           <h3>
@@ -1520,6 +1668,18 @@ export default function TableWithStripedRows() {
         <div className="w-full p-4">
           <h3>
             <p className="font-bold">СУИС-Соёл урлагийн их сургууль</p>
+            <Link
+              href="/sehrish.pdf"
+              download="Sehrish.pdf"
+              locale={false}
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Downlod Resume"
+              // className={styles["link--secondary"]}
+            >
+              {" "}
+              My Resume{" "}
+            </Link>{" "}
             <p className="text-gray-500">
               ШААРДЛАГА: СУИС-ийн нэг онцлог бол сургалт явуулж буй бакалаврын
               хөтөлбөрийн дийлэх хувь ньурлагийн авъяас шаардсан хөтөлбөр
@@ -1678,75 +1838,6 @@ export default function TableWithStripedRows() {
           </table>
         </div>
       </div>
-      {/* <div className="w-full bg-white mb-6 shadow-lg rounded">
-        <div className="w-full p-4">
-          <h3>
-            <p className="font-bold">ХААИС-Хөдөө аж ахуйн их сургууль</p>
-            <p className="text-gray-500">
-              ШААРДЛАГА: Элсэгч нь тухайн мэргэжлийн чиглэлд харгалзах ерөнхий
-              шалгалтын аль нэгийг өгсөн байна.
-            </p>
-          </h3>
-        </div>
-        <div className="max-w-full">
-          <table className="w-full table-fixed border-collapse">
-            <thead className="text-left">
-              <tr className="[&>*]:px-6 [&>*]:bg-gray-100 [&>*]:text-gray-500 [&>*]:border [&>*]:border-solid [&>*]:border-gray-200 [&>*]:py-3 [&>*]:text-xs [&>*]:uppercase [&>*]:border-l-0 [&>*]:border-r-0 [&>*]:whitespace-no-wrap [&>*]:font-semibold [&>*]:text-center">
-                {TABLE_HEAD_HAIS.map((head) => (
-                  <th
-                    key={head}
-                    className="border-b border-blue-gray-100 bg-blue-gray-50 p-4"
-                  >
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal leading-none"
-                    >
-                      {head}
-                    </Typography>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="align-top break-words">
-              {TABLE_ROWS_HAIS.map(({ name, lesson1 }, index) => (
-                <tr
-                  key={name}
-                  className="hover:bg-gray-200 [&>*]:border-t-0 [&>*]:px-6 [&>*]:align-middle [&>*]:border-l-0 [&>*]:border-r-0 [&>*]:text-xs [&>*]:whitespace-no-wrap [&>*]:p-4"
-                >
-                  <td className="text-left ">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal"
-                    >
-                      {index + 1}
-                    </Typography>
-                  </td>
-                  <td className="p-4 text-center">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal"
-                    >
-                      {name}
-                    </Typography>
-                  </td>
-                  <td className="p-4 text-center">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal"
-                    >
-                      {lesson1}
-                    </Typography>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div> */}
     </main>
   );
 }

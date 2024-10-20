@@ -20,6 +20,10 @@ const userSchema = new Schema(
       unique: true,
       required: true,
     },
+    facebook: {
+      type: String,
+      required: false,
+    },
 
     password: {
       type: String,

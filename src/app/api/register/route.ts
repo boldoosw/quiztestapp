@@ -4,9 +4,11 @@ import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
 export const POST = async (request: any) => {
-  const {lastname,firstname ,phone, email, password,role } = await request.json();
+  const {lastname,firstname ,phone, email,facebook, password,role } = await request.json();
 
   await connectMongoDB();
+
+  console.log("facebook id:",facebook);
 
   const existingUser = await User.findOne({ email });
 
@@ -20,6 +22,7 @@ export const POST = async (request: any) => {
     firstname,
     phone,
     email,
+    facebook,
     password: hashedPassword,
     role,
     topic_id:""

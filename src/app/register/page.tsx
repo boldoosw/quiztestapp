@@ -27,7 +27,8 @@ const Register = () => {
     const firstname = e.target[1].value;
     const phone = e.target[2].value;
     const email = e.target[3].value;
-    const password = e.target[4].value;
+    const facebook = e.target[4].value;
+    const password = e.target[5].value;
 
     console.log(role);
 
@@ -51,6 +52,10 @@ const Register = () => {
       setError("Имайл хаяг алдаатай байна !");
       return;
     }
+    if (facebook === "") {
+      setError("Фэйсбүүк хаягаа оруулна уу!!!!");
+      return;
+    }
 
     if (!password || password.length < 4) {
       setError("Нууц үг 4 тэмдэгтээс их байх ёстой!");
@@ -68,6 +73,7 @@ const Register = () => {
           firstname,
           phone,
           email,
+          facebook,
           password,
           role,
         }),
@@ -122,6 +128,12 @@ const Register = () => {
               type="text"
               className="border-gray-300 mb-4 w-full rounded border px-3 py-2 text-black focus:border-blue-400 focus:text-black focus:outline-none"
               placeholder="Email"
+              required
+            />
+            <input
+              type="text"
+              className="border-gray-300 mb-4 w-full rounded border px-3 py-2 text-black focus:border-blue-400 focus:text-black focus:outline-none"
+              placeholder="Фэйсбүүк хаяг"
               required
             />
             <input
