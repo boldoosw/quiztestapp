@@ -1263,150 +1263,163 @@ export default function TableWithStripedRows() {
       className={`${quicksand.variable}  font-quicksand max-w-[900px] w-full m-auto flex flex-col items-center`}
     >
       <div className="w-full bg-white mb-6 shadow-lg rounded grid grid-cols-3 gap-4 place-items-stretch p-4">
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-          <svg
-            className="fill-current w-4 h-4 mr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-          </svg>
-          <Link
-            className="py-4"
-            href="/assets/pdfs/ashus.pdf"
-            locale={false}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+        <Link
+          className="py-2"
+          href="/assets/pdfs/ashus.pdf"
+          locale={false}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {" "}
+          <button className="w-full bg-gray-600 hover:bg-gray-400 text-white font-bold py-4 px-4 rounded inline-flex items-center">
+            <svg
+              className="fill-current w-4 h-4 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+
             <span>АШУҮИС</span>
-          </Link>
-        </button>
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-          <svg
-            className="fill-current w-4 h-4 mr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-          </svg>
-          <Link
-            className="py-4"
-            href="/assets/pdfs/mubis.pdf"
-            locale={false}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          </button>{" "}
+        </Link>
+        <Link
+          className="py-2"
+          href="/assets/pdfs/mubis.pdf"
+          locale={false}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {" "}
+          <button className="w-full bg-gray-600 hover:bg-gray-400 text-white font-bold py-4 px-4 rounded inline-flex items-center">
+            <svg
+              className="fill-current w-4 h-4 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+
             <span>МУБИС</span>
-          </Link>
-        </button>
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-          <svg
-            className="fill-current w-4 h-4 mr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-          </svg>
-          <Link
-            className="py-4"
-            href="/assets/pdfs/muis.pdf"
-            locale={false}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          </button>{" "}
+        </Link>
+        <Link
+          className="py-2"
+          href="/assets/pdfs/muis.pdf"
+          locale={false}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <button className="w-full bg-gray-600 hover:bg-gray-400 text-white font-bold py-4 px-4 rounded inline-flex items-center">
+            <svg
+              className="fill-current w-4 h-4 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+
             <span>МУИС</span>
-          </Link>{" "}
-        </button>
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-          <svg
-            className="fill-current w-4 h-4 mr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-          </svg>
-          <Link
-            className="py-4"
-            href="/assets/pdfs/suis.pdf"
-            locale={false}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          </button>
+        </Link>{" "}
+        <Link
+          className="py-2"
+          href="/assets/pdfs/suis.pdf"
+          locale={false}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {" "}
+          <button className="w-full bg-gray-600 hover:bg-gray-400 text-white font-bold py-4 px-4 rounded inline-flex items-center">
+            <svg
+              className="fill-current w-4 h-4 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+
             <span>СУИС</span>
-          </Link>
-        </button>
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-          <svg
-            className="fill-current w-4 h-4 mr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-          </svg>
-          <Link
-            className="py-4"
-            href="/assets/pdfs/sezis.pdf"
-            locale={false}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          </button>{" "}
+        </Link>
+        <Link
+          className="py-2"
+          href="/assets/pdfs/sezis.pdf"
+          locale={false}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <button className="w-full bg-gray-600 hover:bg-gray-400 text-white font-bold py-4 px-4 rounded inline-flex items-center">
+            <svg
+              className="fill-current w-4 h-4 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+
             <span>СЭЗИС</span>
-          </Link>
-        </button>
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-          <svg
-            className="fill-current w-4 h-4 mr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-          </svg>
-          <Link
-            className="py-4"
-            href="/assets/pdfs/haais.pdf"
-            locale={false}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          </button>{" "}
+        </Link>
+        <Link
+          className="py-2"
+          href="/assets/pdfs/haais.pdf"
+          locale={false}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <button className="w-full bg-gray-600 hover:bg-gray-400 text-white font-bold py-4 px-4 rounded inline-flex items-center">
+            <svg
+              className="fill-current w-4 h-4 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+
             <span>ХААИС</span>
-          </Link>
-        </button>
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-          <svg
-            className="fill-current w-4 h-4 mr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-          </svg>
-          <Link
-            className="py-4"
-            href="/assets/pdfs/hsis.pdf"
-            locale={false}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          </button>{" "}
+        </Link>
+        <Link
+          className="py-2"
+          href="/assets/pdfs/hsis.pdf"
+          locale={false}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {" "}
+          <button className="w-full bg-gray-600 hover:bg-gray-400 text-white font-bold py-4 px-4 rounded inline-flex items-center">
+            <svg
+              className="fill-current w-4 h-4 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+
             <span>ХСИС</span>
-          </Link>
-        </button>
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-          <svg
-            className="fill-current w-4 h-4 mr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-          </svg>
-          <Link
-            className="py-4"
-            href="/assets/pdfs/shutis.pdf"
-            locale={false}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          </button>{" "}
+        </Link>
+        <Link
+          className="py-2"
+          href="/assets/pdfs/shutis.pdf"
+          locale={false}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {" "}
+          <button className="w-full bg-gray-600 hover:bg-gray-400 text-white font-bold py-4 px-4 rounded inline-flex items-center">
+            <svg
+              className="fill-current w-4 h-4 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+
             <span>ШУТИС</span>
-          </Link>
-        </button>
+          </button>{" "}
+        </Link>
       </div>
       <div className="w-full bg-white mb-6 shadow-lg rounded">
         <div className="w-full p-4">
