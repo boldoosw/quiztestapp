@@ -116,7 +116,7 @@ export default function Navbar2() {
   }
 
   return (
-    <div className="bg-white mx-auto flex  w-full max-w-7xl justify-between px-4 py-4 text-sm">
+    <div className="bg-white mx-auto flex  w-full max-w-8xl justify-between px-4 py-4 text-sm">
       {/* left side  */}
       <section ref={animationParent} className="flex items-center gap-4">
         {/* logo */}
